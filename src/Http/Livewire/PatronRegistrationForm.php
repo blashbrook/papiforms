@@ -46,14 +46,12 @@ class PatronRegistrationForm extends Component
 
     public function submitForm()
     {
-
         $postpatron = $this->validate();
-
 
         $httpDate = app('papiDate')->getDate();
         //$uri = config('papi.publicURI') . 'patron';
         $uri = 'https://catalog.dcplibrary.org/PAPIService/REST/public/v1/1033/100/3/apikeyvalidate';
-        $concat = 'POST' . $uri . $httpDate;
+        $concat = 'POST'.$uri.$httpDate;
         $accessKey = config('papi.key');
         //$sha1_sig = 'PW S ' . config('papi.id') . ':' . base64_encode(hash_hmac('sha1', $concat, $accessKey, true));
 
@@ -64,11 +62,10 @@ class PatronRegistrationForm extends Component
         //$response = array(
             'POST',
             $uri,
-            ['headers' =>
-                ['Accept' => 'application/json',
-                    'Authorization' => $sha1_sig,
-                    'PolarisDate' => $httpDate],
-           /*     'json' => ['LogonBranchID' => config('papi.logonBranchID'),
+            ['headers' => ['Accept' => 'application/json',
+                'Authorization' => $sha1_sig,
+                'PolarisDate' => $httpDate, ],
+                /*     'json' => ['LogonBranchID' => config('papi.logonBranchID'),
                     'LogonUserID' => config('papi.logonUserID'),
                     'LogonWorkstationID' => config('papi.logonWorkstationID'),
                     'PatronBranchID' => config('papi.logonBranchID'),
