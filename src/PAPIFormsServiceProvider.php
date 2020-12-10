@@ -2,11 +2,11 @@
 
 namespace Blashbrook\PAPIForms;
 
+use Blashbrook\PAPIForms\Http\Livewire\Boo;
+use Blashbrook\PAPIForms\Http\Livewire\PatronRegistrationForm;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Blashbrook\PAPIForms\Http\Livewire\Boo;
-use Blashbrook\PAPIForms\Http\Livewire\PatronRegistrationForm;
 
 class PAPIFormsServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,6 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'papiforms');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-   
 
         Livewire::component('boo', Boo::class);
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
