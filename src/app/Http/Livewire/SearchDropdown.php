@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Http\Livewire;
+namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
  * TODO: Customize for Postal Codes
  *
  * Class SearchDropdown
- * @package Blashbrook\PAPIForms\Http\Livewire
+ * @package Blashbrook\PAPIForms\App\Http\Livewire
  */
 class SearchDropdown extends Component
 {

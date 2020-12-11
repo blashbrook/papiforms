@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Http\Livewire;
+namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\PAPIClient;
 use Livewire\Component;

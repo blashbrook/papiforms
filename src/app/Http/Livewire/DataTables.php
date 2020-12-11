@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Http\Livewire;
+namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 /**
  * TODO: Customize for PatronRegistration

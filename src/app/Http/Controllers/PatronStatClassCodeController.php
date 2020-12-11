@@ -1,12 +1,12 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Blashbrook\PAPIForms\Models\PatronRegistration;
+use App\Models\PatronStatClassCode;
 use Illuminate\Http\Request;
 
-class PatronRegistrationController extends Controller
+class PatronStatClassCodeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class PatronRegistrationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
      * @return \Illuminate\Http\Response
      */
-    public function show(PatronRegistration $patronRegistration)
+    public function show(PatronStatClassCode $patronStatClassCode)
     {
         //
     }
@@ -53,10 +53,10 @@ class PatronRegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
      * @return \Illuminate\Http\Response
      */
-    public function edit(PatronRegistration $patronRegistration)
+    public function edit(PatronStatClassCode $patronStatClassCode)
     {
         //
     }
@@ -65,10 +65,10 @@ class PatronRegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PatronRegistration $patronRegistration)
+    public function update(Request $request, PatronStatClassCode $patronStatClassCode)
     {
         //
     }
@@ -76,10 +76,10 @@ class PatronRegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PatronRegistration $patronRegistration)
+    public function destroy(PatronStatClassCode $patronStatClassCode)
     {
         //
     }

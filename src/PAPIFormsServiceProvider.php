@@ -2,10 +2,9 @@
 
 namespace Blashbrook\PAPIForms;
 
-use Blashbrook\PAPIForms\Http\Livewire\DataTables;
-use Blashbrook\PAPIForms\Http\Livewire\PatronRegistrationForm;
-use Blashbrook\PAPIForms\Http\Livewire\SearchDropdown;
-use Illuminate\Support\Facades\Blade;
+use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
+use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
+use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -22,6 +21,8 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'papiforms');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
+
 
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
         Livewire::component('search-dropdown', SearchDropdown::class);
