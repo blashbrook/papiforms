@@ -56,7 +56,7 @@
         </div>
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
-                <form  wire:submit.prevent="submitForm" action="patronpost" composer require genealabs/laravel-caffeineclass="grid grid-cols-1 row-gap-6">
+                <form  wire:submit.prevent="submitForm" action="patronpost" class="grid grid-cols-1 row-gap-6">
                @csrf
                     @if ($successMessage)
                         <div class="p-4 mt-8 rounded-md bg-green-50">
@@ -94,45 +94,41 @@
 
                     <div>
 
-                        <input type="hidden" name="LogonBranchID" value="3">
-                        <input type="hidden" name="LogonUserID" value="56">
-                        <input type="hidden" name="LogonWorkstationID" value="3">
-                        <input type="hidden" name="PatronBranchID" value="3">
 
                         <x-papiforms::input.group label="Birthdate" for="Birthdate">
-                            <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY"/>
+                            <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="Name" for="NameFirst">
-                            <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name"/>
+                            <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="NameMiddle" for="NameMiddle">
-                            <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name"/>
+                            <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="NameLast" for="NameLast">
-                            <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name"/>
+                            <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="Email" for="Email">
-                            <x-papiforms::input.text wire:model.defer="Email" id="Email" name="Email" type="text" placeholder="Email address"/>
+                            <x-papiforms::input.text wire:model.defer="Email" id="Email" name="Email" type="text" placeholder="Email address" value="{{ old('Email') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="PhoneVoice1" for="PhoneVoice1">
-                            <x-papiforms::input.text wire:model.defer="PhoneVoice1" id="PhoneVoice1" name="text" type="PhoneVoice1" placeholder="Phone number"/>
+                            <x-papiforms::input.text wire:model.defer="PhoneVoice1" id="PhoneVoice1" name="text" type="PhoneVoice1" placeholder="Phone number" value="{{ old('PhoneVoice1') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="StreetOne" for="StreetOne">
-                            <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address"/>
+                            <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="StreetTwo" for="StreetTwo">
-                            <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #"/>
+                            <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="City" for="City">
-                            <x-papiforms::input.text wire:model.defer="City" id="City" name="City" type="text" placeholder="City"/>
+                            <x-papiforms::input.text wire:model.defer="City" id="City" name="City" type="text" placeholder="City" value="{{ old('City') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="State" for="State">
@@ -140,7 +136,8 @@
                                 wire:model.defer="State"
                                 id="State" name="State"
                                 type="text"
-                                placeholder="State"/>
+                                placeholder="State"
+                                value="{{ old('State') }}"/>
                         </x-papiforms::input.group>
 
 {{--                        <x-papiforms::input.group>
@@ -155,7 +152,6 @@
                                 type="text"
                                 value="{{ old('PostalCode') }}"
                                 placeholder="Postal code"/>
-
                         </x-papiforms::input.group>
 
 
@@ -175,6 +171,7 @@
                                 <span>Submit</span>
                             </button>
                         </span>
+                    </div>
                     </div>
                 </form>
             </div>

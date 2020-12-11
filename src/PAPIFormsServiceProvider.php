@@ -2,8 +2,9 @@
 
 namespace Blashbrook\PAPIForms;
 
-use Blashbrook\PAPIForms\Http\Livewire\Boo;
+use Blashbrook\PAPIForms\Http\Livewire\DataTables;
 use Blashbrook\PAPIForms\Http\Livewire\PatronRegistrationForm;
+use Blashbrook\PAPIForms\Http\Livewire\SearchDropdown;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -22,10 +23,11 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
-        Livewire::component('boo', Boo::class);
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
+        Livewire::component('search-dropdown', SearchDropdown::class);
+        Livewire::component('data-tables', DataTables::class);
 
-        //Blade::component('input.text', 'papiforms::input.text');
+
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
