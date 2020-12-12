@@ -16,15 +16,15 @@ class CreatePatronRegistrationsTable extends Migration
         Schema::create('patron_registrations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('LogonBranchID')->default(3);
-            $table->integer('LogonUserID')->default(74);
-            $table->integer('LogonWorkstationID')->default(223);
-            $table->integer('PatronBranchID')->default(3);
+            $table->integer('LogonBranchID')->default('3');
+            $table->integer('LogonUserID')->default('74');
+            $table->integer('LogonWorkstationID')->default('223');
+            $table->integer('PatronBranchID')->default('3');
             $table->string('PostalCode',12)->nullable();
             $table->string('ZipPlusFour',4)->nullable();
             $table->string('City',32)->nullable();
-            $table->string('State',32)->nullable()->default('KY');
-            $table->string('County',32)->nullable()->default('DAVIESS');
+            $table->string('State',32)->nullable();
+            $table->string('County',32)->nullable();
             $table->integer('CountryID')->nullable()->default(1);
             $table->string('StreetOne',64)->nullable();
             $table->string('StreetTwo',64)->nullable();
@@ -42,20 +42,16 @@ class CreatePatronRegistrationsTable extends Migration
             $table->string('PhoneVoice1',20)->nullable();
             $table->string('PhoneVoice2',20)->nullable();
             $table->string('PhoneVoice3',20)->nullable();
-            $table->foreignId('Phone1CarrierID')->constrained('mobile_phone_carrier')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('Phone2CarrierID')->constrained('mobile_phone_carrier')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('Phone3CarrierID')->constrained('mobile_phone_carrier')
-                ->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('Phone1CarrierID')->nullable();
+            $table->integer('Phone2CarrierID')->nullable();
+            $table->integer('Phone3CarrierID')->nullable();
             $table->string('EmailAddress',64)->nullable();
             $table->string('AltEmailAddress',64)->nullable();
             $table->smallInteger('LanguageID')->nullable()->default(1);
             $table->string('UserName',50)->nullable();
             $table->string('Password',256)->nullable();
             $table->string('Password2',256)->nullable();
-            $table->foreignId('DeliveryOptionID')->constrained('delivery_options')
-                ->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('DeliveryOptionID')->nullable();
             $table->boolean('EnableSMS')->nullable();
             $table->tinyInteger('TxtPhoneNumber')->nullable();
             $table->string('Barcode')->nullable();
