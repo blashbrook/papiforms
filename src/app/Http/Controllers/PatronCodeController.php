@@ -3,10 +3,10 @@
 namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Blashbrook\PAPIForms\App\Models\UdfOption;
+use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Illuminate\Http\Request;
 
-class UdfOptionController extends Controller
+class PatronCodeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class UdfOptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
-    public function show(UdfOption $udfOption)
+    public function show(PatronCode $patronCode)
     {
         //
     }
@@ -53,10 +53,10 @@ class UdfOptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
-    public function edit(UdfOption $udfOption)
+    public function edit(PatronCode $patronCode)
     {
         //
     }
@@ -65,10 +65,10 @@ class UdfOptionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UdfOption $udfOption)
+    public function update(Request $request, PatronCode $patronCode)
     {
         //
     }
@@ -76,10 +76,10 @@ class UdfOptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UdfOption $udfOption)
+    public function destroy(PatronCode $patronCode)
     {
         //
     }
