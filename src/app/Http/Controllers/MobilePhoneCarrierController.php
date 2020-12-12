@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\StatisticalCode;
+use Blashbrook\PAPIForms\App\Models\MobilePhoneCarrier;
 use Illuminate\Http\Request;
 
-class StatisticalCodeController extends Controller
+class MobilePhoneCarrierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class StatisticalCodeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StatisticalCode  $statisticalCode
+     * @param  \App\Models\MobilePhoneCarrier  $mobilePhoneCarrier
      * @return \Illuminate\Http\Response
      */
-    public function show(StatisticalCode $statisticalCode)
+    public function show(MobilePhoneCarrier $mobilePhoneCarrier)
     {
         //
     }
@@ -53,10 +53,10 @@ class StatisticalCodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StatisticalCode  $statisticalCode
+     * @param  \App\Models\MobilePhoneCarrier  $mobilePhoneCarrier
      * @return \Illuminate\Http\Response
      */
-    public function edit(StatisticalCode $statisticalCode)
+    public function edit(MobilePhoneCarrier $mobilePhoneCarrier)
     {
         //
     }
@@ -65,10 +65,10 @@ class StatisticalCodeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StatisticalCode  $statisticalCode
+     * @param  \App\Models\MobilePhoneCarrier  $mobilePhoneCarrier
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StatisticalCode $statisticalCode)
+    public function update(Request $request, MobilePhoneCarrier $mobilePhoneCarrier)
     {
         //
     }
@@ -76,10 +76,10 @@ class StatisticalCodeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StatisticalCode  $statisticalCode
+     * @param  \App\Models\MobilePhoneCarrier  $mobilePhoneCarrier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StatisticalCode $statisticalCode)
+    public function destroy(MobilePhoneCarrier $mobilePhoneCarrier)
     {
         //
     }

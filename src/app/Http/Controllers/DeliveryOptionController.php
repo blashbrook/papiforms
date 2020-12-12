@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\PatronStatClassCode;
+use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Illuminate\Http\Request;
 
-class PatronStatClassCodeController extends Controller
+class DeliveryOptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class PatronStatClassCodeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
+     * @param  \App\Models\DeliveryOption  $deliveryOption
      * @return \Illuminate\Http\Response
      */
-    public function show(PatronStatClassCode $patronStatClassCode)
+    public function show(DeliveryOption $deliveryOption)
     {
         //
     }
@@ -53,10 +53,10 @@ class PatronStatClassCodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
+     * @param  \App\Models\DeliveryOption  $deliveryOption
      * @return \Illuminate\Http\Response
      */
-    public function edit(PatronStatClassCode $patronStatClassCode)
+    public function edit(DeliveryOption $deliveryOption)
     {
         //
     }
@@ -65,10 +65,10 @@ class PatronStatClassCodeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
+     * @param  \App\Models\DeliveryOption  $deliveryOption
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PatronStatClassCode $patronStatClassCode)
+    public function update(Request $request, DeliveryOption $deliveryOption)
     {
         //
     }
@@ -76,10 +76,10 @@ class PatronStatClassCodeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PatronStatClassCode  $patronStatClassCode
+     * @param  \App\Models\DeliveryOption  $deliveryOption
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PatronStatClassCode $patronStatClassCode)
+    public function destroy(DeliveryOption $deliveryOption)
     {
         //
     }

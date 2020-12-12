@@ -3,7 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Blashbrook\PAPIForms\Models\PostalCode;
+use Blashbrook\PAPIForms\App\Models\PostalCode;
 use Illuminate\Http\Request;
 
 class PostalCodeController extends Controller

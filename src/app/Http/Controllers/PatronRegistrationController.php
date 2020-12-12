@@ -3,7 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Blashbrook\PAPIForms\Models\PatronRegistration;
+use Blashbrook\PAPIForms\App\Models\PatronRegistration;
 use Illuminate\Http\Request;
 
 class PatronRegistrationController extends Controller
