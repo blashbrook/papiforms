@@ -20,6 +20,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/patron', function () {
         return view('papiforms::patron');
     });
+    Route::get('/multistep', function () {
+        return view('papiforms::multistep');
+    });
     Route::get('/patronpost', PatronRegistrationForm::class);
     Route::get('/search', SearchDropdown::class);
     Route::get('/registrations', DataTables::class);
