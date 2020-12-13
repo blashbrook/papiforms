@@ -2,7 +2,8 @@
     x-data
     x-init="new Pikaday({
         field: $refs.input,
-        format: 'MM/DD/YYYY'
+        format: 'MM/DD/YYYY',
+        yearRange: [1900, 2020]
         })"
     @change="$dispatch('input', $event.target.value)"
     class="mt-1 rounded-md shadow-sm">

@@ -5,6 +5,7 @@ namespace Blashbrook\PAPIForms;
 use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
 use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
+use Blashbrook\PAPIForms\App\Http\Livewire\SelectPostalCode;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -27,6 +28,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
         Livewire::component('search-dropdown', SearchDropdown::class);
         Livewire::component('data-tables', DataTables::class);
+        Livewire::component('select-postal-code', SelectPostalCode::class);
 
 
         // Publishing is only necessary when using the CLI.
