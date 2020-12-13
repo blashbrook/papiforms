@@ -1,9 +1,13 @@
 <div>
-    <select wire:model="selectedID">
-        {!! $selector !!}
+    <select wire:model="selectedID" id="selectedID" name="selectedID">
+        @foreach($postalCodes as $postalCode)
+            <option value="{{ $postalCode->id }}">
+                {{ $postalCode->City }}, {{ $postalCode->State }}  {{ $postalCode->PostalCode }}
+            </option>
+        @endforeach
     </select>
-    @if($selectedID)
-         <span> {{ $selectedCity }}, {{ $selectedState }}  {{ $selectedPostalCode }}</span>
-    @endif
+    @if($selectedArray)
+   <span>{{ $selectedArray->City }}, {{ $selectedArray->State }}  {{ $selectedArray->PostalCode }}</span>
+        @endif
 </div>
 
