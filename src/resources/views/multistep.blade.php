@@ -1,11 +1,11 @@
 <x-papiforms::layouts.app>
-<div x-data="app()" x-cloak>
+<div x-cloak x-data="app()" >
     <div class="max-w-3xl mx-auto px-4 py-10">
         <x-papiforms::forms.registration.steps.complete />
         <div x-show.transition="step != 'complete'">
             <!-- Top Navigation -->
             <div class="border-b-2 py-4">
-                <div class="uppercase tracking-wide text-xs font-bold text-gray-500 mb-1 leading-tight" x-text="`Step: ${step} of 10`"></div>
+                <div class="uppercase tracking-wide text-xs font-bold text-gray-500 mb-1 leading-tight" x-text="`Step: ${step} of ${numberOfSteps}`"></div>
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div class="flex-1">
                         <div x-show="step === 1">
@@ -43,7 +43,7 @@
                         <div class="w-full bg-white rounded-full mr-2">
                             <div class="rounded-full bg-green-500 text-xs leading-none h-2 text-center text-white" :style="'width: '+ parseInt(step / 10 * 100) +'%'"></div>
                         </div>
-                        <div class="text-xs w-10 text-gray-600" x-text="parseInt(step / 10 * 100) +'%'"></div>
+                        <div class="text-xs w-10 text-gray-600" x-text="parseInt(step / numberOfSteps * 100) +'%'"></div>
                     </div>
                 </div>
             </div>
@@ -92,8 +92,8 @@
                     <button x-show="step > 1" @click="step--" class="w-32 focus:outline-none py-2 px-5 rounded-lg shadow-sm text-center text-gray-600 bg-white hover:bg-gray-100 font-medium border">Previous</button>
                 </div>
                 <div class="w-1/2 text-right">
-                    <button x-show="step < 10" @click="step++" class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium">Next</button>
-                    <button @click="step = 'complete'" x-show="step === 10" class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium">Complete</button>
+                    <button x-show="step < numberOfSteps" @click="step++" class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium">Next</button>
+                    <button @click="step = 'complete'" x-show="step === numberOfSteps" class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium">Complete</button>
                 </div>
             </div>
         </div>
@@ -104,6 +104,7 @@
     function app() {
         return {
             step: 1,
+            numberOfSteps: 10,
             passwordStrengthText: '',
             togglePassword: false,
 
