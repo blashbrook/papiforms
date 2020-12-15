@@ -9,7 +9,7 @@
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div class="flex-1">
                         <div x-show="step === 1">
-                            <div class="text-lg font-bold text-gray-700 leading-tight">What is your birthdate?</div>
+                            <div class="text-lg font-bold text-gray-700 leading-tight display-block">Eligibility</div>
                         </div>
                         <div x-show="step === 2">
                             <div class="text-lg font-bold text-gray-700 leading-tight">Your Password</div>
@@ -52,6 +52,7 @@
             <div class="py-10">
                 <div x-show.transition.in="step === 1">
                     <x-papiforms::forms.registration.steps.birthdate />
+                    <livewire:select-postal-code />
                 </div>
                 <div x-show.transition.in="step === 2">
                     <x-papiforms::forms.registration.steps.residence />
