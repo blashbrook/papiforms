@@ -143,16 +143,12 @@
 {{--                        <x-papiforms::input.group>
                             <x-papiforms::input.text wire:model.defer="PostalCode" id="PostalCode" name="text" type="PostalCode" placeholder="Postal code"/>
                         </x-papiforms::input.group>--}}
-                        <x-papiforms::input.group
-                            label="Postal code"
-                            for="PostalCode">
-                            <x-papiforms::input.text
-                                wire:model.defer="PostalCode"
-                                id="PostalCode" name="PostalCode"
-                                type="text"
-                                value="{{ old('PostalCode') }}"
-                                placeholder="Postal code"/>
+                        <x-papiforms::input.group label="Postal code" for="PostalCode">
+                            <livewire:select-postal-code />
                         </x-papiforms::input.group>
+
+
+
 
 
 

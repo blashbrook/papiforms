@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/PAPIClient.git",
-                "reference": "347cdc1ed95f26a16210a4aed7bb97a909f5de80"
+                "reference": "16620d92835c4cf3e08409a0a2b2be30576c82db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/PAPIClient/zipball/347cdc1ed95f26a16210a4aed7bb97a909f5de80",
-                "reference": "347cdc1ed95f26a16210a4aed7bb97a909f5de80",
+                "url": "https://api.github.com/repos/blashbrook/PAPIClient/zipball/16620d92835c4cf3e08409a0a2b2be30576c82db",
+                "reference": "16620d92835c4cf3e08409a0a2b2be30576c82db",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +61,7 @@
                 "laravel",
                 "polaris"
             ],
-            "time": "2020-12-02T21:57:17+00:00"
+            "time": "2020-12-11T03:03:10+00:00"
         },
         {
             "name": "brick/math",
