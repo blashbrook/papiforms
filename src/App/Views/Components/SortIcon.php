@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Components;
+namespace Blashbrook\PAPIForms\App\Views\Components;
 
 use Illuminate\View\Component;
 
