@@ -34,7 +34,7 @@ class PatronRegistrationFactory extends Factory
             'NameMiddle'=>$this->faker->name,
             'Birthdate'=>$this->faker->datetime,
             'EmailAddress'=>$this->faker->unique()->safeEmail,
-            'Barcode'=>$this->faker->numerify('2330709999####')
+            'Barcode'=>$this->faker->numerify('2330709999####'),
         ];
     }
 }

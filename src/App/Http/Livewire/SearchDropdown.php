@@ -2,15 +2,13 @@
 
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
-use Livewire\Component;
 use Illuminate\Support\Facades\Http;
-
+use Livewire\Component;
 
 /**
- * TODO: Customize for Postal Codes
+ * TODO: Customize for Postal Codes.
  *
  * Class SearchDropdown
- * @package Blashbrook\PAPIForms\App\Http\Livewire
  */
 class SearchDropdown extends Component
 {
@@ -25,7 +23,7 @@ class SearchDropdown extends Component
             return;
         }
 
-        $response = Http::get('https://itunes.apple.com/search/?term=' . $this->search . '&limit=10');
+        $response = Http::get('https://itunes.apple.com/search/?term='.$this->search.'&limit=10');
 
         $this->searchResults = $response->json()['results'];
     }

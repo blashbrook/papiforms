@@ -5,8 +5,6 @@ namespace Blashbrook\PAPIForms\App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Blashbrook\PAPIForms\App\Models\PostalCode;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 
 class PostalCodeController extends Controller
 {
@@ -15,7 +13,7 @@ class PostalCodeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    static public function index()
+    public static function index()
     {
         //
     }
@@ -85,5 +83,4 @@ class PostalCodeController extends Controller
     {
         //
     }
-
 }

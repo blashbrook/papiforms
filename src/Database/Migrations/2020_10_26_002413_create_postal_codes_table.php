@@ -22,7 +22,6 @@ class CreatePostalCodesTable extends Migration
             $table->string('State')->default('KY');
             $table->tinyInteger('CountryID')->default('1');
             $table->string('County')->default('DAVIESS');
-
         });
     }
 

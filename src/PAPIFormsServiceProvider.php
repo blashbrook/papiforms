@@ -23,13 +23,10 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
-
-
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
         Livewire::component('search-dropdown', SearchDropdown::class);
         Livewire::component('data-tables', DataTables::class);
         Livewire::component('select-postal-code', SelectPostalCode::class);
-
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
