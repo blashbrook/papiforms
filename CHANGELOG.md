@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/blashbrook/papiforms/compare/v1.2.3...v1.2.4) (2020-12-21)
+
+
+### Bug Fixes
+
+* **PAPIFormsServiceProvider:** update path to migrations ([5cc31fd](https://github.com/blashbrook/papiforms/commit/5cc31fdcb7c3f8f2a36fac5fc062a125913c7ed0))
+
 ## [1.2.3](https://github.com/blashbrook/papiforms/compare/v1.2.2...v1.2.3) (2020-12-21)
 
 
