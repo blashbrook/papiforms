@@ -39,7 +39,7 @@ If you discover any security related issues, please email author email instead o
 
 ## Credits
 
-- [Brian Lashbrook][https://github.com/blashbrook]
+- [Brian Lashbrook][link-author]
 - [All Contributors][link-contributors]
 
 ## License
