@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/blashbrook/papiforms/compare/v1.2.0...v1.2.1) (2020-12-21)
+
+
+### Bug Fixes
+
+* **Sorticon:** correct Psr-4 namespace ([6b1d5c3](https://github.com/blashbrook/papiforms/commit/6b1d5c3622ee73d40bfdb20a1b86a0aaee08cfe9))
+
 # [1.2.0](https://github.com/blashbrook/papiforms/compare/v1.1.1...v1.2.0) (2020-12-21)
 
 
