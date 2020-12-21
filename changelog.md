@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/blashbrook/papiforms/compare/v1.1.1...v1.2.0) (2020-12-21)
+
+
+### Features
+
+* **.editorconfig:** add .editorconfig ([ee88ef7](https://github.com/blashbrook/papiforms/commit/ee88ef7f078e75f4b8b55a5d29098b01d669b653))
+* **.editorconfig:** add .editorconfig ([035924e](https://github.com/blashbrook/papiforms/commit/035924e92440bce2a73cfc625a35ffec52b22b9c))
+
 ## [1.1.1](https://github.com/blashbrook/papiforms/compare/v1.1.0...v1.1.1) (2020-12-21)
 
 
