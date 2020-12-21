@@ -1,3 +1,18 @@
+## [1.2.3](https://github.com/blashbrook/papiforms/compare/v1.2.2...v1.2.3) (2020-12-21)
+
+
+### Bug Fixes
+
+* **Components:** fix composer capitalization issue ([d71acd2](https://github.com/blashbrook/papiforms/commit/d71acd208af2d88ab1417cddd9983c4ed38112a5))
+
+## [1.2.2](https://github.com/blashbrook/papiforms/compare/v1.2.1...v1.2.2) (2020-12-21)
+
+
+### Bug Fixes
+
+* **Components:** fix composer capitalization issue ([953a41e](https://github.com/blashbrook/papiforms/commit/953a41e2a9b69be36478fc9bfa7b04e55b7b1f2c))
+* **View:** fix composer capitalization issue ([45ab407](https://github.com/blashbrook/papiforms/commit/45ab4073c64463ac4408c4dde4187cdebbb8c623))
+
 ## [1.2.1](https://github.com/blashbrook/papiforms/compare/v1.2.0...v1.2.1) (2020-12-21)
 
 

@@ -20,7 +20,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'papiforms');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'papiforms');
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         Livewire::component('patron-registration-form', PatronRegistrationForm::class);
