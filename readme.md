@@ -2,8 +2,10 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+![PHP Composer](https://github.com/blashbrook/papiforms/workflows/PHP%20Composer/badge.svg)
+![Node.js CI](https://github.com/blashbrook/papiforms/workflows/Node.js%20CI/badge.svg)
+![Semantic-Release](https://github.com/blashbrook/papiforms/workflows/Semantic-Release/badge.svg)
+![StyleCI](https://github.styleci.io/repos/320193214/shield?branch=master)
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
