@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\Database\Seeders;
+namespace Database\Seeders;
 
 use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Illuminate\Database\Seeder;
