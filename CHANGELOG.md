@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/blashbrook/papiforms/compare/v1.1.0...v1.1.1) (2020-12-21)
+
+
+### Bug Fixes
+
+* **styleci:** remove js and css ([5875ddd](https://github.com/blashbrook/papiforms/commit/5875dddf7f58d3633c929458c90db51dc3e74a0f))
+
 # [1.1.0](https://github.com/blashbrook/papiforms/compare/v1.0.11...v1.1.0) (2020-12-21)
 
 
