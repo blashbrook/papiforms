@@ -24,18 +24,18 @@ class PatronRegistrationForm extends Component
     public function submitForm()
     {
         $json = [
-            'Birthdate' => $this->Birthdate,
-            'NameFirst' => $this->NameFirst,
-            'NameMiddle' => $this->NameMiddle,
-            'NameLast' => $this->NameLast,
-            'Email' => $this->Email,
-            'PhoneVoice1' => $this->PhoneVoice1,
-            'StreetOne' => $this->StreetOne,
-            'StreetTwo' => $this->StreetTwo,
-            'City' => $this->City,
-            'State' => $this->State,
-            'PostalCode' => $this->PostalCode,
-            'Barcode' => $this->Barcode,
+            'Birthdate'      => $this->Birthdate,
+            'NameFirst'      => $this->NameFirst,
+            'NameMiddle'     => $this->NameMiddle,
+            'NameLast'       => $this->NameLast,
+            'Email'          => $this->Email,
+            'PhoneVoice1'    => $this->PhoneVoice1,
+            'StreetOne'      => $this->StreetOne,
+            'StreetTwo'      => $this->StreetTwo,
+            'City'           => $this->City,
+            'State'          => $this->State,
+            'PostalCode'     => $this->PostalCode,
+            'Barcode'        => $this->Barcode,
             'successMessage' => $this->successMessage,
         ];
         $response = PAPIClient::publicRequest('POST', 'patron', $json);

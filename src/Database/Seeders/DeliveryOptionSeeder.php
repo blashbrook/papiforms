@@ -16,35 +16,35 @@ class DeliveryOptionSeeder extends Seeder
     {
         DeliveryOption::create([
             'DeliveryOptionID' => 1,
-            'DeliveryOption' => 'Mailing Address',
+            'DeliveryOption'   => 'Mailing Address',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 2,
-            'DeliveryOption' => 'Email Address',
+            'DeliveryOption'   => 'Email Address',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 3,
-            'DeliveryOption' => 'Phone 1',
+            'DeliveryOption'   => 'Phone 1',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 4,
-            'DeliveryOption' => 'Phone 2',
+            'DeliveryOption'   => 'Phone 2',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 5,
-            'DeliveryOption' => 'Phone 3',
+            'DeliveryOption'   => 'Phone 3',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 6,
-            'DeliveryOption' => 'FAX',
+            'DeliveryOption'   => 'FAX',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 7,
-            'DeliveryOption' => 'EDI',
+            'DeliveryOption'   => 'EDI',
         ]);
         DeliveryOption::create([
             'DeliveryOptionID' => 8,
-            'DeliveryOption' => 'TXT Messaging',
+            'DeliveryOption'   => 'TXT Messaging',
         ]);
     }
 }

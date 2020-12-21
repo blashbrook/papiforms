@@ -45,7 +45,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('papiforms', function ($app) {
-            return new PAPIForms;
+            return new PAPIForms();
         });
     }
 

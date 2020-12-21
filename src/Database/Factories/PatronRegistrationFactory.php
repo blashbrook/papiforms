@@ -23,18 +23,18 @@ class PatronRegistrationFactory extends Factory
     {
         return [
             //
-            'State'=>'KY',
-            'County'=>'Daviess',
-            'PhoneVoice1'=>$this->faker->numerify('##########'),
-            'PostalCode'=>$this->faker->postcode,
-            'City'=>$this->faker->city,
-            'StreetOne'=>$this->faker->streetAddress,
-            'NameFirst'=>$this->faker->firstName,
-            'NameLast'=>$this->faker->lastName,
-            'NameMiddle'=>$this->faker->name,
-            'Birthdate'=>$this->faker->datetime,
-            'EmailAddress'=>$this->faker->unique()->safeEmail,
-            'Barcode'=>$this->faker->numerify('2330709999####'),
+            'State'       => 'KY',
+            'County'      => 'Daviess',
+            'PhoneVoice1' => $this->faker->numerify('##########'),
+            'PostalCode'  => $this->faker->postcode,
+            'City'        => $this->faker->city,
+            'StreetOne'   => $this->faker->streetAddress,
+            'NameFirst'   => $this->faker->firstName,
+            'NameLast'    => $this->faker->lastName,
+            'NameMiddle'  => $this->faker->name,
+            'Birthdate'   => $this->faker->datetime,
+            'EmailAddress'=> $this->faker->unique()->safeEmail,
+            'Barcode'     => $this->faker->numerify('2330709999####'),
         ];
     }
 }

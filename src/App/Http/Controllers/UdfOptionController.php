@@ -31,7 +31,8 @@ class UdfOptionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +43,8 @@ class UdfOptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param \App\Models\UdfOption $udfOption
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(UdfOption $udfOption)
@@ -53,7 +55,8 @@ class UdfOptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param \App\Models\UdfOption $udfOption
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(UdfOption $udfOption)
@@ -64,8 +67,9 @@ class UdfOptionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\UdfOption    $udfOption
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, UdfOption $udfOption)
@@ -76,7 +80,8 @@ class UdfOptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\UdfOption  $udfOption
+     * @param \App\Models\UdfOption $udfOption
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(UdfOption $udfOption)
