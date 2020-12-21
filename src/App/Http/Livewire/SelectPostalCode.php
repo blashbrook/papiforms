@@ -3,13 +3,10 @@
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIForms\App\Models\PostalCode;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class SelectPostalCode extends Component
 {
-
     public $selectedID = '';
     public $City = 'Owensboro';
     public $State = '';
@@ -19,17 +16,17 @@ class SelectPostalCode extends Component
 
     public function mount()
     {
-       $this->City= 'owensboro';
+        $this->City = 'owensboro';
         $this->postalCodes = PostalCode::all()->sortBy('PostalCode');
     }
 
-    public function updatedselectedID(){
+    public function updatedselectedID()
+    {
         $this->selectedArray = $this->postalCodes->find($this->selectedID);
     }
 
     public function render()
     {
-
         return view('papiforms::livewire.select-postal-code')
             ->layout('papiforms::components.layouts.app');
     }

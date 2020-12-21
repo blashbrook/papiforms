@@ -57,5 +57,5 @@ class PatronRegistration extends Model
         'LegalNameFirst',
         'LegalNameLast',
         'LegalNameMiddle',
-        'UseLegalNameOnNotices'];
+        'UseLegalNameOnNotices', ];
 }

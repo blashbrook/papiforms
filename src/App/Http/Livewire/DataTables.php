@@ -3,7 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 /**
- * TODO: Customize for PatronRegistration
+ * TODO: Customize for PatronRegistration.
  */
 use App\Models\User;
 use Livewire\Component;
@@ -22,7 +22,7 @@ class DataTables extends Component
     public function sortBy($field)
     {
         if ($this->sortField === $field) {
-            $this->sortAsc = !$this->sortAsc;
+            $this->sortAsc = ! $this->sortAsc;
         } else {
             $this->sortAsc = true;
         }
@@ -39,8 +39,8 @@ class DataTables extends Component
     {
         return view('papiforms::livewire.data-tables', [
             'users' => User::where(function ($query) {
-                $query->where('name', 'like', '%' . $this->search . '%')
-                    ->orWhere('email', 'like', '%' . $this->search . '%');
+                $query->where('name', 'like', '%'.$this->search.'%')
+                    ->orWhere('email', 'like', '%'.$this->search.'%');
             })->where('active', $this->active)
                 ->when($this->sortField, function ($query) {
                     $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
@@ -54,4 +54,3 @@ class DataTables extends Component
     //     return 'livewire.custom-pagination-links-view';
     // }
 }
-

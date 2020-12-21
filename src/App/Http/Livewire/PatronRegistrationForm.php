@@ -4,7 +4,6 @@ namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\PAPIClient;
 use Livewire\Component;
-use Illuminate\Support\Facades\Blade;
 
 class PatronRegistrationForm extends Component
 {
@@ -21,8 +20,6 @@ class PatronRegistrationForm extends Component
     public $PostalCode = '';
     public $Barcode = '';
     public $successMessage = '';
-
-
 
     public function submitForm()
     {
