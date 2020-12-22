@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/blashbrook/papiforms/compare/v1.2.5...v1.3.0) (2020-12-22)
+
+
+### Features
+
+* **livewire:** add SelectMobilePhoneCarrier ([c1007b5](https://github.com/blashbrook/papiforms/commit/c1007b5f5a0c57a0c14a3b83181f28ea25cf3ec3))
+
 ## [1.2.5](https://github.com/blashbrook/papiforms/compare/v1.2.4...v1.2.5) (2020-12-21)
 
 
