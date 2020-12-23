@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class SelectDeliveryOption extends Component
 {
-    public $DeliveryOptionID ='';
+    public $DeliveryOptionID = '';
     public $deliveryOption = '';
     public $selectedDeliveryOptionID = '';
     public $selectedDeliveryOptionArray;
@@ -25,7 +25,6 @@ class SelectDeliveryOption extends Component
                 'Phone 1',
                 'TXT Messaging',
             ] )->orderBy('DeliveryOption');*/
-
     }
 
     /**
