@@ -7,22 +7,22 @@ use Livewire\Component;
 
 class SelectPostalCode extends Component
 {
-    public $selectedID = '';
-    public $City = 'Owensboro';
+    public $selectedPostalCodeID = '';
+    public $City = 'OWENSBORO';
     public $State = '';
     public $PostalCode = '';
     public $postalCodes;
-    public $selectedArray;
+    public $selectedPostalCodeArray;
 
     public function mount()
     {
-        $this->City = 'owensboro';
+        $this->City = 'OWENSBORO';
         $this->postalCodes = PostalCode::all()->sortBy('PostalCode');
     }
 
-    public function updatedselectedID()
+    public function updatedselectedPostalCodeID()
     {
-        $this->selectedArray = $this->postalCodes->find($this->selectedID);
+        $this->selectedPostalCodeArray = $this->postalCodes->find($this->selectedPostalCodeID);
     }
 
     public function render()

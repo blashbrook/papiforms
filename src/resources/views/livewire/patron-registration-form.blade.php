@@ -147,6 +147,12 @@
                             <livewire:select-postal-code />
                         </x-papiforms::input.group>
 
+                        <x-papiforms::input.group label="Mobile Phone Carrier" for="MobilePhoneCarrier">
+                            <livewire:select-mobile-phone-carrier />
+                        </x-papiforms::input.group>
+                        <x-papiforms::input.group label="School" for="School">
+                            <livewire:select-udf-option />
+                        </x-papiforms::input.group>
 
 
 

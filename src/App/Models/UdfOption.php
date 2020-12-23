@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class UdfOption extends Model
 {
     use HasFactory;
+    //
 }
