@@ -13,22 +13,17 @@ class SelectDeliveryOption extends Component
     public $selectedDeliveryOptionArray;
     public $deliveryOptions;
 
+    /**
+     *  Run actions when the component is accessed.
+     *  Set values in $deliveryOptions collection by querying the database.
+     */
     public function mount()
     {
-        $this->deliveryOptions = DeliveryOption::where('DeliveryOption','Mailing Address')
+        $this->deliveryOptions = DeliveryOption::where('DeliveryOption', 'Mailing Address')
             ->orWhere('DeliveryOption', 'Email Address')
             ->orWhere('DeliveryOption', 'Phone 1')
             ->orWhere('DeliveryOption', 'TXT Messaging')
             ->get()->sortBy('DeliveryOption');
-
-        /*
-        $this->deliveryOptions = DeliveryOption::whereIn('DeliveryOption',
-            [
-                'Mailing Address',
-                'Email Address',
-                'Phone 1',
-                'TXT Messaging',
-            ] )->orderBy('DeliveryOption');*/
     }
 
     /**
