@@ -6,7 +6,7 @@
 <div class="my-3">
     @if($label)
         <label for="{{ $for }}"
-               class="block sr-only text-sm font-medium text-gray-700 leading-5">
+               class="block text-sm font-medium text-gray-700 leading-5">
             {{ $label }}
         </label>
     @endif

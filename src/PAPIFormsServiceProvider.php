@@ -5,6 +5,7 @@ namespace Blashbrook\PAPIForms;
 use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
 use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
+use Blashbrook\PAPIForms\App\Http\Livewire\SelectDeliveryOption;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectMobilePhoneCarrier;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectPostalCode;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectUdfOption;
@@ -31,6 +32,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
         Livewire::component('select-postal-code', SelectPostalCode::class);
         Livewire::component('select-mobile-phone-carrier', SelectMobilePhoneCarrier::class);
         Livewire::component('select-udf-option', SelectUdfOption::class);
+        Livewire::component('select-delivery-option', SelectDeliveryOption::class);
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {

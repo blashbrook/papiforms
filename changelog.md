@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/blashbrook/papiforms/compare/v1.3.0...v1.4.0) (2020-12-23)
+
+
+### Features
+
+* **registration form:** add phone carrier and udf select inputs ([50a44cf](https://github.com/blashbrook/papiforms/commit/50a44cf7ab4e4cf1f952eb5f6dc4869801a773af))
+
 # [1.3.0](https://github.com/blashbrook/papiforms/compare/v1.2.5...v1.3.0) (2020-12-22)
 
 
