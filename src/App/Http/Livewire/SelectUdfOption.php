@@ -2,18 +2,12 @@
 
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
-use Blashbrook\PAPIForms\App\Models\UdfOptionDef;
 use Blashbrook\PAPIForms\App\Models\UdfOption;
 use Livewire\Component;
 
 /**
- * Class SelectUdf
- * @package Blashbrook\PAPIForms\App\Http\Livewire
- *
- * Component to create a selection input for a UDF (User-Defined Field) in Polaris.
- *
+ * Class SelectUdf.
  */
-
 class SelectUdfOption extends Component
 {
     public $selectedUdfOptionID = '';
@@ -21,10 +15,9 @@ class SelectUdfOption extends Component
     public $selectedUdfOptionArray;
     public $udfOptions;
 
-
     public function mount()
     {
-        $this->udfOptions = UdfOption::select('id','UDFOptionID', 'OptionDesc')->addSelect(
+        $this->udfOptions = UdfOption::select('id', 'UDFOptionID', 'OptionDesc')->addSelect(
             ['Order' => function ($query) {
                 $query->select('DisplayOrder')
                     ->from('udf_option_defs')
@@ -36,7 +29,7 @@ class SelectUdfOption extends Component
 
     public function updatedselectedUdfOptionID()
     {
-         $this->selectedUdfOptionArray = $this->udfOptions->find($this->selectedUdfOptionID);
+        $this->selectedUdfOptionArray = $this->udfOptions->find($this->selectedUdfOptionID);
     }
 
     /**
