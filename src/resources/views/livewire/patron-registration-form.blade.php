@@ -44,11 +44,6 @@
 
                     <div>
 
-
-                        <x-papiforms::input.group label="Birthdate" for="Birthdate">
-                            <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
-                        </x-papiforms::input.group>
-
                         <x-papiforms::input.group label="First name" for="NameFirst">
                             <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
                         </x-papiforms::input.group>
@@ -59,6 +54,10 @@
 
                         <x-papiforms::input.group label="Last name" for="NameLast">
                             <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
+                        </x-papiforms::input.group>
+
+                        <x-papiforms::input.group label="Birthdate" for="Birthdate">
+                            <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="Street address" for="StreetOne">
