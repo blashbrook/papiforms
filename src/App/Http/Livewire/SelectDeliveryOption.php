@@ -15,7 +15,7 @@ class SelectDeliveryOption extends Component
 
     public function mount()
     {
-        $this->deliveryOptions = DeliveryOption::where('DeliveryOption','Mailing Address')
+        $this->deliveryOptions = DeliveryOption::where('DeliveryOption', 'Mailing Address')
             ->orWhere('DeliveryOption', 'Email Address')
             ->orWhere('DeliveryOption', 'Phone 1')
             ->orWhere('DeliveryOption', 'TXT Messaging')
