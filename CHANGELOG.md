@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/blashbrook/papiforms/compare/v1.4.0...v1.5.0) (2020-12-23)
+
+
+### Features
+
+* **registration form:** add delivery options ([38c3759](https://github.com/blashbrook/papiforms/commit/38c375926a48b2a59d23e75fb960bbb8241f7ce2))
+
 # [1.4.0](https://github.com/blashbrook/papiforms/compare/v1.3.0...v1.4.0) (2020-12-23)
 
 
