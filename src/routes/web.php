@@ -3,6 +3,7 @@
 namespace Blashbrook\PAPIForms;
 
 use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
+use Blashbrook\PAPIForms\App\Http\Livewire\MultiStepRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectDeliveryOption;
@@ -29,4 +30,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mobile', SelectMobilePhoneCarrier::class);
     Route::get('/school', SelectUdfOption::class);
     Route::get('/notifications', SelectDeliveryOption::class);
+    Route::get('/steps', MultiStepRegistrationForm::class);
 });

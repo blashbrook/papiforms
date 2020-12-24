@@ -1,4 +1,4 @@
-<x-papiforms::layouts.app>
+<x-papiforms::layouts.fadein>
 <div x-cloak x-data="app()" >
     <div class="max-w-3xl mx-auto px-4 py-10">
         <x-papiforms::forms.registration.steps.complete />
@@ -103,6 +103,18 @@
 </div>
 <script>
     function app() {
+        document.addEventListener("DOMContentLoaded", function(){
+            setTimeout(function(){
+                var replacers = document.querySelectorAll('[data-replace]');
+                for(var i=0; i<replacers.length; i++){
+                    let replaceClasses = JSON.parse(replacers[i].dataset.replace.replace(/'/g, '"'));
+                    Object.keys(replaceClasses).forEach(function(key) {
+                        replacers[i].classList.remove(key);
+                        replacers[i].classList.add(replaceClasses[key]);
+                    });
+                }
+            }, 1);
+        });
         return {
             step: 1,
             numberOfSteps: 10,
@@ -130,4 +142,4 @@
         }
     }
 </script>
-</x-papiforms::layouts.app>
+</x-papiforms::layouts.fadein>

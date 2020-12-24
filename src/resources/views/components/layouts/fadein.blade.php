@@ -389,6 +389,20 @@
             font-family: 'Nunito';
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            setTimeout(function(){
+                var replacers = document.querySelectorAll('[data-replace]');
+                for(var i=0; i<replacers.length; i++){
+                    let replaceClasses = JSON.parse(replacers[i].dataset.replace.replace(/'/g, '"'));
+                    Object.keys(replaceClasses).forEach(function(key) {
+                        replacers[i].classList.remove(key);
+                        replacers[i].classList.add(replaceClasses[key]);
+                    });
+                }
+            }, 1);
+        });
+    </script>
     @livewireStyles
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"
           integrity="sha512-+WF6UMXHki/uCy0vATJzyA9EmAcohIQuwpNz0qEO+5UeE5ibPejMRdFuARSrl1trs3skqie0rY/gNiolfaef5w=="
@@ -397,7 +411,8 @@
           integrity="sha512-xoQ+h19cVJGZcB5/rFb2H4n21Y9K3hiuBOZKEwdNXv1xb/nhlt6vhbaPH3sNvejkTWwWPpuXXfmbRI0Qs/RD8Q=="
           crossorigin="anonymous"/>
 </head>
-<body class="antialiased bg-gray-200">
+<body class="antialiased bg-gray-200 opacity-0 ease-in transition"
+      data-replace='{ "opacity-0": "opacity-100"}'>
 
 {{ $slot }}
 

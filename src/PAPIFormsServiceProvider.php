@@ -9,6 +9,7 @@ use Blashbrook\PAPIForms\App\Http\Livewire\SelectDeliveryOption;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectMobilePhoneCarrier;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectPostalCode;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectUdfOption;
+use Blashbrook\PAPIForms\App\Http\Livewire\MultiStepRegistrationForm;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -33,6 +34,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
         Livewire::component('select-mobile-phone-carrier', SelectMobilePhoneCarrier::class);
         Livewire::component('select-udf-option', SelectUdfOption::class);
         Livewire::component('select-delivery-option', SelectDeliveryOption::class);
+        Livewire::component('multi-step-registration-form', MultiStepRegistrationForm::class);
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
