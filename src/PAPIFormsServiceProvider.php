@@ -3,13 +3,13 @@
 namespace Blashbrook\PAPIForms;
 
 use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
+use Blashbrook\PAPIForms\App\Http\Livewire\MultiStepRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectDeliveryOption;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectMobilePhoneCarrier;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectPostalCode;
 use Blashbrook\PAPIForms\App\Http\Livewire\SelectUdfOption;
-use Blashbrook\PAPIForms\App\Http\Livewire\MultiStepRegistrationForm;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 

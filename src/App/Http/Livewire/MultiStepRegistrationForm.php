@@ -6,29 +6,24 @@ use Livewire\Component;
 
 class MultiStepRegistrationForm extends Component
 {
-
     public $step = 0;
     public $numberOfSteps = 10;
     public $incrementLabel = 'Next';
     public $decrementLabel = 'Back';
 
-
     public function increment()
     {
         $this->step++;
-       if($this->step < 10)
-       {
-
-           $this->incrementLabel = 'Next';
-       } else {
-           $this->incrementLabel = 'Submit';
-       }
+        if ($this->step < 10) {
+            $this->incrementLabel = 'Next';
+        } else {
+            $this->incrementLabel = 'Submit';
+        }
     }
 
     public function decrement()
     {
-        if($this->step > 1)
-        {
+        if ($this->step > 1) {
             $this->step--;
         }
     }
@@ -37,6 +32,7 @@ class MultiStepRegistrationForm extends Component
     {
         echo 'done';
     }
+
     /**
      * Get the view / contents that represent the component.
      *
