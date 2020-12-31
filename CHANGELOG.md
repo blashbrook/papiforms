@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/blashbrook/papiforms/compare/v1.6.0...v1.7.0) (2020-12-31)
+
+
+### Features
+
+* **header.blade.php:** icon test ([e4eaab5](https://github.com/blashbrook/papiforms/commit/e4eaab575f99b3e546f63024976cc4856acbf78a))
+
 # [1.6.0](https://github.com/blashbrook/papiforms/compare/v1.5.0...v1.6.0) (2020-12-24)
 
 
