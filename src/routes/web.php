@@ -23,7 +23,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/multistep', function () {
         return view('papiforms::multistep');
     });
-    Route::get('/header', function() {
+    Route::get('/header', function () {
         return view('papiforms::header');
     });
     Route::get('/patronpost', PatronRegistrationForm::class);
