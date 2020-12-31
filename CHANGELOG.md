@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/blashbrook/papiforms/compare/v1.7.0...v1.7.1) (2020-12-31)
+
+
+### Bug Fixes
+
+* **MobilePhoneCarrierSeeder:** correct sms email addresses ([5faa3e7](https://github.com/blashbrook/papiforms/commit/5faa3e74c1376af6748c27f183e2ed057657e79e))
+
 # [1.7.0](https://github.com/blashbrook/papiforms/compare/v1.6.0...v1.7.0) (2020-12-31)
 
 
