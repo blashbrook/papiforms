@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/blashbrook/papiforms/compare/v1.5.0...v1.6.0) (2020-12-24)
+
+
+### Features
+
+* **layouts.fadein:** add layout to fade in multistep form ([ab28821](https://github.com/blashbrook/papiforms/commit/ab28821488d169bbf0103b7bc8d253e2170fea14))
+
 # [1.5.0](https://github.com/blashbrook/papiforms/compare/v1.4.0...v1.5.0) (2020-12-23)
 
 

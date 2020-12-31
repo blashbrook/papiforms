@@ -23,6 +23,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/multistep', function () {
         return view('papiforms::multistep');
     });
+    Route::get('/header', function() {
+        return view('papiforms::header');
+    });
     Route::get('/patronpost', PatronRegistrationForm::class);
     Route::get('/search', SearchDropdown::class);
     Route::get('/registrations', DataTables::class);
