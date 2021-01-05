@@ -26,6 +26,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/header', function() {
         return view('papiforms::header');
     });
+    Route::get('/modal', function() {
+        return view('papiforms::modal');
+    });
     Route::get('/patronpost', PatronRegistrationForm::class);
     Route::get('/search', SearchDropdown::class);
     Route::get('/registrations', DataTables::class);
