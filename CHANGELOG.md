@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/blashbrook/papiforms/compare/v1.7.1...v1.8.0) (2021-01-05)
+
+
+### Features
+
+* **modal:** add modal.blade.php ([3d464a7](https://github.com/blashbrook/papiforms/commit/3d464a7588a21f71d083bde9e79d8c9479e0b7ca))
+
 ## [1.7.1](https://github.com/blashbrook/papiforms/compare/v1.7.0...v1.7.1) (2020-12-31)
 
 
