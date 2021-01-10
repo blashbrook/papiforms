@@ -1,24 +1,3 @@
-# [1.8.0](https://github.com/blashbrook/papiforms/compare/v1.7.1...v1.8.0) (2021-01-05)
-
-
-### Features
-
-* **modal:** add modal.blade.php ([3d464a7](https://github.com/blashbrook/papiforms/commit/3d464a7588a21f71d083bde9e79d8c9479e0b7ca))
-
-## [1.7.1](https://github.com/blashbrook/papiforms/compare/v1.7.0...v1.7.1) (2020-12-31)
-
-
-### Bug Fixes
-
-* **MobilePhoneCarrierSeeder:** correct sms email addresses ([5faa3e7](https://github.com/blashbrook/papiforms/commit/5faa3e74c1376af6748c27f183e2ed057657e79e))
-
-# [1.7.0](https://github.com/blashbrook/papiforms/compare/v1.6.0...v1.7.0) (2020-12-31)
-
-
-### Features
-
-* **header.blade.php:** icon test ([e4eaab5](https://github.com/blashbrook/papiforms/commit/e4eaab575f99b3e546f63024976cc4856acbf78a))
-
 # [1.6.0](https://github.com/blashbrook/papiforms/compare/v1.5.0...v1.6.0) (2020-12-24)
 
 
