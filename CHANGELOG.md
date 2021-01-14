@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/blashbrook/papiforms/compare/v1.9.0...v1.10.0) (2021-01-14)
+
+
+### Features
+
+* **teenpass:** enable self-registration ([fb2279c](https://github.com/blashbrook/papiforms/commit/fb2279c9e6b306cc861152f53b8c7c840cbedc16))
+
 # [1.9.0](https://github.com/blashbrook/papiforms/compare/v1.8.0...v1.9.0) (2021-01-14)
 
 
