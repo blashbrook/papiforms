@@ -1,40 +1,27 @@
 <?php
 
-namespace Blashbrook\PAPIForms;
-
-use Blashbrook\PAPIForms\App\Http\Livewire\DataTables;
-use Blashbrook\PAPIForms\App\Http\Livewire\MultiStepRegistrationForm;
-use Blashbrook\PAPIForms\App\Http\Livewire\PatronRegistrationForm;
-use Blashbrook\PAPIForms\App\Http\Livewire\SearchDropdown;
-use Blashbrook\PAPIForms\App\Http\Livewire\SelectDeliveryOption;
-use Blashbrook\PAPIForms\App\Http\Livewire\SelectMobilePhoneCarrier;
-use Blashbrook\PAPIForms\App\Http\Livewire\SelectPostalCode;
-use Blashbrook\PAPIForms\App\Http\Livewire\SelectUdfOption;
 use Illuminate\Support\Facades\Route;
+use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
 
-Route::get('/register', function () {
-    return view('papiforms::register');
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
 });
-
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/teenpass', TeenPassRegistrationForm::class);
     Route::get('/patron', function () {
         return view('papiforms::patron');
     });
-    Route::get('/multistep', function () {
-        return view('papiforms::multistep');
-    });
-    Route::get('/header', function () {
-        return view('papiforms::header');
-    });
-    Route::get('/modal', function () {
-        return view('papiforms::modal');
-    });
-    Route::get('/patronpost', PatronRegistrationForm::class);
-    Route::get('/search', SearchDropdown::class);
-    Route::get('/registrations', DataTables::class);
-    Route::get('/postalcodes', SelectPostalCode::class);
-    Route::get('/mobile', SelectMobilePhoneCarrier::class);
-    Route::get('/school', SelectUdfOption::class);
-    Route::get('/notifications', SelectDeliveryOption::class);
-    Route::get('/steps', MultiStepRegistrationForm::class);
 });
+
