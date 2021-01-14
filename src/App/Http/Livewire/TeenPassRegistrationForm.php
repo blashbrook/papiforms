@@ -125,7 +125,6 @@ class TeenPassRegistrationForm extends Component
             //'Barcode'           => $this->Barcode,
             //'successMessage'    => $this->successMessage
         ];
-        ddd($json);
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         ddd($body);
