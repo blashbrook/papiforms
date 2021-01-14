@@ -3,7 +3,7 @@
 namespace Blashbrook\PAPIForms;
 
 use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
-;use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
 class PAPIFormsServiceProvider extends ServiceProvider

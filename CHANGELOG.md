@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/blashbrook/papiforms/compare/v1.8.0...v1.9.0) (2021-01-14)
+
+
+### Features
+
+* **teenpass:** create Teen Pass Registration Form ([a6b36c3](https://github.com/blashbrook/papiforms/commit/a6b36c3a2086d2c5142c97aa82cc353afdf0e453))
+
 # [1.6.0](https://github.com/blashbrook/papiforms/compare/v1.5.0...v1.6.0) (2020-12-24)
 
 
