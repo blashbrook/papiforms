@@ -2,18 +2,17 @@
 
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
+use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Blashbrook\PAPIForms\App\Models\MobilePhoneCarrier;
+use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Blashbrook\PAPIForms\App\Models\PostalCode;
 use Blashbrook\PAPIForms\App\Models\UdfOption;
-use Blashbrook\PAPIForms\App\Models\DeliveryOption;
-use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Blashbrook\PAPIClient\Facades\PAPIClient;
 
 class TeenPassRegistrationForm extends Component
 {
-
     public $postalCodes;
     public $selectedPostalCodeArray;
     public $selectedPostalCodeID = '';
@@ -43,13 +42,13 @@ class TeenPassRegistrationForm extends Component
     public $Birthdate = '';
     public $PhoneVoice1 = '';
     public $Phone1CarrierID = '';
-    public $EmailAddress ='';
-    public $Password ='';
-    public $Password2 ='';
-    public $DeliveryOptionID ='';
+    public $EmailAddress = '';
+    public $Password = '';
+    public $Password2 = '';
+    public $DeliveryOptionID = '';
     public $TxtPhoneNumber = '';
     public $PatronCode = '';
-    public $successMessage ='';
+    public $successMessage = '';
 
     protected $rules = [
         'PostalCode'        => 'required',
@@ -74,12 +73,10 @@ class TeenPassRegistrationForm extends Component
         'PatronCode'        => 'required',
     ];
 
-
     public function mount()
     {
         $this->City = 'OWENSBORO';
         $this->patronCodeDescription = 'Teen Pass';
-
     }
 
     public function updatedselectedPostalCodeID()
@@ -148,13 +145,12 @@ class TeenPassRegistrationForm extends Component
             ->orWhere('DeliveryOption', 'Phone 1')
             ->orWhere('DeliveryOption', 'TXT Messaging')
             ->get()->sortBy('DeliveryOption');
-       $this->patronCodeArray = PatronCode::select('PatronCodeID')
+        $this->patronCodeArray = PatronCode::select('PatronCodeID')
             ->where('Description', $this->patronCodeDescription)
             ->pluck('PatronCodeID');
-       $this->PatronCode = $this->patronCodeArray[0];
+        $this->PatronCode = $this->patronCodeArray[0];
 
         return view('papiforms::livewire.teen-pass-registration-form')
             ->layout('papiforms::layouts.app');
     }
-
 }

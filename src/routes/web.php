@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +23,3 @@ Route::group(['middleware' => ['web']], function () {
         return view('papiforms::patron');
     });
 });
-
