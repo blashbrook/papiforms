@@ -97,7 +97,7 @@ class TeenPassRegistrationForm extends Component
 
     public function submitForm()
     {
-        $this->successMessage ='';
+        $this->successMessage = '';
         $this->validate();
 
         $json = [
@@ -126,15 +126,16 @@ class TeenPassRegistrationForm extends Component
         ];
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-        if($body['ErrorMessage'] == '') {
-            $this->successMessage = "You have successfully registered for a Teen Pass.  Your barcode number is " . $body['Barcode'];
+        if ($body['ErrorMessage'] == '') {
+            $this->successMessage = 'You have successfully registered for a Teen Pass.  Your barcode number is '.$body['Barcode'];
             $this->resetForm();
         } else {
-            $this->successMessage = "There was an error with your application.  " . $body['ErrorMessage'];
+            $this->successMessage = 'There was an error with your application.  '.$body['ErrorMessage'];
         }
     }
 
-    public function resetForm() {
+    public function resetForm()
+    {
         $this->selectedPostalCodeID = '';
         $this->PostalCode = '';
         $this->City = '';
