@@ -5,7 +5,7 @@
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
-                <form  wire:submit.prevent="submitForm" action="patronpost" class="grid grid-cols-1 row-gap-6">
+                <form  wire:submit.prevent="submitForm" class="grid grid-cols-1 row-gap-6">
                     @csrf
                     @if ($successMessage)
                         <div class="p-4 mt-8 rounded-md bg-green-50">
@@ -132,22 +132,31 @@
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
             <div class="max-w-lg mx-auto">
                 <h2 class="text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-                    Get in touch
+                    How it works
                 </h2>
-                <p class="mt-3 text-lg leading-6 text-gray-500">
-                    Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
-                    lacus arcu.
+                <p class="mt-3 leading-6 text-gray-500">
+                    Teen Pass offers limited library services to Daviess County residents ages 13-18.  Application does not require a signature.
+                    A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
+                    Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
                 </p>
                 <dl class="mt-8 text-base leading-6 text-gray-500">
-                    <div>
-                        <dt class="sr-only">Postal address</dt>
-                        <dd>
-                            <p>742 Evergreen Terrace</p>
-                            <p>Springfield, OR 12345</p>
+                    <div class="mt-6">
+                        <dt class="sr-only">Address</dt>
+                        <dd class="flex">
+                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-3">
+                                <p><a href="https://g.page/dcplibrary?share" target="new">Daviess County Public Library</a></p>
+                                <p>2020 Frederica Street</p>
+                                <p>Owensboro, KY  42301</p>
+                            </span>
                         </dd>
                     </div>
                     <div class="mt-6">
-                        <dt class="sr-only">Phone number</dt>
+                        <dt class="sr-only">Call</dt>
                         <dd class="flex">
                             <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
@@ -155,7 +164,7 @@
                                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             <span class="ml-3">
-                                +1 (270) 684-0211
+                                <a href="tel:1-270-684-0211">+1 (270) 684-0211</a>
                             </span>
                         </dd>
                     </div>
@@ -168,7 +177,20 @@
                                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <span class="ml-3">
-                                support@example.com
+                                <a href="mailto:help@dcplibrary.org">help@dcplibrary.org</href>
+                            </span>
+                        </dd>
+                    </div>
+                    <div class="mt-3">
+                        <dt class="sr-only">Text</dt>
+                        <dd class="flex">
+                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-3 pl-2">
+                                <a href="sms://+12702791526">+1 (270) 279-1526</href>
                             </span>
                         </dd>
                     </div>
@@ -179,6 +201,5 @@
                 </p>
             </div>
         </div>
-
     </div>
 </div>

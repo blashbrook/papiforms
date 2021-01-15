@@ -51,6 +51,7 @@ class TeenPassRegistrationForm extends Component
     public $successMessage = '';
 
     protected $rules = [
+        'selectedPostalCodeID' => 'required',
         'PostalCode'        => 'required',
         'City'              => 'required',
         'State'             => 'required',
@@ -65,7 +66,7 @@ class TeenPassRegistrationForm extends Component
         'Birthdate'         => 'required',
         'PhoneVoice1'       => 'nullable:digits:10',
         'Phone1CarrierID'   => 'nullable',
-        'EmailAddress'      => 'required|email',
+        'EmailAddress'      => 'nullable',
         'Password'          => 'required',
         'Password2'         => 'required',
         'DeliveryOptionID'  => 'required',
@@ -96,7 +97,8 @@ class TeenPassRegistrationForm extends Component
 
     public function submitForm()
     {
-        $formData = $this->validate();
+        $this->successMessage ='';
+        $this->validate();
 
         $json = [
             'PostalCode'        => $this->PostalCode,
@@ -124,7 +126,36 @@ class TeenPassRegistrationForm extends Component
         ];
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-        ddd($body);
+        if($body['ErrorMessage'] == '') {
+            $this->successMessage = "You have successfully registered for a Teen Pass.  Your barcode number is " . $body['Barcode'];
+            $this->resetForm();
+        } else {
+            $this->successMessage = "There was an error with your application.  " . $body['ErrorMessage'];
+        }
+    }
+
+    public function resetForm() {
+        $this->selectedPostalCodeID = '';
+        $this->PostalCode = '';
+        $this->City = '';
+        $this->State = '';
+        $this->County = '';
+        $this->CountryID = '';
+        $this->StreetOne = '';
+        $this->StreetTwo = '';
+        $this->NameFirst = '';
+        $this->NameLast = '';
+        $this->NameMiddle = '';
+        $this->User4 = '';
+        $this->Birthdate = '';
+        $this->PhoneVoice1 = '';
+        $this->Phone1CarrierID = '';
+        $this->EmailAddress = '';
+        $this->Password = '';
+        $this->Password2 = '';
+        $this->DeliveryOptionID = '';
+        $this->TxtPhoneNumber = '';
+        $this->PatronCode = '';
     }
 
     public function render()
