@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/blashbrook/papiforms/compare/v1.10.0...v1.10.1) (2021-01-17)
+
+
+### Bug Fixes
+
+* **select-postal-code:** add {{ $attributes }} to blade component ([289707f](https://github.com/blashbrook/papiforms/commit/289707f0fbb066df659d40b1f620384b2797e7a4))
+
 # [1.10.0](https://github.com/blashbrook/papiforms/compare/v1.9.0...v1.10.0) (2021-01-14)
 
 
