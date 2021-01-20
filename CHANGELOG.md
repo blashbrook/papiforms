@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/blashbrook/papiforms/compare/v1.10.1...v1.11.0) (2021-01-20)
+
+
+### Features
+
+* **TeenPassConfirmation:** add email confirmation ([1a445b1](https://github.com/blashbrook/papiforms/commit/1a445b14ee63e010c1baa9345a6b3716a68a4bf9))
+
 ## [1.10.1](https://github.com/blashbrook/papiforms/compare/v1.10.0...v1.10.1) (2021-01-17)
 
 
