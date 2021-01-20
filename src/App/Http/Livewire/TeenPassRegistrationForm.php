@@ -8,6 +8,8 @@ use Blashbrook\PAPIForms\App\Models\MobilePhoneCarrier;
 use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Blashbrook\PAPIForms\App\Models\PostalCode;
 use Blashbrook\PAPIForms\App\Models\UdfOption;
+use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -128,6 +130,9 @@ class TeenPassRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         if ($body['ErrorMessage'] == '') {
             $this->successMessage = 'You have successfully registered for a Teen Pass.  Your barcode number is '.$body['Barcode'];
+            $json['Barcode'] = $body['Barcode'];
+            $json['first_name'] = $this->NameFirst;
+            Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
             $this->resetForm();
         } else {
             $this->successMessage = 'There was an error with your application.  '.$body['ErrorMessage'];
