@@ -135,7 +135,7 @@
                     How it works
                 </h2>
                 <p class="mt-3 leading-6 text-gray-500">
-                    Teen Pass offers limited library services to Daviess County residents ages 13-18.  Application does not require a signature.
+                    Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
                     A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
                     Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
                 </p>
@@ -149,13 +149,13 @@
                                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <span class="ml-3">
-                                <p><a href="https://g.page/dcplibrary?share" target="new">Daviess County Public Library</a></p>
+                                <a href="https://g.page/dcplibrary?share" target="new"><p>Daviess County Public Library</p>
                                 <p>2020 Frederica Street</p>
-                                <p>Owensboro, KY  42301</p>
+                                <p>Owensboro, KY  42301</p></a>
                             </span>
                         </dd>
                     </div>
-                    <div class="mt-6">
+                    <div class="mt-3">
                         <dt class="sr-only">Call</dt>
                         <dd class="flex">
                             <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
@@ -177,7 +177,7 @@
                                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <span class="ml-3">
-                                <a href="mailto:help@dcplibrary.org">help@dcplibrary.org</href>
+                                <a href="mailto:help@dcplibrary.org">help@dcplibrary.org</a>
                             </span>
                         </dd>
                     </div>
@@ -187,10 +187,23 @@
                             <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                             </svg>
-                            <span class="ml-3 pl-2">
-                                <a href="sms://+12702791526">+1 (270) 279-1526</href>
+                            <span class="ml-3">
+                                <a href="sms://+12702791526">+1 (270) 279-1526</a>
+                            </span>
+                        </dd>
+                    </div>
+                    <div class="mt-3">
+                        <dt class="sr-only">Chat</dt>
+                        <dd class="flex">
+                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                            </svg>
+                            <span class="ml-3">
+                                <a href="https://v2.libanswers.com/widget_chat.php?hash=8dc452e387b604c224f914bdf1a4a8f4" target="new">Chat with us</a>
                             </span>
                         </dd>
                     </div>
