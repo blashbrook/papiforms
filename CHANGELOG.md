@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/blashbrook/papiforms/compare/v1.11.0...v1.12.0) (2021-01-20)
+
+
+### Features
+
+* **teenpass:** update information text ([e256605](https://github.com/blashbrook/papiforms/commit/e256605e6945a619e6f2383516af8a988d05b6d2))
+
 # [1.11.0](https://github.com/blashbrook/papiforms/compare/v1.10.1...v1.11.0) (2021-01-20)
 
 
