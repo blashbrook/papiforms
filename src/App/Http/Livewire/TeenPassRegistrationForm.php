@@ -15,7 +15,6 @@ use Livewire\Component;
 
 class TeenPassRegistrationForm extends Component
 {
-
     //public $success = false;
 
     public $postalCodes;
@@ -138,8 +137,8 @@ class TeenPassRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         if ($body['ErrorMessage'] == '') {
             $this->successMessage = true;
-            $this->modalTitle = "Success!";
-            $this->modalMessage = 'You have successfully registered for a Teen Pass.  Your temporary barcode number is '. $body['Barcode'] . '.
+            $this->modalTitle = 'Success!';
+            $this->modalMessage = 'You have successfully registered for a Teen Pass.  Your temporary barcode number is '.$body['Barcode'].'.
                 You will receive your card in the mail within 10 days.
                 Click Continue to finish creating your online account.';
             $this->modalBarcode = $body['Barcode'];
@@ -150,8 +149,8 @@ class TeenPassRegistrationForm extends Component
             $this->resetForm();
         } else {
             $this->success = false;
-            $this->modalTitle = "Error!";
-            $this->modalMessage = 'Your application failed with the error message "' . $body['ErrorMessage'] . '". Please try again.';
+            $this->modalTitle = 'Error!';
+            $this->modalMessage = 'Your application failed with the error message "'.$body['ErrorMessage'].'". Please try again.';
         }
     }
 

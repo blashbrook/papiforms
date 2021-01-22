@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 Route::group(['middleware' => ['web']], function () {
     Route::get('/teenpass', TeenPassRegistrationForm::class);
-    Route::get('/modal', function() {
+    Route::get('/modal', function () {
         return view('papiforms::registration-form-modal')
             ->layout('papiforms::layouts.app');
     });
