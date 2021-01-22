@@ -15,6 +15,9 @@ use Livewire\Component;
 
 class TeenPassRegistrationForm extends Component
 {
+
+    //public $success = false;
+
     public $postalCodes;
     public $selectedPostalCodeArray;
     public $selectedPostalCodeID = '';
@@ -29,6 +32,11 @@ class TeenPassRegistrationForm extends Component
 
     public $patronCodeDescription = '';
     public $patronCodeArray;
+
+    public $modalTitle = '';
+    public $modalMessage = '';
+    public $modalBarcode = '';
+    public $modalPIN = '';
 
     public $PostalCode = '';
     public $City = '';
@@ -50,7 +58,7 @@ class TeenPassRegistrationForm extends Component
     public $DeliveryOptionID = '';
     public $TxtPhoneNumber = '';
     public $PatronCode = '';
-    public $successMessage = '';
+    public $successMessage = false;
 
     protected $rules = [
         'selectedPostalCodeID' => 'required',
@@ -99,7 +107,7 @@ class TeenPassRegistrationForm extends Component
 
     public function submitForm()
     {
-        $this->successMessage = '';
+        //$this->successMessage = '';
         $this->validate();
 
         $json = [
@@ -129,13 +137,21 @@ class TeenPassRegistrationForm extends Component
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         if ($body['ErrorMessage'] == '') {
-            $this->successMessage = 'You have successfully registered for a Teen Pass.  Your barcode number is '.$body['Barcode'];
+            $this->successMessage = true;
+            $this->modalTitle = "Success!";
+            $this->modalMessage = 'You have successfully registered for a Teen Pass.  Your temporary barcode number is '. $body['Barcode'] . '.
+                You will receive your card in the mail within 10 days.
+                Click Continue to finish creating your online account.';
+            $this->modalBarcode = $body['Barcode'];
+            $this->modalPIN = $json['Password'];
             $json['Barcode'] = $body['Barcode'];
             $json['first_name'] = $this->NameFirst;
             Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
             $this->resetForm();
         } else {
-            $this->successMessage = 'There was an error with your application.  '.$body['ErrorMessage'];
+            $this->success = false;
+            $this->modalTitle = "Error!";
+            $this->modalMessage = 'Your application failed with the error message "' . $body['ErrorMessage'] . '". Please try again.';
         }
     }
 

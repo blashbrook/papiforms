@@ -5,41 +5,13 @@
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
+                @if ($successMessage)
+                    <x-papiforms::modals.success title="{{ $modalTitle }}" barcode="{{ $modalBarcode }}" pin="{{ $modalPIN }}">
+                        {{ $modalMessage }}
+                    </x-papiforms::modals.success>
+                @endif
                 <form  wire:submit.prevent="submitForm" class="grid grid-cols-1 row-gap-6">
                     @csrf
-                    @if ($successMessage)
-                        <div class="p-4 mt-8 rounded-md bg-green-50">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <svg class="w-5 h-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-medium leading-5 text-green-800">
-                                         {{ $successMessage }}
-                                    </p>
-                                </div>
-                                <div class="pl-3 ml-auto">
-                                    <div class="-mx-1.5 -my-1.5">
-                                        <button
-                                            type="button"
-                                            wire:click="$set('successMessage', null)"
-                                            class="inline-flex rounded-md p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:bg-green-100 transition ease-in-out duration-150"
-                                            aria-label="Dismiss">
-                                            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                      clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
 
                     <div>
 
