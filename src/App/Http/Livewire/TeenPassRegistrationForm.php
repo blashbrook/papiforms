@@ -137,10 +137,11 @@ class TeenPassRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         if ($body['ErrorMessage'] == '') {
             $this->successMessage = true;
-            $this->modalTitle = 'Success!';
-            $this->modalMessage = 'You have successfully registered for a Teen Pass.  Your temporary barcode number is '.$body['Barcode'].'.
-                You will receive your card in the mail within 10 days.
-                Click Continue to finish creating your online account.';
+            $this->modalTitle = 'Your temporary Teen Pass barcode is '.$body['Barcode'].'.';
+            $this->modalMessage =
+                'You will receive an email from no-reply@dcplibrary.org with more information.
+                If the email is not in your Inbox, please check your spam or junk folder.
+                Click Continue to complete your online account registration.';
             $this->modalBarcode = $body['Barcode'];
             $this->modalPIN = $json['Password'];
             $json['Barcode'] = $body['Barcode'];
@@ -195,7 +196,7 @@ class TeenPassRegistrationForm extends Component
             ->orWhere('DeliveryOption', 'Email Address')
             ->orWhere('DeliveryOption', 'Phone 1')
             ->orWhere('DeliveryOption', 'TXT Messaging')
-            ->get()->sortBy('DeliveryOption');
+            ->get(['DeliveryOptionID', 'DeliveryOption'])->sortBy('DeliveryOption');
         $this->patronCodeArray = PatronCode::select('PatronCodeID')
             ->where('Description', $this->patronCodeDescription)
             ->pluck('PatronCodeID');

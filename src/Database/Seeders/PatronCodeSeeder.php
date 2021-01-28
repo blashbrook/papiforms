@@ -87,12 +87,12 @@ class PatronCodeSeeder extends Seeder
             'Description'  => 'eCard',
         ]);
         PatronCode::create([
-            'PatronCodeID' => 35,
-            'Description'  => 'Teen Pass',
-        ]);
-        PatronCode::create([
             'PatronCodeID' => 37,
             'Description'  => 'Juvenile Expanded Movie',
+        ]);
+        PatronCode::create([
+            'PatronCodeID' => 38,
+            'Description'  => 'Teen Pass',
         ]);
     }
 }
