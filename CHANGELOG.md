@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/blashbrook/papiforms/compare/v1.13.0...v1.14.0) (2021-02-09)
+
+
+### Features
+
+* **teen-pass-registration-form:** set selectedPostalCodeID to defer ([f8cc7f4](https://github.com/blashbrook/papiforms/commit/f8cc7f477f48b4219a74a80fde416b4ae01e66d9))
+
 # [1.13.0](https://github.com/blashbrook/papiforms/compare/v1.12.0...v1.13.0) (2021-02-09)
 
 
