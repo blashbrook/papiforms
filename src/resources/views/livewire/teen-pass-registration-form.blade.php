@@ -36,14 +36,14 @@
                     </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
-                            <x-papiforms::input.select-postal-code wire:model="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
+                            <x-papiforms::input.select-postal-code wire:model.defer="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
 
-                        <input name="PostalCode" type="hidden" value="{{ $PostalCode }}" />
-                        <input name="City" type="hidden" value="{{ $City }}" />
-                        <input name="State" type="hidden" value="{{ $State }}" />
-                        <input name="County" type="hidden" value="{{ $County }}" />
-                        <input name="CountryID" type="hidden" value="{{ $CountryID }}" />
+                        <input wire:model="PostalCode" id="PostalCode" name="PostalCode" type="hidden" value="{{ old('PostalCode') }}" />
+                        <input wire:model="City" id="City" name="City" type="hidden" value="{{ old('City') }}" />
+                        <input wire:model="State" id="State" name="State" type="hidden" value="{{ old('State') }}" />
+                        <input wire:model="County" id="County" name="County" type="hidden" value="{{ old('County') }}" />
+                        <input wire:model="CountryID" id="CountryID" name="CountryID" type="hidden" value="{{ old('CountryID') }}" />
 
                         <x-papiforms::input.group label="Birthdate" for="Birthdate">
                             <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
