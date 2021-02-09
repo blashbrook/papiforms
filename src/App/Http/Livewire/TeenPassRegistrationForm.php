@@ -183,6 +183,7 @@ class TeenPassRegistrationForm extends Component
         $this->udfOptions = UdfOptionController::createSelection();
         $this->deliveryOptions = DeliveryOptionController::createSelection();
         $this->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
+
         return view('papiforms::livewire.teen-pass-registration-form')
             ->layout('papiforms::layouts.app');
     }

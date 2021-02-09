@@ -4,7 +4,6 @@ namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Blashbrook\PAPIForms\App\Models\UdfOption;
-use Blashbrook\PAPIForms\App\Models\UdfOptionDef;
 use Illuminate\Http\Request;
 
 class UdfOptionController extends Controller

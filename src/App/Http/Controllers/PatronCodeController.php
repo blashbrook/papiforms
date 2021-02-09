@@ -13,8 +13,10 @@ class PatronCodeController extends Controller
         $patronCodeArray = PatronCode::select('PatronCodeID')
             ->where('Description', $patronCodeDescription)
             ->pluck('PatronCodeID');
+
         return $patronCodeArray[0];
     }
+
     /**
      * Display a listing of the resource.
      *

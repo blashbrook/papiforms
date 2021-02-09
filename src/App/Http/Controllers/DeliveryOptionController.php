@@ -21,8 +21,7 @@ class DeliveryOptionController extends Controller
             ->orWhere('DeliveryOption', 'Phone 1')
             ->orWhere('DeliveryOption', 'TXT Messaging')
             ->get(['DeliveryOptionID', 'DeliveryOption'])->sortBy('DeliveryOption');
-        foreach ($deliveryOptions as $deliveryOption)
-        {
+        foreach ($deliveryOptions as $deliveryOption) {
             switch ($deliveryOption->DeliveryOption) {
                 case 'Email Address':
                     $deliveryOption->DeliveryOption = 'Email';
@@ -39,6 +38,7 @@ class DeliveryOptionController extends Controller
 
             }
         }
+
         return $deliveryOptions;
     }
 
