@@ -53,7 +53,7 @@
                             <x-papiforms::input.select-udf-option wire:model="User4" id="User4" name="User4" value="{{ old('User4') }}"/>
                         </x-papiforms::input.group>
 
-                        <x-papiforms::input.group label="EmailAddress" for="EmailAddress">
+                        <x-papiforms::input.group label="Email" for="EmailAddress">
                             <x-papiforms::input.text wire:model.defer="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
                         </x-papiforms::input.group>
 

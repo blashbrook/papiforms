@@ -15,7 +15,7 @@ class MobilePhoneCarrierController extends Controller
      */
     public function index()
     {
-        //
+        return MobilePhoneCarrier::all();
     }
 
     /**

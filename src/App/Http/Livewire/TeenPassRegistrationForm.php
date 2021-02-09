@@ -4,11 +4,11 @@ namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
-use Blashbrook\PAPIForms\App\Models\DeliveryOption;
-use Blashbrook\PAPIForms\App\Models\MobilePhoneCarrier;
-use Blashbrook\PAPIForms\App\Models\PatronCode;
-use Blashbrook\PAPIForms\App\Models\PostalCode;
-use Blashbrook\PAPIForms\App\Models\UdfOption;
+use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
+use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
+use Blashbrook\PAPIForms\Facades\PatronCodeController;
+use Blashbrook\PAPIForms\Facades\PostalCodeController;
+use Blashbrook\PAPIForms\Facades\UdfOptionController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -28,9 +28,6 @@ class TeenPassRegistrationForm extends Component
     public $mobilePhoneCarriers;
 
     public $deliveryOptions;
-
-    public $patronCodeDescription = '';
-    public $patronCodeArray;
 
     public $modalTitle = '';
     public $modalMessage = '';
@@ -86,7 +83,6 @@ class TeenPassRegistrationForm extends Component
     public function mount()
     {
         $this->City = 'OWENSBORO';
-        $this->patronCodeDescription = 'Teen Pass';
     }
 
     public function updatedselectedPostalCodeID()
@@ -182,26 +178,11 @@ class TeenPassRegistrationForm extends Component
 
     public function render()
     {
-        $this->postalCodes = PostalCode::all()->sortBy('PostalCode');
-        $this->mobilePhoneCarriers = MobilePhoneCarrier::all();
-        $this->udfOptions = UdfOption::select('id', 'UDFOptionID', 'OptionDesc')->addSelect(
-            ['Order' => function ($query) {
-                $query->select('DisplayOrder')
-                    ->from('udf_option_defs')
-                    ->whereColumn('UDFOptionID', 'udf_options.UDFOptionID');
-            }])->orderBy('Order')
-            ->where('AttrID', '60')
-            ->get();
-        $this->deliveryOptions = DeliveryOption::where('DeliveryOption', 'Mailing Address')
-            ->orWhere('DeliveryOption', 'Email Address')
-            ->orWhere('DeliveryOption', 'Phone 1')
-            ->orWhere('DeliveryOption', 'TXT Messaging')
-            ->get(['DeliveryOptionID', 'DeliveryOption'])->sortBy('DeliveryOption');
-        $this->patronCodeArray = PatronCode::select('PatronCodeID')
-            ->where('Description', $this->patronCodeDescription)
-            ->pluck('PatronCodeID');
-        $this->PatronCode = $this->patronCodeArray[0];
-
+        $this->postalCodes = PostalCodeController::createSelection();
+        $this->mobilePhoneCarriers = MobilePhoneCarrierController::index();
+        $this->udfOptions = UdfOptionController::createSelection();
+        $this->deliveryOptions = DeliveryOptionController::createSelection();
+        $this->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
         return view('papiforms::livewire.teen-pass-registration-form')
             ->layout('papiforms::layouts.app');
     }

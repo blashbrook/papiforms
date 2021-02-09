@@ -36,7 +36,9 @@
                 "Blashbrook\\PAPIForms\\PAPIFormsServiceProvider"
             ],
             "aliases": {
-                "PAPIForms": "Blashbrook\\PAPIForms\\Facades\\PAPIForms"
+                "PAPIForms": "Blashbrook\\PAPIForms\\Facades\\PAPIForms",
+                "DeliveryOptionController": "Blashbrook\\PAPIForms\\Facades\\DeliveryOptionController",
+                "MobilePhoneCarrierController": "Blashbrook\\PAPIForms\\Facades\\MobilePhoneCarrierController"
             }
         }
     }

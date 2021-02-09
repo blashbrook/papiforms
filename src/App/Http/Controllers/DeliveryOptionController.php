@@ -13,9 +13,33 @@ class DeliveryOptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function createSelection()
     {
         //
+        $deliveryOptions = DeliveryOption::where('DeliveryOption', 'Mailing Address')
+            ->orWhere('DeliveryOption', 'Email Address')
+            ->orWhere('DeliveryOption', 'Phone 1')
+            ->orWhere('DeliveryOption', 'TXT Messaging')
+            ->get(['DeliveryOptionID', 'DeliveryOption'])->sortBy('DeliveryOption');
+        foreach ($deliveryOptions as $deliveryOption)
+        {
+            switch ($deliveryOption->DeliveryOption) {
+                case 'Email Address':
+                    $deliveryOption->DeliveryOption = 'Email';
+                    break;
+                case 'Mailing Address':
+                    $deliveryOption->DeliveryOption = 'Mail';
+                    break;
+                case 'Phone 1':
+                    $deliveryOption->DeliveryOption = 'Phone';
+                    break;
+                case 'TXT Messaging':
+                    $deliveryOption->DeliveryOption = 'Text message';
+                    break;
+
+            }
+        }
+        return $deliveryOptions;
     }
 
     /**

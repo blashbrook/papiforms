@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class PatronCodeController extends Controller
 {
+    public function getPatronCode($patronCodeDescription)
+    {
+        $patronCodeArray = PatronCode::select('PatronCodeID')
+            ->where('Description', $patronCodeDescription)
+            ->pluck('PatronCodeID');
+        return $patronCodeArray[0];
+    }
     /**
      * Display a listing of the resource.
      *
