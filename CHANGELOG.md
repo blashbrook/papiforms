@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/blashbrook/papiforms/compare/v1.12.0...v1.13.0) (2021-02-09)
+
+
+### Features
+
+* **controllers:** create facades and move functions to controllers ([eb24580](https://github.com/blashbrook/papiforms/commit/eb24580935e54d991d2f00feb05e884990f0e2cf))
+
 # [1.12.0](https://github.com/blashbrook/papiforms/compare/v1.11.0...v1.12.0) (2021-01-20)
 
 
