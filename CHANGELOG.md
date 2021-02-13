@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/blashbrook/papiforms/compare/v1.14.0...v1.15.0) (2021-02-13)
+
+
+### Features
+
+* **teenpass:** update form validation ([3397424](https://github.com/blashbrook/papiforms/commit/33974248c5f09907acad2864ba57fd88bea7f125))
+
 # [1.14.0](https://github.com/blashbrook/papiforms/compare/v1.13.0...v1.14.0) (2021-02-09)
 
 
