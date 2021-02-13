@@ -50,7 +50,7 @@ class TeenPassRegistrationForm extends Component
     public $Phone1CarrierID = '';
     public $EmailAddress = '';
     public $Password = '';
-    public $Password2 = '';
+    public $password_confirm = '';
     public $DeliveryOptionID = '';
     public $TxtPhoneNumber = '';
     public $PatronCode = '';
@@ -69,16 +69,38 @@ class TeenPassRegistrationForm extends Component
         'NameLast'          => 'required',
         'NameMiddle'        => 'required',
         'User4'             => 'nullable',
-        'Birthdate'         => 'required',
-        'PhoneVoice1'       => 'nullable:digits:10',
-        'Phone1CarrierID'   => 'nullable',
-        'EmailAddress'      => 'nullable',
-        'Password'          => 'required',
-        'Password2'         => 'required',
+        'Birthdate'         => 'required|date_format:m/d/Y',
+        'PhoneVoice1'       => 'required|digits:10',
+        'Phone1CarrierID'   => 'required_if:DeliveryOptionID,8',
+        'EmailAddress'      => 'required|regex:/^.+@.+\\..+$/i',
+        'Password'          => 'required|digits_between:4,6|confirmed',
+        'password_confirm'  => 'required',
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
     ];
+
+    public function messages()
+    {
+        return [
+            'selectedPostalCodeID.required'     => 'Select a city, state, and postal code.',
+            'StreetOne.required'                => 'Street address is required.',
+            'NameFirst.required'                => 'First name is required.',
+            'NameLast.required'                 => 'Last name is required.',
+            'NameMiddle.required'               => 'Middle name is required.',
+            'Birthdate.required'                => 'Birthdate is required.',
+            'Birthdate.date_format'             => 'Birthdate must be in MM/DD/YYYY format.',
+            'PhoneVoice1.required'              => 'Phone number is required',
+            'PhoneVoice1.digits'                => 'Phone number must be 10 numbers only.',
+            'EmailAddress.required'             => 'Email address is required.',
+            'EmailAddress.regex'                => 'Email address is invalid.  Must be in someone@example.com format.',
+            'Password.required'                 => 'Password must be 4-6 numbers.',
+            'Password.digits_between'           => 'Password must be 4-6 numbers.',
+            'password_confirm.required'         => '',
+            'DeliveryOptionID.required'         => 'Select a notification method.',
+            'Phone1CarrierID.required_if'       => 'Select your mobile phone carrier.',
+        ];
+    }
 
     public function mount()
     {
@@ -122,7 +144,7 @@ class TeenPassRegistrationForm extends Component
             'Phone1CarrierID'   => $this->Phone1CarrierID,
             'EmailAddress'      => $this->EmailAddress,
             'Password'          => $this->Password,
-            'Password2'         => $this->Password2,
+            'Password2'         => $this->password_confirm,
             'DeliveryOptionID'  => $this->DeliveryOptionID,
             'TxtPhoneNumber'    => $this->TxtPhoneNumber,
             'PatronCode'        => $this->PatronCode,
@@ -170,7 +192,7 @@ class TeenPassRegistrationForm extends Component
         $this->Phone1CarrierID = '';
         $this->EmailAddress = '';
         $this->Password = '';
-        $this->Password2 = '';
+        $this->password_confirm = '';
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';

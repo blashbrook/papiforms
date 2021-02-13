@@ -14,27 +14,41 @@
                     @csrf
 
                     <div>
-
+                        <div class="flex flex-wrap -mx-3">
+                            <span class="block uppercase tracking-wide text-gray-700 font-bold px-3">Full name</span>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-2">
+                            <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="First name" for="NameFirst">
                             <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
                         </x-papiforms::input.group>
-
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="Middle name" for="NameMiddle">
                             <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
                         </x-papiforms::input.group>
-
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="Last name" for="NameLast">
                             <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
                         </x-papiforms::input.group>
-
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mt-6">
+                            <span class="block uppercase tracking-wide text-gray-700 font-bold px-3">Address</span>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-2">
+                            <div class="w-full md:w-2/3 px-3 md:mb-0">
                     <x-papiforms::input.group label="Street address" for="StreetOne">
                         <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
                     </x-papiforms::input.group>
-
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 md:mb-0">
                     <x-papiforms::input.group label="Apartment #" for="StreetTwo">
                         <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
                     </x-papiforms::input.group>
-
+                            </div>
+                        </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
                             <x-papiforms::input.select-postal-code wire:model.defer="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
@@ -77,8 +91,8 @@
                             <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Password" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
 
-                        <x-papiforms::input.group label="Confirm password" for="Password2">
-                            <x-papiforms::input.text wire:model.defer="Password2" id="Password2" name="Password2" type="password" placeholder="Confirm password" value="{{ old('Password2') }}"/>
+                        <x-papiforms::input.group label="Confirm password" for="password_confirm">
+                            <x-papiforms::input.text wire:model.defer="password_confirm" id="password_confirm" name="password_confirm" type="password" placeholder="Confirm password" value="{{ old('password_confirm') }}"/>
                         </x-papiforms::input.group>
 
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />
