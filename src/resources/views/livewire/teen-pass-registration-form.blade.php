@@ -91,8 +91,8 @@
                             <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Password" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
 
-                        <x-papiforms::input.group label="Confirm password" for="password_confirm">
-                            <x-papiforms::input.text wire:model.defer="password_confirm" id="password_confirm" name="password_confirm" type="password" placeholder="Confirm password" value="{{ old('password_confirm') }}"/>
+                        <x-papiforms::input.group label="Confirm password" for="Password_confirmation">
+                            <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm password" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
 
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />

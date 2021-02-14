@@ -50,7 +50,7 @@ class TeenPassRegistrationForm extends Component
     public $Phone1CarrierID = '';
     public $EmailAddress = '';
     public $Password = '';
-    public $password_confirm = '';
+    public $Password_confirmation = '';
     public $DeliveryOptionID = '';
     public $TxtPhoneNumber = '';
     public $PatronCode = '';
@@ -74,7 +74,7 @@ class TeenPassRegistrationForm extends Component
         'Phone1CarrierID'   => 'required_if:DeliveryOptionID,8',
         'EmailAddress'      => 'required|regex:/^.+@.+\\..+$/i',
         'Password'          => 'required|digits_between:4,6|confirmed',
-        'password_confirm'  => 'required',
+        //'Password_confirmation'  => 'required',
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
@@ -93,10 +93,10 @@ class TeenPassRegistrationForm extends Component
             'PhoneVoice1.required'              => 'Phone number is required',
             'PhoneVoice1.digits'                => 'Phone number must be 10 numbers only.',
             'EmailAddress.required'             => 'Email address is required.',
-            'EmailAddress.regex'                => 'Email address is invalid.  Must be in someone@example.com format.',
+            'EmailAddress.regex'                => 'Email address is invalid.',
             'Password.required'                 => 'Password must be 4-6 numbers.',
             'Password.digits_between'           => 'Password must be 4-6 numbers.',
-            'password_confirm.required'         => '',
+            //'Password_confirmation.required'         => '',
             'DeliveryOptionID.required'         => 'Select a notification method.',
             'Phone1CarrierID.required_if'       => 'Select your mobile phone carrier.',
         ];
@@ -144,7 +144,7 @@ class TeenPassRegistrationForm extends Component
             'Phone1CarrierID'   => $this->Phone1CarrierID,
             'EmailAddress'      => $this->EmailAddress,
             'Password'          => $this->Password,
-            'Password2'         => $this->password_confirm,
+            'Password2'         => $this->Password,
             'DeliveryOptionID'  => $this->DeliveryOptionID,
             'TxtPhoneNumber'    => $this->TxtPhoneNumber,
             'PatronCode'        => $this->PatronCode,
@@ -155,7 +155,7 @@ class TeenPassRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         if ($body['ErrorMessage'] == '') {
             $this->successMessage = true;
-            $this->modalTitle = 'Your temporary Teen Pass barcode is '.$body['Barcode'].'.';
+            $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
             $this->modalMessage =
                 'You will receive an email from no-reply@dcplibrary.org with more information.
                 If the email is not in your Inbox, please check your spam or junk folder.
@@ -192,7 +192,7 @@ class TeenPassRegistrationForm extends Component
         $this->Phone1CarrierID = '';
         $this->EmailAddress = '';
         $this->Password = '';
-        $this->password_confirm = '';
+        $this->Password_confirmation = '';
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';
