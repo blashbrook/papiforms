@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/blashbrook/papiforms/compare/v1.15.0...v1.16.0) (2021-02-16)
+
+
+### Features
+
+* **teen-pass-registration-form:** add input sections ([f889728](https://github.com/blashbrook/papiforms/commit/f88972872a14b32068a64db0e7afdf6d1e20cf9b))
+
 # [1.15.0](https://github.com/blashbrook/papiforms/compare/v1.14.0...v1.15.0) (2021-02-13)
 
 
