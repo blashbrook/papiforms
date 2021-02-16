@@ -14,9 +14,7 @@
                     @csrf
 
                     <div>
-                        <div class="flex flex-wrap -mx-3">
-                            <span class="block uppercase tracking-wide text-gray-700 font-bold px-3">Full name</span>
-                        </div>
+                        <x-papiforms::input.section section="Full name">
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="First name" for="NameFirst">
@@ -32,11 +30,10 @@
                         <x-papiforms::input.group label="Last name" for="NameLast">
                             <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
                         </x-papiforms::input.group>
+                        </x-papiforms::input.section>
                             </div>
                         </div>
-                        <div class="flex flex-wrap -mx-3 mt-6">
-                            <span class="block uppercase tracking-wide text-gray-700 font-bold px-3">Address</span>
-                        </div>
+            <x-papiforms::input.section section="Address">
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-2/3 px-3 md:mb-0">
                     <x-papiforms::input.group label="Street address" for="StreetOne">
@@ -52,20 +49,22 @@
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
                             <x-papiforms::input.select-postal-code wire:model.defer="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
-
+            </x-papiforms::input.section>
                         <input wire:model="PostalCode" id="PostalCode" name="PostalCode" type="hidden" value="{{ old('PostalCode') }}" />
                         <input wire:model="City" id="City" name="City" type="hidden" value="{{ old('City') }}" />
                         <input wire:model="State" id="State" name="State" type="hidden" value="{{ old('State') }}" />
                         <input wire:model="County" id="County" name="County" type="hidden" value="{{ old('County') }}" />
                         <input wire:model="CountryID" id="CountryID" name="CountryID" type="hidden" value="{{ old('CountryID') }}" />
+            <x-papiforms::input.section section="Birthdate">
 
                         <x-papiforms::input.group label="Birthdate" for="Birthdate">
                             <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
-
+            </x-papiforms::input.section>
                         <x-papiforms::input.group label="School" for="User4">
                             <x-papiforms::input.select-udf-option wire:model="User4" id="User4" name="User4" value="{{ old('User4') }}"/>
                         </x-papiforms::input.group>
+            <x-papiforms::input.section section="Contact information">
 
                         <x-papiforms::input.group label="Email" for="EmailAddress">
                             <x-papiforms::input.text wire:model.defer="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
@@ -86,15 +85,17 @@
                         <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
                             <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
                         </x-papiforms::input.group>
+            </x-papiforms::input.section>
+            <x-papiforms::input.section section="Password">
 
-                        <x-papiforms::input.group label="Password" for="Password">
+            <x-papiforms::input.group label="Password" for="Password">
                             <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Password" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
 
                         <x-papiforms::input.group label="Confirm password" for="Password_confirmation">
                             <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm password" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
-
+            </x-papiforms::input.section>
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />
                     <div class="">
                         <span class="inline-flex rounded-md shadow-sm">
