@@ -61,24 +61,29 @@
                             <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
+            <x-papiforms::input.section section="School">
                         <x-papiforms::input.group label="School" for="User4">
                             <x-papiforms::input.select-udf-option wire:model="User4" id="User4" name="User4" value="{{ old('User4') }}"/>
                         </x-papiforms::input.group>
+            </x-papiforms::input.section>
             <x-papiforms::input.section section="Contact information">
 
                         <x-papiforms::input.group label="Email" for="EmailAddress">
                             <x-papiforms::input.text wire:model.defer="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
                         </x-papiforms::input.group>
-
+                <div class="flex flex-wrap -mx-3 mb-2">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0">
                         <x-papiforms::input.group label="Phone" for="PhoneVoice1">
                             <x-papiforms::input.text wire:model.defer="PhoneVoice1" id="PhoneVoice1" name="PhoneVoice1" type="text" placeholder="Phone number" value="{{ old('PhoneVoice1') }}"/>
                         </x-papiforms::input.group>
-
+                    </div>
+                        <div class="w-full md:w-1/2 px-3 md:mb-0">
                         {{-- Phone Carrier Selection --}}
                         <x-papiforms::input.group label="Mobile carrier" for="Phone1CarrierID">
                             <x-papiforms::input.select-mobile-phone-carrier wire:model.defer="Phone1CarrierID" id="Phone1CarrierID" name="Phone1CarrierID"  value="{{ old('Phone1CarrierID') }}" />
                         </x-papiforms::input.group>
-
+                        </div>
+                </div>
                         <input wire:model="TxtPhoneNumber" name="TxtPhoneNumber" type="hidden" />
 
                         {{-- Delivery option --}}
@@ -97,7 +102,7 @@
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />
-                    <div class="">
+                    <div class="mt-10">
                         <span class="inline-flex rounded-md shadow-sm">
                             <button type="submit"
                                     class="inline-flex items-center justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 disabled:opacity-50">
