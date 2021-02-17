@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/blashbrook/papiforms/compare/v1.16.0...v1.17.0) (2021-02-17)
+
+
+### Features
+
+* **teen-pass-registration-from:** update sections ([edb340e](https://github.com/blashbrook/papiforms/commit/edb340e05397f78d0f9555a7c7a92a34551fb6a1))
+
 # [1.16.0](https://github.com/blashbrook/papiforms/compare/v1.15.0...v1.16.0) (2021-02-16)
 
 
