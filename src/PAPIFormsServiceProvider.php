@@ -8,6 +8,8 @@ use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
 use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
+use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -26,6 +28,12 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
+        Validator::extend('teenpass_birthdate', function($attribute, $value, $parameters, $validator){
+                $birthDate = Carbon::create($value);
+                $firstDate = Carbon::now()->subYears(18);
+                $lastDate = Carbon::now()->subYears(13);
+                return $birthDate > $firstDate && $birthDate < $lastDate;
+        });
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
