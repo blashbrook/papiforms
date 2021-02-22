@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/blashbrook/papiforms/compare/v1.17.0...v1.18.0) (2021-02-22)
+
+
+### Features
+
+* **teen-pass-confirmation:** format email template ([52e9939](https://github.com/blashbrook/papiforms/commit/52e993947c859c59dfbd8a75424a8c3ae49ad095))
+
 # [1.17.0](https://github.com/blashbrook/papiforms/compare/v1.16.0...v1.17.0) (2021-02-17)
 
 
