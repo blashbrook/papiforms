@@ -167,7 +167,7 @@ class TeenPassRegistrationForm extends Component
             Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
             $this->resetForm();
         } else {
-            $this->success = false;
+            $this->successMessage = true;
             $this->modalTitle = 'Error!';
             $this->modalMessage = 'Your application failed with the error message "'.$body['ErrorMessage'].'". Please try again.';
         }

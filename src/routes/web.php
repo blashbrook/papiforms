@@ -26,4 +26,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/patron', function () {
         return view('papiforms::patron');
     });
+    Route::get('/teenpassemail', function() {
+        return new \Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable([
+            'first_name'=>'Brian',
+            'Barcode'=>'4444444444',
+            'EmailAddress'=>'blashbrook@dcplibrary.org',
+            'logo'=>'assets/dcpl_logo_banner.png'
+        ]);
+    });
 });
