@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/blashbrook/papiforms/compare/v1.18.0...v1.18.1) (2021-02-23)
+
+
+### Bug Fixes
+
+* **dcpl_logo_banner:** correct path to logo banner image ([e893007](https://github.com/blashbrook/papiforms/commit/e8930075b8ff00b7c9cae11495ff7fa9f3b0b323))
+
 # [1.18.0](https://github.com/blashbrook/papiforms/compare/v1.17.0...v1.18.0) (2021-02-22)
 
 
