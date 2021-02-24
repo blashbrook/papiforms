@@ -5,7 +5,7 @@
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
             <div class="max-w-lg mx-auto">
-                <img src="{{ asset('storage/images/logo_horizontal.png') }}" />
+                <img src="{{ asset('storage/images/logo_banner_small.png') }}" />
 
                 <h2 class="text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
                     Teen Pass Application
