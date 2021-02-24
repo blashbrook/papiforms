@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/blashbrook/papiforms/compare/v1.18.1...v1.19.0) (2021-02-24)
+
+
+### Features
+
+* **layouts.app:** add hotjar script ([386e17e](https://github.com/blashbrook/papiforms/commit/386e17ef0b8b83878d2027c33c26d55bdf3c879b))
+
 ## [1.18.1](https://github.com/blashbrook/papiforms/compare/v1.18.0...v1.18.1) (2021-02-23)
 
 
