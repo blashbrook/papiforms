@@ -30,6 +30,6 @@ class TeenPassConfirmationMailable extends Mailable
     {
         return $this->to($this->confirmation['EmailAddress'])
             ->subject('DCPL Teen Pass Registration Confirmation')
-            ->markdown('papiforms::email.teen-pass-confirmation');
+            ->markdown('papiforms::mail.teen-pass-confirmation');
     }
 }
