@@ -134,17 +134,15 @@ class TeenPassRegistrationForm extends Component
 
     public function setErrorMessage($response)
     {
-        switch($response)
-        {
+        switch ($response) {
             case 'Duplicate patron name is specified':
-                return "You may already have a library account.
-                        Please contact the library for more information.";
+                return 'You may already have a library account.
+                        Please contact the library for more information.';
                 break;
             default:
                 return $response;
                 break;
         }
-
     }
 
     public function submitForm()
@@ -196,7 +194,7 @@ class TeenPassRegistrationForm extends Component
             $this->modalTitle = 'There was an error with your application!';
             $this->modalMessage = $this->setErrorMessage($body['ErrorMessage']);
             //$this->modalMessage = 'We could not process your application "'.$body['ErrorMessage'].'". Please try again or contact us.';
-            $this->modalOK = "closeErrorMessage";
+            $this->modalOK = 'closeErrorMessage';
         }
     }
 
