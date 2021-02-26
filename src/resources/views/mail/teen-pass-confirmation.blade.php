@@ -1,3 +1,4 @@
+@component('papiforms::mail.html.panel')
 @component('papiforms::mail.text.message')
 {{--# Introduction--}}
 
@@ -9,7 +10,7 @@ Hi {{ $confirmation['first_name'] }},
 {{ $confirmation['Barcode'] }}
 <p>Use your barcode to access thousands of books, movies, and music at the library or online.  Download our new cardholder brochure for more information.</p>
 
-@component('papiforms::mail.html.button', ['url' => 'https://dcpl.bibliocommons.com', 'class' => 'button-primary'])
+@component('papiforms::mail.html.button', ['url' => 'https://dcpl.bibliocommons.com', 'color' => 'success'])
 Access the catalog
 @endcomponent
 

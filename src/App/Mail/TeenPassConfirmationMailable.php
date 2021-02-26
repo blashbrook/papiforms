@@ -10,7 +10,7 @@ class TeenPassConfirmationMailable extends Mailable
 {
     use Queueable, SerializesModels;
     public $confirmation;
-
+    public $theme = 'papiforms::mail.html.themes.default';
     /**
      * Create a new message instance.
      *

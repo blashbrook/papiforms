@@ -28,6 +28,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
+
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
@@ -51,7 +52,6 @@ class PAPIFormsServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/papiforms.php', 'papiforms');
 
-        // Register the service the package provides.
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
         });

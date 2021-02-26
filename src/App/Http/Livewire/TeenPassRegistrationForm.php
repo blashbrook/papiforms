@@ -33,6 +33,10 @@ class TeenPassRegistrationForm extends Component
     public $modalMessage = '';
     public $modalBarcode = '';
     public $modalPIN = '';
+    public $modalOK = '';
+    public $successMessage = false;
+    public $errorMessage = false;
+    public $errorText = '';
 
     public $PostalCode = '';
     public $City = '';
@@ -54,7 +58,6 @@ class TeenPassRegistrationForm extends Component
     public $DeliveryOptionID = '';
     public $TxtPhoneNumber = '';
     public $PatronCode = '';
-    public $successMessage = false;
 
     protected $rules = [
         'selectedPostalCodeID' => 'required',
@@ -123,6 +126,27 @@ class TeenPassRegistrationForm extends Component
         $this->TxtPhoneNumber = '1';
     }
 
+    public function closeErrorMessage()
+    {
+        $this->errorMessage = false;
+        $this->resetForm();
+    }
+
+    public function setErrorMessage($response)
+    {
+        switch($response)
+        {
+            case 'Duplicate patron name is specified':
+                return "You may already have a library account.
+                        Please contact the library for more information.";
+                break;
+            default:
+                return $response;
+                break;
+        }
+
+    }
+
     public function submitForm()
     {
         //$this->successMessage = '';
@@ -154,8 +178,8 @@ class TeenPassRegistrationForm extends Component
         ];
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
+        $this->requestCompleted = true;
         if ($body['ErrorMessage'] == '') {
-            $this->successMessage = true;
             $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
             $this->modalMessage =
                 'You will receive an email from no-reply@dcplibrary.org with more information.
@@ -168,9 +192,11 @@ class TeenPassRegistrationForm extends Component
             Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
             $this->resetForm();
         } else {
-            $this->successMessage = true;
-            $this->modalTitle = 'Error!';
-            $this->modalMessage = 'Your application failed with the error message "'.$body['ErrorMessage'].'". Please try again.';
+            $this->errorMessage = true;
+            $this->modalTitle = 'There was an error with your application!';
+            $this->modalMessage = $this->setErrorMessage($body['ErrorMessage']);
+            //$this->modalMessage = 'We could not process your application "'.$body['ErrorMessage'].'". Please try again or contact us.';
+            $this->modalOK = "closeErrorMessage";
         }
     }
 
@@ -197,6 +223,8 @@ class TeenPassRegistrationForm extends Component
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';
+        $this->successMessage = false;
+        $this->errorMessage = false;
     }
 
     public function render()

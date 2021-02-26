@@ -97,6 +97,26 @@
                             {{ $modalMessage }}
                         </x-papiforms::modals.success>
                 @endif
+                <div>
+                @if ($errorMessage)
+{{--                        <div class="flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2" >
+                            <!-- icons -->
+                            <button wire:click="$set('errorMessage', false)" type="button" class="text-red-500 rounded-full bg-white mr-3">
+                                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                                </svg>
+                            </button>
+                            <!-- message -->
+                            <div class="text-white max-w-xs ">
+                                {{ $errorText }}
+                            </div>
+                        </div>--}}
+                        <x-papiforms::modals.error title="{{ $modalTitle }}" ok="{{ $modalOK }}">
+                            {{ $modalMessage }}
+                        </x-papiforms::modals.error>
+                @endif
+                </div>
                 <form  wire:submit.prevent="submitForm" class="grid grid-cols-1 row-gap-6">
                     @csrf
 
@@ -104,25 +124,25 @@
                         <x-papiforms::input.section section="Full name">
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
-                        <x-papiforms::input.group label="First name" for="NameFirst">
-                            <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
-                        </x-papiforms::input.group>
+                                <x-papiforms::input.group label="First name" for="NameFirst">
+                                    <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
-                        <x-papiforms::input.group label="Middle name" for="NameMiddle">
-                            <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
-                        </x-papiforms::input.group>
+                                <x-papiforms::input.group label="Middle name" for="NameMiddle">
+                                    <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="Last name" for="NameLast">
                             <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
-                        </x-papiforms::input.group>
+                            </x-papiforms::input.group>
                         </x-papiforms::input.section>
                             </div>
                         </div>
-            <x-papiforms::input.section section="Address">
+                    <x-papiforms::input.section section="Address">
                         <div class="flex flex-wrap -mx-3 mb-2">
-                            <div class="w-full md:w-2/3 px-3 md:mb-0">
+                         <div class="w-full md:w-2/3 px-3 md:mb-0">
                     <x-papiforms::input.group label="Street address" for="StreetOne">
                         <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
                     </x-papiforms::input.group>
