@@ -222,8 +222,6 @@ class TeenPassRegistrationForm extends Component
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';
-        $this->successMessage = false;
-        $this->errorMessage = false;
     }
 
     public function render()
