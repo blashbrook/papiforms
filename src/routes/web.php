@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
             'NameFirst' => 'John',
             'NameMiddle' => 'Queue',
             'NameLast' => 'Public',
-            'DeliveryOptionID' => '3'
+            'DeliveryOptionID' => '3',
         ]);
     });
 });
