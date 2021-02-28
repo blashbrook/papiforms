@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/blashbrook/papiforms/compare/v1.19.0...v1.19.1) (2021-02-28)
+
+
+### Bug Fixes
+
+* **teenpassregistrationform:** restore $successMessage after http request ([1855c88](https://github.com/blashbrook/papiforms/commit/1855c88785f15f80f8ba552907b2b28d689f02ae))
+
 # [1.19.0](https://github.com/blashbrook/papiforms/compare/v1.18.1...v1.19.0) (2021-02-24)
 
 
