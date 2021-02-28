@@ -32,6 +32,10 @@ Route::group(['middleware' => ['web']], function () {
             'Barcode'=>'4444444444',
             'EmailAddress'=>'blashbrook@dcplibrary.org',
             'logo'=>'assets/dcpl_logo_banner.png',
+            'NameFirst' => 'John',
+            'NameMiddle' => 'Queue',
+            'NameLast' => 'Public',
+            'DeliveryOptionID' => '3'
         ]);
     });
 });

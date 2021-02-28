@@ -63,6 +63,7 @@ p {
     font-size: 16px;
     line-height: 1.5em;
     margin-top: 0;
+    margin-bottom: 5px;
     text-align: left;
 }
 
@@ -170,14 +171,26 @@ img {
 }
 
 .footer p {
-    color: #b0adc5;
+    color: #525252;
     font-size: 12px;
     text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.footer span {
+    display: inline-block;
+    font-size: 12px;
+    padding:0 50px 0 0;
+    margin:0;
+    color: #525252;
+    text-align: left;
+    width: 200px;
 }
 
 .footer a {
-    color: #b0adc5;
-    text-decoration: underline;
+    color: #525252;
+    text-decoration: none;
 }
 
 /* Tables */
@@ -281,6 +294,42 @@ img {
 .panel-item p:last-of-type {
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+/* Cards */
+.card {
+    -webkit-text-size-adjust: none;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    border-color: #8d8f91;
+    border-width: 1px;
+    border-style: dashed;
+    color: #333;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 2px 0 rgba(0, 0, 150, 0.025), 2px 4px 0 rgba(0, 0, 150, 0.015);
+    margin: 0 auto;
+    padding: 20px 10px;
+    margin: 20px 0;
+}
+.card h1,h2,h3 {
+    text-align: center;
+}
+.card h1 {
+    font-size: large;
+    margin-bottom: 5px;
+}
+.card h3 {
+    font-size: small;
+    margin-bottom: 5px;
+}
+.card h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    margin-bottom: 30px;
 }
 
 /* Utilities */

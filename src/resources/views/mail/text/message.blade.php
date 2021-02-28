@@ -1,8 +1,7 @@
 @component('papiforms::mail.html.layout')
     {{-- Header --}}
     @slot('header')
-        @component('papiforms::mail.html.header', ['url' => config('app.url')])
-            {{ config('app.name') }}
+        @component('papiforms::mail.html.header', ['url' => 'https://www.dcplibrary.org'])
         @endcomponent
     @endslot
 
@@ -21,7 +20,6 @@
     {{-- Footer --}}
     @slot('footer')
         @component('papiforms::mail.html.footer')
-            © {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.')
         @endcomponent
     @endslot
 @endcomponent

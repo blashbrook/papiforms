@@ -1,12 +1,9 @@
 <tr>
 <td class="header">
-<a href="{{ $url }}" style="display: inline-block;">
-    <img src="https://app.dcplibrary.org/storage/images/logo_banner_email.png" height="40px" alt="Daviess County Public Library">
-@if (trim($slot) === 'Laravel')
-<img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo">
-@else
-{{--{{ $slot }}--}}
-@endif
+<div style="display: inline-block; background-color: #edf2f7;">
+<a href="https://www.dcplibrary.org">
+<img src="https://app.dcplibrary.org/storage/images/logo_banner_email.png" height="40px" alt="Daviess County Public Library">
 </a>
+</div>
 </td>
 </tr>

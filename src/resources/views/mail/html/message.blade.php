@@ -1,8 +1,7 @@
 @component('papiforms::mail.html.layout')
 {{-- Header --}}
 @slot('header')
-@component('papiforms::mail.html.header', ['url' => config('app.url')])
-{{ config('app.name') }}
+@component('papiforms::mail.html.header', ['url' => 'https://www.dcplibrary.org'])
 @endcomponent
 @endslot
 
@@ -21,7 +20,15 @@
 {{-- Footer --}}
 @slot('footer')
 @component('papiforms::mail.html.footer')
-© {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.')
+<p>Daviess County Public Library, 2020 Frederica Street, Owensboro, KY  42301</p>
+<span><a href="https://www.dcplibrary.org">www.dcplibrary.org</a></span>
+<span><a href="sms://+12702791526">Text us: (270) 279-1526</a></span>
+<br/>
+<span><a href="tel:1-270-684-0211">(270) 684-0211</a></span>
+<span><a href="https://v2.libanswers.com/widget_chat.php?hash=8dc452e387b604c224f914bdf1a4a8f4" target="new">Chat with us</a></span>
+<br/>
+<span><a href="mailto:help@dcplibrary.org">help@dcplibrary.org</a></span>
+<span>&nbsp;</span>
 @endcomponent
 @endslot
 @endcomponent
