@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/blashbrook/papiforms/compare/v1.19.1...v1.19.2) (2021-02-28)
+
+
+### Bug Fixes
+
+* **teenpassregistrationform:** remove successMessage from resetForm function so that success modal will appear ([06d2638](https://github.com/blashbrook/papiforms/commit/06d2638d2bad733eefc18c02247e9c73b1de0f32))
+
 ## [1.19.1](https://github.com/blashbrook/papiforms/compare/v1.19.0...v1.19.1) (2021-02-28)
 
 
