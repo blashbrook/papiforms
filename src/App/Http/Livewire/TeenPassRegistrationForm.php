@@ -178,6 +178,7 @@ class TeenPassRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         $this->requestCompleted = true;
         if ($body['ErrorMessage'] == '') {
+            $this->successMessage = true;
             $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
             $this->modalMessage =
                 'You will receive an email from no-reply@dcplibrary.org with more information.
