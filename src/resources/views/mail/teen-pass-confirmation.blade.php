@@ -1,4 +1,5 @@
 @component('papiforms::mail.html.message')
+<center><a href="https://www.dcplibrary.org"><img src="https://app.dcplibrary.org/storage/images/logo.png" height="131px" width="184px" alt="Daviess County Public Library"></a></center>
 {{--# Introduction--}}
 
 <h4>Welcome {{ $confirmation['first_name'] }}!</h4>
@@ -18,7 +19,7 @@
 
 <h4>Getting Started</h4>
 
-<p>Your Daviess County Public Library card gives you to access thousands of books, movies, and music at the library or online.  For more informaton about borrowing and other library services, <a href="https://www.dcplibrary.org/wp-content/uploads/2020/02/DCPL_Cardholder_Information.pdf">download the new cardholder brochure [PDF]</a>.</p>
+<p>Your Daviess County Public Library card gives you to access thousands of books, movies, and music at the library or online.  For more informaton about borrowing and other library services, download the brochure for <a href="https://www.dcplibrary.org/wp-content/uploads/2020/02/DCPL_Cardholder_Information.pdf">New Cardholders [PDF]</a>.</p>
 
 @component('papiforms::mail.html.button', ['url' => 'https://dcpl.bibliocommons.com', 'color' => 'success'])
     ACCESS THE CATALOG
@@ -29,9 +30,9 @@
     ACCESS ONLINE RESOURCES
 @endcomponent
 
-<p><a href="http://www.libraryaware.com/2528/Subscribers/Subscribe">Sign up for newsletters</a> for information on new or recommended reads and upcoming events, delivered straight to your inbox.</p>
-<p><a href="http://dcplibrary.evanced.info/signup">Visit the events calendar</a> to find out what's going on at library.</p>
-<p><a href="https://www.dcplibrary.org">Visit our website at https://www.dcplibrary.org</a> to learn more, and find us on social media @dcplibrary</p>
+<p>Sign up for <a href="http://www.libraryaware.com/2528/Subscribers/Subscribe">Newsletters</a> with information on new or recommended reads and upcoming events, delivered straight to your inbox.</p>
+<p>View the <a href="http://dcplibrary.evanced.info/signup">Events Calendar</a> to find out what's going on at library.</p>
+<p>Visit our website at <a href="https://www.dcplibrary.org">https://www.dcplibrary.org</a> to learn more, and find us on social media @dcplibrary</p>
 
 <h4>Important Information about Notifications</h4>
 
@@ -40,11 +41,11 @@
 @case('8')
 <p>You have chosen to receive text message notifications.
 Please add the number <strong>+18663711276</strong> to your phone's trusted contacts.
-<a href="https://www.dcplibrary.org/wp-content/uploads/2021/02/DCPL_texting_instructions_printable.pdf">Download the instructional bookmark [PDF]</a> to learn how to manage your account using Shoutbomb, the library's text messaging service.</p>.
+Download the <a href="https://www.dcplibrary.org/wp-content/uploads/2021/02/DCPL_texting_instructions_printable.pdf">Instructional Bookmark [PDF]</a> or text the keyword HELP to learn how to manage your account using Shoutbomb, the library's text messaging service.</p><p>Please allow up to 3 days for your texting notification account to be processed.</p>.
 @break('8')
 
 @case('3')
-<p>You have chosen to receive phone notifications. Please add the number <strong>+12706849100</strong> to your phone's trusted contacts.</p><p>You may also call this number anytime to management your account.</p>
+<p>You have chosen to receive phone notifications. Please add the number <strong>+12706849100</strong> to your phone's trusted contacts.</p><p>You may call this number anytime to manage your account.</p><p>Please allow up to 3 days for your phone notification account to be processed.</p>.
 @break('3')
 
 @case('2')
@@ -55,7 +56,7 @@ Please add the number <strong>+18663711276</strong> to your phone's trusted cont
 <p>You have chosen to receive mail notifications.  Please allow 2-3 business days to receive notifications about your account.</p>
 @endswitch
 
-<p>You will be notified when your items are due or on hold. The library is not responsible for missed notifications, so please make sure your notification preferences are up-to-date.  To change your notifications, contact or visit the library.</p>
+<p>You will be notified when your items are due or on hold. The library is not responsible for missed notifications, so please make sure your mailing address, phone number, and email address are up-to-date.  Please visit or contact the library to change your notification information.</p>
 
 <h4>Thank you for joining the Daviess County Public Library!</h4>
 
