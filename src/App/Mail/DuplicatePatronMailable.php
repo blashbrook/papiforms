@@ -6,7 +6,6 @@ use Illuminate\Mail\Mailable;
 
 class DuplicatePatronMailable extends Mailable
 {
-
     public $confirmation;
     public $theme = 'papiforms::mail.html.themes.default';
 
@@ -22,5 +21,3 @@ class DuplicatePatronMailable extends Mailable
             ->markdown('papiforms::mail.duplicate-patron');
     }
 }
-
-

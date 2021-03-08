@@ -180,7 +180,7 @@ class TeenPassRegistrationForm extends Component
             $this->resetForm();
         } else {
             $this->errorMessage = true;
-            if($body['ErrorMessage'] == 'Duplicate patron name is specified') {
+            if ($body['ErrorMessage'] == 'Duplicate patron name is specified') {
                 $this->modalTitle = 'Duplicate account detected';
                 $this->modalMessage = 'You may already have a library account.
                                 Your application has been forwarded to a library
