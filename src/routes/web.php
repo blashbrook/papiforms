@@ -1,6 +1,8 @@
 <?php
 
 use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
+use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +29,19 @@ Route::group(['middleware' => ['web']], function () {
         return view('papiforms::patron');
     });
     Route::get('/teenpassemail', function () {
-        return new \Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable([
+        return new TeenPassConfirmationMailable([
+            'first_name'=>'Brian',
+            'Barcode'=>'4444444444',
+            'EmailAddress'=>'blashbrook@dcplibrary.org',
+            'logo'=>'assets/dcpl_logo_banner.png',
+            'NameFirst' => 'John',
+            'NameMiddle' => 'Queue',
+            'NameLast' => 'Public',
+            'DeliveryOptionID' => '3',
+        ]);
+    });
+    Route::get('/duplicate', function () {
+        return new DuplicatePatronMailable([
             'first_name'=>'Brian',
             'Barcode'=>'4444444444',
             'EmailAddress'=>'blashbrook@dcplibrary.org',

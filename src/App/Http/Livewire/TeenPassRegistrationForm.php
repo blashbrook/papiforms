@@ -3,6 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
@@ -132,19 +133,6 @@ class TeenPassRegistrationForm extends Component
         $this->resetForm();
     }
 
-    public function setErrorMessage($response)
-    {
-        switch ($response) {
-            case 'Duplicate patron name is specified':
-                return 'You may already have a library account.
-                        Please contact the library for more information.';
-                break;
-            default:
-                return $response;
-                break;
-        }
-    }
-
     public function submitForm()
     {
         //$this->successMessage = '';
@@ -192,9 +180,18 @@ class TeenPassRegistrationForm extends Component
             $this->resetForm();
         } else {
             $this->errorMessage = true;
-            $this->modalTitle = 'There was an error with your application!';
-            $this->modalMessage = $this->setErrorMessage($body['ErrorMessage']);
-            //$this->modalMessage = 'We could not process your application "'.$body['ErrorMessage'].'". Please try again or contact us.';
+            if($body['ErrorMessage'] == 'Duplicate patron name is specified') {
+                $this->modalTitle = 'Duplicate account detected';
+                $this->modalMessage = 'You may already have a library account.
+                                Your application has been forwarded to a library
+                                representative for review.  You will be contacted shortly
+                                with more information.';
+                Mail::to('blashbrook@dcplibrary.org')->send(new DuplicatePatronMailable($json));
+            } else {
+                $this->modalTitle = 'There was an error with your application!';
+                $this->modalMessage = $body['ErrorMessage'];
+                $this->modalMessage .= 'Please try again later, or contact the library.';
+            }
             $this->modalOK = 'closeErrorMessage';
         }
     }
