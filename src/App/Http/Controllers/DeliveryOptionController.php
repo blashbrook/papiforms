@@ -41,6 +41,19 @@ class DeliveryOptionController extends Controller
 
         return $deliveryOptions;
     }
+   public function getSelection($deliveryOptionID)
+   {
+       //
+/*       $deliveryOptionDesc = $this->createSelection();
+       //$deliveryOptionDesc = $deliveryOptions->firstWhere('DeliveryOptionID', '3');
+       foreach ($deliveryOptionDesc as $value) {
+           if ($value->DeliveryOptionID === $deliveryOptionID) {
+               return $value->DeliveryOption;
+           }
+       }*/
+       $selected = DeliveryOption::get()->where('DeliveryOptionID', $deliveryOptionID)->flatten();
+       return $selected[0]['DeliveryOption'];
+   }
 
     /**
      * Show the form for creating a new resource.

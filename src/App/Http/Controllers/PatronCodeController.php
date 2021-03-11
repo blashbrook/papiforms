@@ -17,6 +17,11 @@ class PatronCodeController extends Controller
         return $patronCodeArray[0];
     }
 
+    public function getSelection($patronCodeID)
+    {
+        $selected = PatronCode::get()->where('PatronCodeID', $patronCodeID)->flatten();
+        return $selected[0]['Description'];
+    }
     /**
      * Display a listing of the resource.
      *

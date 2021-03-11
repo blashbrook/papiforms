@@ -5,6 +5,7 @@ namespace Blashbrook\PAPIForms\App\Http\Livewire;
 use Blashbrook\PAPIClient\Facades\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
+use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
@@ -180,12 +181,18 @@ class TeenPassRegistrationForm extends Component
             $this->resetForm();
         } else {
             $this->errorMessage = true;
-            if($body['ErrorMessage'] == 'Duplicate patron name is specified') {
+            if ($body['ErrorMessage'] == 'Duplicate patron name is specified') {
                 $this->modalTitle = 'Duplicate account detected';
                 $this->modalMessage = 'You may already have a library account.
                                 Your application has been forwarded to a library
                                 representative for review.  You will be contacted shortly
                                 with more information.';
+                $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
+                if($this->Phone1CarrierID !== '')
+                {
+                    $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
+                }
+                $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
                 Mail::to('blashbrook@dcplibrary.org')->send(new DuplicatePatronMailable($json));
             } else {
                 $this->modalTitle = 'There was an error with your application!';

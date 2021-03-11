@@ -18,6 +18,13 @@ class MobilePhoneCarrierController extends Controller
         return MobilePhoneCarrier::all();
     }
 
+    public function getSelection($carrierID)
+    {
+        $selected = MobilePhoneCarrier::get()->where('CarrierID', $carrierID)->flatten();
+        return $selected[0]['CarrierName'];
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
