@@ -4,6 +4,7 @@ namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
+use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
@@ -17,6 +18,8 @@ use Livewire\Component;
 class TeenPassRegistrationForm extends Component
 {
     //public $success = false;
+
+    public $appRecipient = 'dcrowley@dcplibrary.org';
 
     public $postalCodes;
     public $selectedPostalCodeArray;
@@ -35,6 +38,7 @@ class TeenPassRegistrationForm extends Component
     public $modalBarcode = '';
     public $modalPIN = '';
     public $modalOK = '';
+    public bool $requestCompleted = false;
     public $successMessage = false;
     public $errorMessage = false;
     public $errorText = '';
@@ -165,7 +169,7 @@ class TeenPassRegistrationForm extends Component
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         $this->requestCompleted = true;
-        if ($body['ErrorMessage'] == '') {
+        if ($body['ErrorMessage'] === '') {
             $this->successMessage = true;
             $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
             $this->modalMessage =
@@ -176,7 +180,15 @@ class TeenPassRegistrationForm extends Component
             $this->modalPIN = $json['Password'];
             $json['Barcode'] = $body['Barcode'];
             $json['first_name'] = $this->NameFirst;
+            $json['appRecipient'] = $this->appRecipient;
+            $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
+            if ($this->Phone1CarrierID !== '') {
+                $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
+            }
+            $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
+
             Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
+            Mail::to($this->appRecipient)->send(new PatronApplicationMailable($json));
             $this->resetForm();
         } else {
             $this->errorMessage = true;
@@ -186,12 +198,7 @@ class TeenPassRegistrationForm extends Component
                                 Your application has been forwarded to a library
                                 representative for review.  You will be contacted shortly
                                 with more information.';
-                $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
-                if ($this->Phone1CarrierID !== '') {
-                    $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
-                }
-                $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
-                Mail::to('dcrowley@dcplibrary.org')->send(new DuplicatePatronMailable($json));
+                Mail::to($this->appRecipient)->send(new DuplicatePatronMailable($json));
             } else {
                 $this->modalTitle = 'There was an error with your application!';
                 $this->modalMessage = $body['ErrorMessage'];
