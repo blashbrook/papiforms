@@ -5,7 +5,6 @@ namespace Blashbrook\PAPIForms\App\Http\Livewire;
 use Blashbrook\PAPIClient\Facades\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
-use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
@@ -188,8 +187,7 @@ class TeenPassRegistrationForm extends Component
                                 representative for review.  You will be contacted shortly
                                 with more information.';
                 $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
-                if($this->Phone1CarrierID !== '')
-                {
+                if ($this->Phone1CarrierID !== '') {
                     $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
                 }
                 $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
