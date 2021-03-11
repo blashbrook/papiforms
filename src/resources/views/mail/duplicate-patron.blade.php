@@ -10,7 +10,7 @@
 <p>Birthdate: {{ $confirmation['Birthdate'] }}</p>
 <p>School: {{ $confirmation['User4'] }}</p>
 <p>Phone: {{ $confirmation['PhoneVoice1'] }}</p>
-<p>Mobile phone carrier: {{ $confirmation['mobilePhoneCarrierDesc'] }}</p>
+<p>Mobile phone carrier: {{ $confirmation['mobilePhoneCarrierDesc'] ?? '' }}</p>
 <p>Email: {{ $confirmation['EmailAddress'] }}</p>
 <p>Notification preference: {{ $confirmation['deliveryOptionDesc'] }}</p>
 <p>Patron code: {{ $confirmation['patronCodeDesc'] }}</p>
