@@ -16,7 +16,7 @@ class DuplicatePatronMailable extends Mailable
 
     public function build()
     {
-        return $this->to('blashbrook@dcplibrary.org')
+        return $this->to('dcrowley@dcplibrary.org')
             ->subject('Duplicate Patron Registration')
             ->markdown('papiforms::mail.duplicate-patron');
     }

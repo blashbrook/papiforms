@@ -191,7 +191,7 @@ class TeenPassRegistrationForm extends Component
                     $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
                 }
                 $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
-                Mail::to('blashbrook@dcplibrary.org')->send(new DuplicatePatronMailable($json));
+                Mail::to('dcrowley@dcplibrary.org')->send(new DuplicatePatronMailable($json));
             } else {
                 $this->modalTitle = 'There was an error with your application!';
                 $this->modalMessage = $body['ErrorMessage'];
