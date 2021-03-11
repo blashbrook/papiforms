@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/blashbrook/papiforms/compare/v1.19.2...v1.20.0) (2021-03-11)
+
+
+### Features
+
+* **duplicate-patron:** make duplicate-patron mail template readable ([7bf78c0](https://github.com/blashbrook/papiforms/commit/7bf78c093ec33f6a98e5a555d90fe13d35a12b2a))
+
 ## [1.19.2](https://github.com/blashbrook/papiforms/compare/v1.19.1...v1.19.2) (2021-02-28)
 
 
