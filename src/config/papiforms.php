@@ -1,10 +1,19 @@
 <?php
 
 return [
-    'patron_uploads' => [
-        'driver' => 'local',
-        'root' => storage_path('app/patron_uploads'),
-        'url' => env('APP_URL') . '/patron_uploads',
-        'visibility' => 'public',
-    ]
+
+    'disks' => [
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/uploads'),
+            'url' => env('APP_URL') . '/uploads',
+            'visibility' => 'public',
+        ],
+    ],
+
+    'links' => [
+        public_path('uploads') => storage_path('app/uploads'),
+
+    ],
+
 ];

@@ -8,10 +8,12 @@ use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
 use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\App\Http\Livewire\AdultRegistrationForm;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use Illuminate\Support\Facades\Config;
 
 class PAPIFormsServiceProvider extends ServiceProvider
 {
@@ -28,13 +30,19 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
+        Livewire::component('adult-registration-form', AdultRegistrationForm::class);
 
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
             $lastDate = Carbon::now()->subYears(13);
-
             return $birthDate > $firstDate && $birthDate < $lastDate;
+        });
+
+        Validator::extend('adult_birthdate', function ($attribute, $value, $parameters, $validator) {
+            $birthDate = Carbon::create($value);
+            $firstDate = Carbon::now()->subYears(18);
+            return $birthDate <= $firstDate;
         });
 
         // Publishing is only necessary when using the CLI.
@@ -70,6 +78,18 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->app->singleton('patron_code_controller', function ($app) {
             return new PatronCodeController();
         });
+
+        // Dynamically configure uploads disks and links
+        Config::set('filesystems.disks.uploads',
+        [
+                'driver' => 'local',
+                'root' => storage_path('app/uploads'),
+                'url' => env('APP_URL') . '/uploads',
+                'visibility' => 'public',
+        ]);
+        Config::set('filesystems.links',
+            [public_path('uploads') => storage_path('app/uploads')]
+        );
     }
 
     /**
