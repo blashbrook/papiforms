@@ -7,13 +7,13 @@ use Blashbrook\PAPIForms\App\Http\Controllers\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
-use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\AdultRegistrationForm;
+use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Illuminate\Support\Facades\Config;
 
 class PAPIFormsServiceProvider extends ServiceProvider
 {
@@ -36,12 +36,14 @@ class PAPIFormsServiceProvider extends ServiceProvider
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
             $lastDate = Carbon::now()->subYears(13);
+
             return $birthDate > $firstDate && $birthDate < $lastDate;
         });
 
         Validator::extend('adult_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
+
             return $birthDate <= $firstDate;
         });
 
@@ -82,10 +84,10 @@ class PAPIFormsServiceProvider extends ServiceProvider
         // Dynamically configure uploads disks and links
         Config::set('filesystems.disks.uploads',
         [
-                'driver' => 'local',
-                'root' => storage_path('app/uploads'),
-                'url' => env('APP_URL') . '/uploads',
-                'visibility' => 'public',
+            'driver' => 'local',
+            'root' => storage_path('app/uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
         ]);
         Config::set('filesystems.links',
             [public_path('uploads') => storage_path('app/uploads')]

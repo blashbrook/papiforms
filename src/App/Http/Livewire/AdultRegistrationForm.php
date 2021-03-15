@@ -3,9 +3,9 @@
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
@@ -94,7 +94,7 @@ class AdultRegistrationForm extends Component
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
-        'newUpload'         => 'image'
+        'newUpload'         => 'image',
     ];
 
     public function messages()

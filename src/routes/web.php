@@ -1,7 +1,7 @@
 <?php
 
-use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\App\Http\Livewire\AdultRegistrationForm;
+use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Illuminate\Support\Facades\Route;
