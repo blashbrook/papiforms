@@ -210,7 +210,7 @@
                     <x-papiforms::input.text wire:model="User2" id="User2" name="User2" placeholder="License or ID #" value="{{ old('User2') }}"/>
                 </x-papiforms::input.group>
             <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
-                <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative mb-3">
                     @if($newUpload)
                         <img src="{{ $newUpload->temporaryUrl() }}" alt="Photo ID preview">
                     @else
@@ -218,8 +218,8 @@
                         <p>Upload a picture of your driver's license or photo ID.</p>
                         <p>The address on the ID must match the address on this application.</p>
                     </span>
-            <span class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                    <svg wire:loading wire:target="newUpload" class="w-5 h-5 mr-3 -ml-1 text-gray-500 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+            <span class="text-gray-400 inline-flex items-center leading-none text-md mx-5">
+                    <svg wire:loading wire:target="newUpload" class="w-10 h-10 text-gray-500 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor"
