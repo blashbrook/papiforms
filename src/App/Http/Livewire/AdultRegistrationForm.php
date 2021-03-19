@@ -94,7 +94,7 @@ class AdultRegistrationForm extends Component
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
-        'newUpload'         => 'image',
+
     ];
 
     public function messages()
@@ -148,7 +148,7 @@ class AdultRegistrationForm extends Component
 
     public function updatedNewUpload()
     {
-        $this->validate(['newUpload' => 'mimes:jpg,png,bmp,JPG,PNG,BMP,jpeg,JPEG']);
+        $this->validate(['newUpload' => 'mimes:jpg,png']);
     }
 
     public function submitForm()
