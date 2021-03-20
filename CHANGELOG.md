@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-19)
+
+
+### Features
+
+* **adult-registration-form:** add image preview ([af36ea1](https://github.com/blashbrook/papiforms/commit/af36ea1c371d91a06d28604e812913c46bdc4509))
+
 # [1.21.0](https://github.com/blashbrook/papiforms/compare/v1.20.0...v1.21.0) (2021-03-15)
 
 
