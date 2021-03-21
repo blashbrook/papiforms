@@ -128,9 +128,9 @@
                     <x-papiforms::input.text wire:model="User2" id="User2" name="User2" placeholder="License or ID #" value="{{ old('User2') }}"/>
                 </x-papiforms::input.group>
 
-                 <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
+                 <x-papiforms::input.group label="Upload an image of your Driver's License or other government-issued photo ID." for="newUpload" srOnly="not-sr-only">
 
-                <x-papiforms::input.filepond wire:model="newUpload" name="newUpload" />
+                <x-papiforms::input.filepond wire:model="newUpload" name="newUpload" id="newUpload"/>
 
                 </x-papiforms::input.group>
 
