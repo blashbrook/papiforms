@@ -5,113 +5,31 @@
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
             <div class="max-w-lg mx-auto">
-                {{-- <img src="{{ asset('storage/images/logo_banner_small.png') }}" /> --}}
-                <x-papiforms::assets.logo-banner-md />
-                <h2 class="text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-                    Adult Card Application
-                </h2>
+                <x-papiforms::assets.two-thirds-header>
+                        Adult Card Application
+                </x-papiforms::assets.two-thirds-header>
                 <p class="mt-3 leading-6 text-gray-500">
-                    Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
-                    A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
-                    Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
+                    To apply online, you must be a Daviess County resident aged 18 years or older,
+                    and your address must match the address on your driver's license or photo ID. </p>
+                <p class="mt-3 leading-6 text-gray-500">
+                    Adult non-residents must apply for a card at the library.<br/>
+                    <a href="https://www.dcplibrary.org/get-a-library-card">
+                        To see what types of cards are available,
+                        visit https://www.dcplibrary.org/get-a-library-card</a>
                 </p>
-                <dl class="mt-8 text-base leading-6 text-gray-500">
-                    <div class="mt-6">
-                        <dt class="sr-only">Address</dt>
-                        <dd class="flex">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span class="ml-3">
-                                <a href="https://g.page/dcplibrary?share" target="new"><p>Daviess County Public Library</p>
-                                <p>2020 Frederica Street</p>
-                                <p>Owensboro, KY  42301</p></a>
-                            </span>
-                        </dd>
-                    </div>
-                    <div class="mt-3">
-                        <dt class="sr-only">Call</dt>
-                        <dd class="flex">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <span class="ml-3">
-                                <a href="tel:1-270-684-0211">+1 (270) 684-0211</a>
-                            </span>
-                        </dd>
-                    </div>
-                    <div class="mt-3">
-                        <dt class="sr-only">Email</dt>
-                        <dd class="flex">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span class="ml-3">
-                                <a href="mailto:help@dcplibrary.org">help@dcplibrary.org</a>
-                            </span>
-                        </dd>
-                    </div>
-                    <div class="mt-3">
-                        <dt class="sr-only">Text</dt>
-                        <dd class="flex">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                            </svg>
-                            <span class="ml-3">
-                                <a href="sms://+12702791526">+1 (270) 279-1526</a>
-                            </span>
-                        </dd>
-                    </div>
-                    <div class="mt-3">
-                        <dt class="sr-only">Chat</dt>
-                        <dd class="flex">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                            </svg>
-                            <span class="ml-3">
-                                <a href="https://v2.libanswers.com/widget_chat.php?hash=8dc452e387b604c224f914bdf1a4a8f4" target="new">Chat with us</a>
-                            </span>
-                        </dd>
-                    </div>
-                </dl>
-                {{--                <p class="mt-6 text-base leading-6 text-gray-500">
-                                    Looking for careers?
-                                    <a href="#" class="font-medium text-gray-700 underline">View all job openings</a>.
-                                </p>--}}
+
+                <x-papiforms::assets.two-thirds-contact />
             </div>
         </div>
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
+                <div>
                 @if ($successMessage)
                         <x-papiforms::modals.success title="{{ $modalTitle }}" barcode="{{ $modalBarcode }}" pin="{{ $modalPIN }}">
                             {{ $modalMessage }}
                         </x-papiforms::modals.success>
                 @endif
-                <div>
                 @if ($errorMessage)
-{{--                        <div class="flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2" >
-                            <!-- icons -->
-                            <button wire:click="$set('errorMessage', false)" type="button" class="text-red-500 rounded-full bg-white mr-3">
-                                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                                </svg>
-                            </button>
-                            <!-- message -->
-                            <div class="text-white max-w-xs ">
-                                {{ $errorText }}
-                            </div>
-                        </div>--}}
                         <x-papiforms::modals.error title="{{ $modalTitle }}" ok="{{ $modalOK }}">
                             {{ $modalMessage }}
                         </x-papiforms::modals.error>
@@ -211,18 +129,7 @@
                 </x-papiforms::input.group>
 
                  <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
-{{--
-                <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative mb-3">
-                    @if($newUpload)
-                        <img src="{{ $newUpload->temporaryUrl() }}" alt="Photo ID preview">
-                    @else
-                    <span class="tracking-widest text-md title-font font-medium text-gray-600 mb-1 p-10">
-                        <p>Upload a picture of your driver's license or photo ID.</p>
-                        <p>The address on the ID must match the address on this application.</p>
-                    </span>
 
-                        @endif
-                </div>--}}
                 <x-papiforms::input.filepond wire:model="newUpload" name="newUpload" />
 
                 </x-papiforms::input.group>
