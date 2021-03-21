@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/blashbrook/papiforms/compare/v1.23.0...v1.24.0) (2021-03-21)
+
+
+### Features
+
+* **header-contact:** abstract header and contact to components ([50a8293](https://github.com/blashbrook/papiforms/commit/50a8293fed21792433ac008fee6e7e98119b2706))
+
 # [1.23.0](https://github.com/blashbrook/papiforms/compare/v1.22.0...v1.23.0) (2021-03-21)
 
 
