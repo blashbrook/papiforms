@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/blashbrook/papiforms/compare/v1.22.0...v1.23.0) (2021-03-21)
+
+
+### Features
+
+* **adult-registration-form:** add uploading animation ([41bb5d2](https://github.com/blashbrook/papiforms/commit/41bb5d28d11d8ef5c2bfde6b543d0ec7814be17f))
+* **filepond:** add filepond for id upload ([f871797](https://github.com/blashbrook/papiforms/commit/f8717976d4ab7b990d974ade83bd8c51c7c18041))
+
 # [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-19)
 
 
