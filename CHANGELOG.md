@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/blashbrook/papiforms/compare/v1.24.0...v1.25.0) (2021-03-21)
+
+
+### Features
+
+* **adult-registration-form:** add label to newUpload ([50dd197](https://github.com/blashbrook/papiforms/commit/50dd197ec886480d18ae6159281f2fd6de4ec5b8))
+
 # [1.24.0](https://github.com/blashbrook/papiforms/compare/v1.23.0...v1.24.0) (2021-03-21)
 
 
