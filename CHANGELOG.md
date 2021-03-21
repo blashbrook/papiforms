@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/blashbrook/papiforms/compare/v1.25.0...v1.26.0) (2021-03-21)
+
+
+### Features
+
+* **routes:** direct base url to adult card application ([983fa1b](https://github.com/blashbrook/papiforms/commit/983fa1be47e1bee7a8cee694a58bbbe1e27c3b73))
+
 # [1.25.0](https://github.com/blashbrook/papiforms/compare/v1.24.0...v1.25.0) (2021-03-21)
 
 
