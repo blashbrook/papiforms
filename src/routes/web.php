@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', AdultRegistrationForm::class);
+
 Route::group(['middleware' => ['web']], function () {
     Route::get('/teenpass', TeenPassRegistrationForm::class);
     Route::get('/adult', AdultRegistrationForm::class);
