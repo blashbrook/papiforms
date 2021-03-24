@@ -3,9 +3,9 @@
 namespace Blashbrook\PAPIForms\App\Http\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
@@ -14,10 +14,13 @@ use Blashbrook\PAPIForms\Facades\UdfOptionController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
-class TeenPassRegistrationForm extends Component
+class AdultRegistrationForm extends Component
 {
     //public $success = false;
+
+    use WithFileUploads;
 
     public $appRecipient = 'dcrowley@dcplibrary.org';
 
@@ -32,6 +35,9 @@ class TeenPassRegistrationForm extends Component
     public $mobilePhoneCarriers;
 
     public $deliveryOptions;
+
+    public $newUpload;
+    public $newUploadFilename;
 
     public $modalTitle = '';
     public $modalMessage = '';
@@ -54,6 +60,7 @@ class TeenPassRegistrationForm extends Component
     public $NameLast = '';
     public $NameMiddle = '';
     public $User4 = '';
+    public $User2 = '';
     public $Birthdate = '';
     public $PhoneVoice1 = '';
     public $Phone1CarrierID = '';
@@ -76,16 +83,18 @@ class TeenPassRegistrationForm extends Component
         'NameFirst'         => 'required',
         'NameLast'          => 'required',
         'NameMiddle'        => 'required',
+        'User2'             => 'nullable',
         'User4'             => 'nullable',
-        'Birthdate'         => 'required|date_format:m/d/Y|bail|teenpass_birthdate',
+        'Birthdate'         => 'required|date_format:m/d/Y|bail|adult_birthdate',
         'PhoneVoice1'       => 'required|digits:10',
         'Phone1CarrierID'   => 'required_if:DeliveryOptionID,8',
-        'EmailAddress'      => 'required|email',
+        'EmailAddress'      => 'required|regex:/^.+@.+\\..+$/i',
         'Password'          => 'required|digits_between:4,6|confirmed',
         //'Password_confirmation'  => 'required',
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
+
     ];
 
     public function messages()
@@ -98,11 +107,11 @@ class TeenPassRegistrationForm extends Component
             'NameMiddle.required'               => 'Middle name is required.',
             'Birthdate.required'                => 'Birthdate is required.',
             'Birthdate.date_format'             => 'Birthdate must be in MM/DD/YYYY format.',
-            'Birthdate.teenpass_birthdate'      => 'Must be 13-17 years old to get a Teen Pass.',
+            'Birthdate.adult_birthdate'      => 'Must be 18 years or older to get an Adult Library Card.',
             'PhoneVoice1.required'              => 'Phone number is required',
             'PhoneVoice1.digits'                => 'Phone number must be 10 numbers only.',
             'EmailAddress.required'             => 'Email address is required.',
-            'EmailAddress.email'                => 'Email address is invalid.',
+            'EmailAddress.regex'                => 'Email address is invalid.',
             'Password.required'                 => 'Password must be 4-6 numbers.',
             'Password.digits_between'           => 'Password must be 4-6 numbers.',
             //'Password_confirmation.required'         => '',
@@ -137,6 +146,11 @@ class TeenPassRegistrationForm extends Component
         $this->resetForm();
     }
 
+    public function updatedNewUpload()
+    {
+        $this->validate(['newUpload' => 'mimes:jpg,png']);
+    }
+
     public function submitForm()
     {
         //$this->successMessage = '';
@@ -154,6 +168,7 @@ class TeenPassRegistrationForm extends Component
             'NameLast'          => Str::upper($this->NameLast),
             'NameMiddle'        => Str::upper($this->NameMiddle),
             'User4'             => $this->User4,
+            'User2'             => $this->User2,
             'Birthdate'         => $this->Birthdate,
             'PhoneVoice1'       => $this->PhoneVoice1,
             'Phone1CarrierID'   => $this->Phone1CarrierID,
@@ -169,12 +184,12 @@ class TeenPassRegistrationForm extends Component
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         $this->requestCompleted = true;
-        $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
-        if ($this->Phone1CarrierID !== '') {
-            $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
-        }
-        $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
+        $filename = $this->newUpload->store('/', 'uploads');
+        $json['newUploadURL'] = \Storage::disk('uploads')->url($filename);
         $json['appRecipient'] = $this->appRecipient;
+        $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
+        $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
+
         if ($body['ErrorMessage'] === '') {
             $this->successMessage = true;
             $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
@@ -186,8 +201,10 @@ class TeenPassRegistrationForm extends Component
             $this->modalPIN = $json['Password'];
             $json['Barcode'] = $body['Barcode'];
             $json['first_name'] = $this->NameFirst;
-
-            Mail::to($json['EmailAddress'])->send(new TeenPassConfirmationMailable($json));
+            if ($this->Phone1CarrierID !== '') {
+                $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
+            }
+            Mail::to($json['EmailAddress'])->send(new AdultConfirmationMailable($json));
             Mail::to($this->appRecipient)->send(new PatronApplicationMailable($json));
             $this->resetForm();
         } else {
@@ -221,7 +238,7 @@ class TeenPassRegistrationForm extends Component
         $this->NameFirst = '';
         $this->NameLast = '';
         $this->NameMiddle = '';
-        $this->User4 = '';
+        $this->User2 = '';
         $this->Birthdate = '';
         $this->PhoneVoice1 = '';
         $this->Phone1CarrierID = '';
@@ -239,9 +256,9 @@ class TeenPassRegistrationForm extends Component
         $this->mobilePhoneCarriers = MobilePhoneCarrierController::index();
         $this->udfOptions = UdfOptionController::createSelection();
         $this->deliveryOptions = DeliveryOptionController::createSelection();
-        $this->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
+        $this->PatronCode = PatronCodeController::getPatronCode('Adult');
 
-        return view('papiforms::livewire.teen-pass-registration-form')
+        return view('papiforms::livewire.adult-registration-form')
             ->layout('papiforms::layouts.app');
     }
 }
