@@ -175,6 +175,8 @@ class TeenPassRegistrationForm extends Component
         }
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
         $json['appRecipient'] = $this->appRecipient;
+        $json['User2'] = '';
+        $json['newUploadURL'] = '';
         if ($body['ErrorMessage'] === '') {
             $this->successMessage = true;
             $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
