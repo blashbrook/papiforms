@@ -396,7 +396,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.2/css/pikaday.css"
           integrity="sha512-xoQ+h19cVJGZcB5/rFb2H4n21Y9K3hiuBOZKEwdNXv1xb/nhlt6vhbaPH3sNvejkTWwWPpuXXfmbRI0Qs/RD8Q=="
           crossorigin="anonymous"/>
-    <!-- Hotjar Tracking Code for https://app.dcplibrary.org -->
+{{--    <!-- Hotjar Tracking Code for https://app.dcplibrary.org -->
     <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -406,7 +406,7 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    </script>--}}
 </head>
 <body class="antialiased bg-gray-200">
 
