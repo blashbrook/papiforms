@@ -1,3 +1,16 @@
+# [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* **teenpassregistrationform:** set deliveryOptionDesc before errorMessage ([d8acf98](https://github.com/blashbrook/papiforms/commit/d8acf98e7a21f999947fc45cbaa368c083312bf7))
+* **teenpassregistrationform:** set deliveryOptionDesc before errorMessage ([9e05d9a](https://github.com/blashbrook/papiforms/commit/9e05d9a19fff47539dbb69fdac5831dfeb1ceaf0))
+
+
+### Features
+
+* **adult-registration-form:** add image preview ([af36ea1](https://github.com/blashbrook/papiforms/commit/af36ea1c371d91a06d28604e812913c46bdc4509))
+
 # [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-23)
 
 
