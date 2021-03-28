@@ -1,3 +1,22 @@
+# [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-28)
+
+
+### Bug Fixes
+
+* **teenpassregistrationform:** set deliveryOptionDesc before errorMessage ([d8acf98](https://github.com/blashbrook/papiforms/commit/d8acf98e7a21f999947fc45cbaa368c083312bf7))
+* **teenpassregistrationform:** set deliveryOptionDesc before errorMessage ([9e05d9a](https://github.com/blashbrook/papiforms/commit/9e05d9a19fff47539dbb69fdac5831dfeb1ceaf0))
+* **teenpassregistrationform:** set User2 and newUploadURL to empty for duplicate patron email ([dcb6946](https://github.com/blashbrook/papiforms/commit/dcb6946d0c598f739f20018811ec27a2150599f2))
+
+
+### Features
+
+* **adult-registration-form:** add image preview ([af36ea1](https://github.com/blashbrook/papiforms/commit/af36ea1c371d91a06d28604e812913c46bdc4509))
+* **duplicate-patron:** force release update on packagist ([f3a4154](https://github.com/blashbrook/papiforms/commit/f3a41548e8597622fb36d33ae3675ec4a4271653))
+* **hotjar:** re-enable hotjar in layouts.app blade ([069dd84](https://github.com/blashbrook/papiforms/commit/069dd84e4f3db5e3881cfef28a6c151e2cc2f28f))
+* **layouts.app:** disable hotjar ([829fb69](https://github.com/blashbrook/papiforms/commit/829fb69876d715494724b154633c378027d9bf2f))
+* **s3:** change file uploads to s3 ([e903292](https://github.com/blashbrook/papiforms/commit/e9032925904bc131c5468877025e235c0bacbeed))
+* **s3:** modify .env and move uploads to s3 ([b9709c7](https://github.com/blashbrook/papiforms/commit/b9709c7ef72100291cd119ca089cac22449b9733))
+
 # [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-27)
 
 
