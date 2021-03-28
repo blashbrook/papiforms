@@ -17,7 +17,7 @@
 <p>Email: {{ $confirmation['EmailAddress'] }}</p>
 <p>Notification preference: {{ $confirmation['deliveryOptionDesc'] }}</p>
 <p>Patron code: {{ $confirmation['patronCodeDesc'] }}</p>
-{{--@if($confirmation['User2'])
+{{---@if($confirmation['User2'])
 <p>ID #: {{ $confirmation['User2'] }}</p>
 @endif
 @if($confirmation['newUploadURL'])
