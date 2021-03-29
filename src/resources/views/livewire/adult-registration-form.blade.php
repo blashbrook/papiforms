@@ -4,19 +4,11 @@
     </div>
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
-            <div class="max-w-lg mx-auto">
-                {{-- <img src="{{ asset('storage/images/logo_banner_small.png') }}" /> --}}
-                <x-papiforms::assets.logo-banner-md />
-                <h2 class="text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-                    Adult Card Application
-                </h2>
-                <p class="mt-3 leading-6 text-gray-500">
-                    Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
-                    A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
-                    Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
-                </p>
-            <x-papiforms::blocks.contact />
-            </div>
+            <x-papiforms::blocks.description title="Adult Card Application">
+                Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
+                A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
+                Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
+            </x-papiforms::blocks.description>
         </div>
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
