@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/blashbrook/papiforms/compare/v1.27.0...v1.28.0) (2021-03-29)
+
+
+### Features
+
+* **blocks:** extract application description, contact, and logo to components ([e269543](https://github.com/blashbrook/papiforms/commit/e2695438a75710b3430c6f07f7a254fd52bb5e8e))
+
 # [1.22.0](https://github.com/blashbrook/papiforms/compare/v1.21.0...v1.22.0) (2021-03-28)
 
 
