@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/blashbrook/papiforms/compare/v1.28.0...v1.29.0) (2021-03-30)
+
+
+### Features
+
+* **filepond:** add filepond file upload to s3 ([c2b9488](https://github.com/blashbrook/papiforms/commit/c2b948847a758aa2b02c54457eee4daf85afe509))
+
 # [1.28.0](https://github.com/blashbrook/papiforms/compare/v1.27.0...v1.28.0) (2021-03-29)
 
 
