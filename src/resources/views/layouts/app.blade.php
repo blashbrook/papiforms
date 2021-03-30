@@ -396,6 +396,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.2/css/pikaday.css"
           integrity="sha512-xoQ+h19cVJGZcB5/rFb2H4n21Y9K3hiuBOZKEwdNXv1xb/nhlt6vhbaPH3sNvejkTWwWPpuXXfmbRI0Qs/RD8Q=="
           crossorigin="anonymous"/>
+    <!-- Filepond -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
     <!-- Hotjar Tracking Code for https://app.dcplibrary.org -->
     <script>
         (function(h,o,t,j,a,r){
@@ -422,5 +425,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.2/pikaday.min.js"
         integrity="sha512-dkMzAitT+RFxzaHsyXAd1KtYpmuP/Jl6yOPYUu1s20dLfizq6cpbzDFNSAANb3IZbyhVhAbZxAyeqORpjkF3oQ=="
         crossorigin="anonymous"></script>
+<!-- Filepond -->
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script>
+    FilePond.registerPlugin(FilePondPluginFileValidateType);
+    FilePond.registerPlugin(FilePondPluginImagePreview);
+    const inputElement = document.querySelector('input[type="file"]');
+    const pond = FilePond.create( inputElement );
+</script>
 </body>
 </html>
