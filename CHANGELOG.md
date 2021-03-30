@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/blashbrook/papiforms/compare/v1.29.0...v1.29.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **uploads:** add metadata to app.blade.php to upgrade blocked livewire uploads from http to https ([35404cc](https://github.com/blashbrook/papiforms/commit/35404cc97e3d02d5c6321c2ef518d389dec5888c))
+
 # [1.29.0](https://github.com/blashbrook/papiforms/compare/v1.28.0...v1.29.0) (2021-03-30)
 
 
