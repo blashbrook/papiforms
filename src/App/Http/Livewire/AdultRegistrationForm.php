@@ -83,7 +83,7 @@ class AdultRegistrationForm extends Component
         'NameFirst'         => 'required',
         'NameLast'          => 'required',
         'NameMiddle'        => 'required',
-        'User2'             => 'nullable',
+        'User2'             => 'required',
         'User4'             => 'nullable',
         'Birthdate'         => 'required|date_format:m/d/Y|bail|adult_birthdate',
         'PhoneVoice1'       => 'required|digits:10',
@@ -94,6 +94,7 @@ class AdultRegistrationForm extends Component
         'DeliveryOptionID'  => 'required',
         'TxtPhoneNumber'    => 'nullable',
         'PatronCode'        => 'required',
+        'newUpload'         => 'required',
 
     ];
 
@@ -146,10 +147,10 @@ class AdultRegistrationForm extends Component
         $this->resetForm();
     }
 
-    public function updatedNewUpload()
+/*    public function updatedNewUpload()
     {
         $this->validate(['newUpload' => 'mimes:jpg,png']);
-    }
+    }*/
 
     public function submitForm()
     {
@@ -248,6 +249,8 @@ class AdultRegistrationForm extends Component
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';
+        $this->newUpload = '';
+        $this->newUploadFilename = '';
     }
 
     public function render()

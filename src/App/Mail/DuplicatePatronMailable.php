@@ -16,8 +16,13 @@ class DuplicatePatronMailable extends Mailable
 
     public function build()
     {
-        return $this->to('dcrowley@dcplibrary.org')
-            ->subject('Duplicate Patron Registration')
+        return $this->to($this->confirmation['appRecipient'])
+            ->cc('blashbrook@dcplibrary.org')
+            ->subject('DUPLICATE - ' .
+                $this->confirmation['NameLast'] . ', ' .
+                $this->confirmation['NameFirst'] . ' ' .
+                $this->confirmation['NameMiddle'] . ' - ' .
+                $this->confirmation['patronCodeDesc'])
             ->markdown('papiforms::mail.duplicate-patron');
     }
 }
