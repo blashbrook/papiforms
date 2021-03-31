@@ -147,10 +147,10 @@ class AdultRegistrationForm extends Component
         $this->resetForm();
     }
 
-/*    public function updatedNewUpload()
-    {
-        $this->validate(['newUpload' => 'mimes:jpg,png']);
-    }*/
+    /*    public function updatedNewUpload()
+        {
+            $this->validate(['newUpload' => 'mimes:jpg,png']);
+        }*/
 
     public function submitForm()
     {
