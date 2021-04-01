@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/blashbrook/papiforms/compare/v1.29.1...v1.30.0) (2021-04-01)
+
+
+### Features
+
+* **papiformsserviceprovider:** add uploads s3 disk dynamically ([3c025cf](https://github.com/blashbrook/papiforms/commit/3c025cf496e30fd382e73cf7b9130f25781e3e01))
+
 ## [1.29.1](https://github.com/blashbrook/papiforms/compare/v1.29.0...v1.29.1) (2021-03-30)
 
 
