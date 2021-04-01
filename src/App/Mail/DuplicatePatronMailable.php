@@ -18,10 +18,9 @@ class DuplicatePatronMailable extends Mailable
     {
         return $this->to($this->confirmation['appRecipient'])
             ->cc('blashbrook@dcplibrary.org')
-            ->subject('DUPLICATE - '.
-                $this->confirmation['NameLast'].', '.
+            ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
-                $this->confirmation['NameMiddle'].' - '.
+                $this->confirmation['NameMiddle'].' - DUPLICATE '.
                 $this->confirmation['patronCodeDesc'])
             ->markdown('papiforms::mail.duplicate-patron');
     }

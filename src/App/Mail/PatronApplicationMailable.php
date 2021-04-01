@@ -18,10 +18,9 @@ class PatronApplicationMailable extends Mailable
     {
         return $this->to($this->confirmation['appRecipient'])
             ->cc('blashbrook@dcplibrary.org')
-            ->subject('NEW - '.
-                $this->confirmation['NameLast'].', '.
+            ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
-                $this->confirmation['NameMiddle'].' - '.
+                $this->confirmation['NameMiddle'].' - NEW '.
                 $this->confirmation['patronCodeDesc'])
             ->markdown('papiforms::mail.patron-application');
     }
