@@ -47,8 +47,7 @@ class PatronCodeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,8 +58,7 @@ class PatronCodeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\PatronCode $patronCode
-     *
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
     public function show(PatronCode $patronCode)
@@ -71,8 +69,7 @@ class PatronCodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\PatronCode $patronCode
-     *
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
     public function edit(PatronCode $patronCode)
@@ -83,9 +80,8 @@ class PatronCodeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\PatronCode   $patronCode
-     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, PatronCode $patronCode)
@@ -96,8 +92,7 @@ class PatronCodeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\PatronCode $patronCode
-     *
+     * @param  \App\Models\PatronCode  $patronCode
      * @return \Illuminate\Http\Response
      */
     public function destroy(PatronCode $patronCode)
