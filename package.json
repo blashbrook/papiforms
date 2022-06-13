@@ -40,7 +40,7 @@
         "package-lock.json"
     ],
     "dependencies": {
-        "marked": "^4.0.16",
+        "marked": "^4.0.17",
         "npm": "^8.11.0"
     }
 }
