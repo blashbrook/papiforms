@@ -12,14 +12,13 @@
     "homepage": "https://github.com/blashbrook/papiforms",
     "keywords": ["Laravel", "PAPIForms"],
     "require": {
-        "illuminate/support": "~7|~8",
-        "livewire/livewire": "^2.3",
-        "blashbrook/papiclient": "dev-master",
-        "league/flysystem-aws-s3-v3": "^1.0.0"
+        "livewire/livewire": "~2",
+        "blashbrook/papiclient": "dev-main",
+        "league/flysystem-aws-s3-v3": "~3"
     },
     "require-dev": {
-        "phpunit/phpunit": "~8.0",
-        "orchestra/testbench": "~5|~6"
+        "phpunit/phpunit": "~9",
+        "orchestra/testbench": "~6"
     },
     "autoload": {
         "psr-4": {
@@ -28,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Blashbrook\\PAPIForms\\Tests\\": "tests"
+            "Blashbrook\\PAPIForms\\Tests\\": "Tests"
         }
     },
     "extra": {
