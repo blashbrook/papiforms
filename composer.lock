@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25f1920f3be707cfab8af74a4d8a00bf",
+    "content-hash": "b38aa67c04c150e5a8741e2b678a60b2",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -152,16 +152,16 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "9487cf204d48115142b4161c6067dc89974bfff1"
+                "reference": "f428c355990d32f57f4047bbed5a1feefe6730f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/9487cf204d48115142b4161c6067dc89974bfff1",
-                "reference": "9487cf204d48115142b4161c6067dc89974bfff1",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/f428c355990d32f57f4047bbed5a1feefe6730f6",
+                "reference": "f428c355990d32f57f4047bbed5a1feefe6730f6",
                 "shasum": ""
             },
             "require-dev": {
@@ -204,9 +204,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/v1.0.7"
+                "source": "https://github.com/blashbrook/papiclient/tree/v1.0.8"
             },
-            "time": "2022-12-29T02:50:11+00:00"
+            "time": "2022-12-31T07:10:35+00:00"
         },
         {
             "name": "brick/math",

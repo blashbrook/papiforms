@@ -13,7 +13,7 @@
     "keywords": ["Laravel", "PAPIForms"],
     "require": {
         "livewire/livewire": "~2",
-        "blashbrook/papiclient": "^1.0.7",
+        "blashbrook/papiclient": "^v1.0.8",
         "league/flysystem-aws-s3-v3": "^3.10"
     },
     "require-dev": {
