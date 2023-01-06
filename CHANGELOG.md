@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/blashbrook/papiforms/compare/v1.30.3...v1.31.0) (2023-01-06)
+
+
+### Features
+
+* **teen-pass-registration-form:** change password label to pin ([1546d88](https://github.com/blashbrook/papiforms/commit/1546d88ccd4a1000b2c8a721b618849a393e84e6))
+
 # [1.30.0](https://github.com/blashbrook/papiforms/compare/v1.29.1...v1.30.0) (2021-04-01)
 
 
