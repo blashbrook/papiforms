@@ -118,14 +118,14 @@
                             <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
-            <x-papiforms::input.section section="Password">
+            <x-papiforms::input.section section="PIN">
 
             <x-papiforms::input.group label="Password" for="Password">
-                            <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Password" value="{{ old('Password') }}"/>
+                            <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Create PIN (4-6 digit number)" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
 
-                        <x-papiforms::input.group label="Confirm password" for="Password_confirmation">
-                            <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm password" value="{{ old('Password_confirmation') }}"/>
+                        <x-papiforms::input.group label="Confirm PIN" for="Password_confirmation">
+                            <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />
