@@ -1,3 +1,12 @@
+## [1.34.1](https://github.com/blashbrook/papiforms/compare/v1.34.0...v1.34.1) (2023-01-09)
+
+
+### Reverts
+
+* Revert "feat(PostalCodeSeeder.php): add curdsville postal code" ([9bbc960](https://github.com/blashbrook/papiforms/commit/9bbc9606ee70ee1d91f787c003a1f9dca6f66210))
+* Revert "feat(composer.lock): add curdsville address" ([054a7b7](https://github.com/blashbrook/papiforms/commit/054a7b7488bdf0c33d299509b7f63e8b71a9831b))
+* Revert "chore(release): 1.34.0 [skip ci]" ([9258b17](https://github.com/blashbrook/papiforms/commit/9258b179e94c0957a950f5090efa47a608cc3a1b))
+
 # [1.32.0](https://github.com/blashbrook/papiforms/compare/v1.31.0...v1.32.0) (2023-01-09)
 
 
