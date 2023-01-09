@@ -136,4 +136,3 @@ class PostalCodeSeeder extends Seeder
         ]);
     }
 }
-
