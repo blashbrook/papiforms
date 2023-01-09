@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/blashbrook/papiforms/compare/v1.34.2...v1.35.0) (2023-01-09)
+
+
+### Features
+
+* **PostalCodeSeeder:** add curdsville postal code ([e80ad07](https://github.com/blashbrook/papiforms/commit/e80ad07cf84cb1fca74b3e3518a0a896c07989a0))
+
 ## [1.34.2](https://github.com/blashbrook/papiforms/compare/v1.34.1...v1.34.2) (2023-01-09)
 
 
