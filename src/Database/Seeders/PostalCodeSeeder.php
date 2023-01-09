@@ -126,5 +126,13 @@ class PostalCodeSeeder extends Seeder
             'CountryID'   => 1,
             'County'      => 'DAVIESS',
         ]);
+        PostalCode::create([
+            'PostalCodeID'=> 56680,
+            'PostalCode'  => '42334',
+            'City'        => 'CURDSVILLE',
+            'State'       => 'KY',
+            'CountryID'   => 1,
+            'County'      => 'DAVIESS',
+        ]);
     }
 }
