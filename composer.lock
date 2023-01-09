@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b38aa67c04c150e5a8741e2b678a60b2",
+    "content-hash": "cf5e9ccf3dfdc79132ddf2a2b61c1e4c",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.255.10",
+            "version": "3.255.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5d598491cc62da506082aec8661475d40af24b16"
+                "reference": "e851af4d7d2d95b131db344430384ae7cc04758e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5d598491cc62da506082aec8661475d40af24b16",
-                "reference": "5d598491cc62da506082aec8661475d40af24b16",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e851af4d7d2d95b131db344430384ae7cc04758e",
+                "reference": "e851af4d7d2d95b131db344430384ae7cc04758e",
                 "shasum": ""
             },
             "require": {
@@ -146,22 +146,22 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.255.10"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.255.11"
             },
-            "time": "2023-01-05T19:20:51+00:00"
+            "time": "2023-01-06T19:22:07+00:00"
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v1.0.8",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "f428c355990d32f57f4047bbed5a1feefe6730f6"
+                "reference": "f693cd3a18807d05e22d44c307de01a9de4caab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/f428c355990d32f57f4047bbed5a1feefe6730f6",
-                "reference": "f428c355990d32f57f4047bbed5a1feefe6730f6",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/f693cd3a18807d05e22d44c307de01a9de4caab1",
+                "reference": "f693cd3a18807d05e22d44c307de01a9de4caab1",
                 "shasum": ""
             },
             "require-dev": {
@@ -204,9 +204,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/v1.0.8"
+                "source": "https://github.com/blashbrook/papiclient/tree/v1.1.1"
             },
-            "time": "2022-12-31T07:10:35+00:00"
+            "time": "2023-01-06T21:17:30+00:00"
         },
         {
             "name": "brick/math",
