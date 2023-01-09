@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/blashbrook/papiforms/compare/v1.33.0...v1.34.0) (2023-01-09)
+
+
+### Features
+
+* **composer.lock:** add curdsville address ([44fba3e](https://github.com/blashbrook/papiforms/commit/44fba3ea5d95766590c92b0ce99194c6d8dabfd6))
+
 # [1.33.0](https://github.com/blashbrook/papiforms/compare/v1.32.0...v1.33.0) (2023-01-09)
 
 
