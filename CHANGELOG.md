@@ -1,3 +1,10 @@
+## [1.34.2](https://github.com/blashbrook/papiforms/compare/v1.34.1...v1.34.2) (2023-01-09)
+
+
+### Reverts
+
+* Revert "Update PostalCodeSeeder.php" ([1e88c50](https://github.com/blashbrook/papiforms/commit/1e88c50bf6e6db70765485e59708f0bfc09e69aa))
+
 ## [1.34.1](https://github.com/blashbrook/papiforms/compare/v1.34.0...v1.34.1) (2023-01-09)
 
 
