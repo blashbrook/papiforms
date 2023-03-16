@@ -35,7 +35,6 @@ class DeliveryOptionController extends Controller
                 case 'TXT Messaging':
                     $deliveryOption->DeliveryOption = 'Text message';
                     break;
-
             }
         }
 
