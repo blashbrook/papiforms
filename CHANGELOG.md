@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/blashbrook/papiforms/compare/v1.35.0...v1.36.0) (2023-03-29)
+
+
+### Features
+
+* **update:** update composer and nodejs packages ([50a9aa6](https://github.com/blashbrook/papiforms/commit/50a9aa6665affdaffb1b19752c181af25f3dab92))
+
 # [1.35.0](https://github.com/blashbrook/papiforms/compare/v1.34.2...v1.35.0) (2023-01-09)
 
 
