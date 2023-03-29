@@ -125,9 +125,9 @@ class PAPIFormsServiceProvider extends ServiceProvider
         ], 'papiforms.views');
 
         // Publishing assets.
-       /* $this->publishes([
-            __DIR__.'/resources/assets' => public_path('vendor/blashbrook'),
-        ], 'papiforms.views');*/
+        /* $this->publishes([
+             __DIR__.'/resources/assets' => public_path('vendor/blashbrook'),
+         ], 'papiforms.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
