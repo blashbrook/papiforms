@@ -32,10 +32,10 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::get('/teenpassemail', function () {
         return new TeenPassConfirmationMailable([
-            'first_name'=>'Brian',
-            'Barcode'=>'4444444444',
-            'EmailAddress'=>'blashbrook@dcplibrary.org',
-            'logo'=>'assets/dcpl_logo_banner.png',
+            'first_name' => 'Brian',
+            'Barcode' => '4444444444',
+            'EmailAddress' => 'blashbrook@dcplibrary.org',
+            'logo' => 'assets/dcpl_logo_banner.png',
             'NameFirst' => 'John',
             'NameMiddle' => 'Queue',
             'NameLast' => 'Public',
@@ -44,10 +44,10 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::get('/duplicate', function () {
         return new DuplicatePatronMailable([
-            'first_name'=>'Brian',
-            'Barcode'=>'4444444444',
-            'EmailAddress'=>'blashbrook@dcplibrary.org',
-            'logo'=>'assets/dcpl_logo_banner.png',
+            'first_name' => 'Brian',
+            'Barcode' => '4444444444',
+            'EmailAddress' => 'blashbrook@dcplibrary.org',
+            'logo' => 'assets/dcpl_logo_banner.png',
             'NameFirst' => 'John',
             'NameMiddle' => 'Queue',
             'NameLast' => 'Public',
