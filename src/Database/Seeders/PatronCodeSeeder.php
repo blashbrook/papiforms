@@ -16,83 +16,83 @@ class PatronCodeSeeder extends Seeder
     {
         PatronCode::create([
             'PatronCodeID' => 1,
-            'Description'  => 'Adult Courtesy',
+            'Description' => 'Adult Courtesy',
         ]);
         PatronCode::create([
             'PatronCodeID' => 2,
-            'Description'  => 'Adult Paid',
+            'Description' => 'Adult Paid',
         ]);
         PatronCode::create([
             'PatronCodeID' => 3,
-            'Description'  => 'Adult',
+            'Description' => 'Adult',
         ]);
         PatronCode::create([
             'PatronCodeID' => 4,
-            'Description'  => 'Bulk Loan Institutions',
+            'Description' => 'Bulk Loan Institutions',
         ]);
         PatronCode::create([
             'PatronCodeID' => 5,
-            'Description'  => 'Business Use Only',
+            'Description' => 'Business Use Only',
         ]);
         PatronCode::create([
             'PatronCodeID' => 7,
-            'Description'  => 'Homebound',
+            'Description' => 'Homebound',
         ]);
         PatronCode::create([
             'PatronCodeID' => 8,
-            'Description'  => 'ILL',
+            'Description' => 'ILL',
         ]);
         PatronCode::create([
             'PatronCodeID' => 9,
-            'Description'  => 'Juvenile Courtesy',
+            'Description' => 'Juvenile Courtesy',
         ]);
         PatronCode::create([
             'PatronCodeID' => 11,
-            'Description'  => 'Juvenile Paid',
+            'Description' => 'Juvenile Paid',
         ]);
         PatronCode::create([
             'PatronCodeID' => 13,
-            'Description'  => 'Juvenile',
+            'Description' => 'Juvenile',
         ]);
         PatronCode::create([
             'PatronCodeID' => 15,
-            'Description'  => 'Library Board',
+            'Description' => 'Library Board',
         ]);
         PatronCode::create([
             'PatronCodeID' => 16,
-            'Description'  => 'Outreach Institutions',
+            'Description' => 'Outreach Institutions',
         ]);
         PatronCode::create([
             'PatronCodeID' => 17,
-            'Description'  => 'Staff',
+            'Description' => 'Staff',
         ]);
         PatronCode::create([
             'PatronCodeID' => 18,
-            'Description'  => 'Teen Courtesy',
+            'Description' => 'Teen Courtesy',
         ]);
         PatronCode::create([
             'PatronCodeID' => 22,
-            'Description'  => 'Temp Internet User',
+            'Description' => 'Temp Internet User',
         ]);
         PatronCode::create([
             'PatronCodeID' => 23,
-            'Description'  => 'Teen Paid',
+            'Description' => 'Teen Paid',
         ]);
         PatronCode::create([
             'PatronCodeID' => 27,
-            'Description'  => 'Teen',
+            'Description' => 'Teen',
         ]);
         PatronCode::create([
             'PatronCodeID' => 31,
-            'Description'  => 'eCard',
+            'Description' => 'eCard',
         ]);
         PatronCode::create([
             'PatronCodeID' => 37,
-            'Description'  => 'Juvenile Expanded Movie',
+            'Description' => 'Juvenile Expanded Movie',
         ]);
         PatronCode::create([
             'PatronCodeID' => 38,
-            'Description'  => 'Teen Pass',
+            'Description' => 'Teen Pass',
         ]);
     }
 }
