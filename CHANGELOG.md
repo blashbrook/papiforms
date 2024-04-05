@@ -1,3 +1,10 @@
+## [1.37.1](https://github.com/blashbrook/papiforms/compare/v1.37.0...v1.37.1) (2024-04-05)
+
+
+### Bug Fixes
+
+* **composer:** update composer requirements ([90a4727](https://github.com/blashbrook/papiforms/commit/90a4727a79540b5e90c35230917d6df47411b66d))
+
 # [1.36.0](https://github.com/blashbrook/papiforms/compare/v1.35.0...v1.36.0) (2023-03-29)
 
 
