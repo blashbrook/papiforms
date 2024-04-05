@@ -1,3 +1,10 @@
+## [1.37.2](https://github.com/blashbrook/papiforms/compare/v1.37.1...v1.37.2) (2024-04-05)
+
+
+### Bug Fixes
+
+* **composer:** update papiclient to v1.3.4 ([76aacb0](https://github.com/blashbrook/papiforms/commit/76aacb0dfbb92afc13695dba677593fd7559aed7))
+
 ## [1.37.1](https://github.com/blashbrook/papiforms/compare/v1.37.0...v1.37.1) (2024-04-05)
 
 
