@@ -1,7 +1,7 @@
 {
     "name": "papiforms",
     "description": "Custom forms for Polaris ILS 6.5 API.",
-    "version": "1.37.4",
+    "version": "1.37.5",
     "private": true,
     "scripts": {
         "dev": "npm run development",

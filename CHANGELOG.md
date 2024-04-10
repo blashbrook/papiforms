@@ -1,3 +1,10 @@
+## [1.37.5](https://github.com/blashbrook/papiforms/compare/v1.37.4...v1.37.5) (2024-04-10)
+
+
+### Bug Fixes
+
+* **php.yml:** Update php version in composer github action ([fa32c4a](https://github.com/blashbrook/papiforms/commit/fa32c4a76675ed747ba5dd5a0a07eeef218f6548))
+
 ## [1.37.4](https://github.com/blashbrook/papiforms/compare/v1.37.3...v1.37.4) (2024-04-10)
 
 
