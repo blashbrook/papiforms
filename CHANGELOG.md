@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/blashbrook/papiforms/compare/v1.39.0...v1.39.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* **user1:** add parent/guardian name to email ([6b76da4](https://github.com/blashbrook/papiforms/commit/6b76da4984ab748d4ce49026957b563900717b00))
+
 # [1.39.0](https://github.com/blashbrook/papiforms/compare/v1.38.3...v1.39.0) (2024-04-10)
 
 
