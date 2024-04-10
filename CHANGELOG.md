@@ -1,3 +1,10 @@
+## [1.38.3](https://github.com/blashbrook/papiforms/compare/v1.38.2...v1.38.3) (2024-04-10)
+
+
+### Bug Fixes
+
+* **composer.lock:** update composer ([eded15c](https://github.com/blashbrook/papiforms/commit/eded15c73358413fbdbc228e83525511c1ecd1c9))
+
 ## [1.38.2](https://github.com/blashbrook/papiforms/compare/v1.38.1...v1.38.2) (2024-04-10)
 
 
