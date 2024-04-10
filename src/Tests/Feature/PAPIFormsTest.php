@@ -2,7 +2,6 @@
 
 namespace Feature;
 
-use Blashbrook\PAPIForms\PAPIForms;
 use Tests\TestCase;
 
 class PAPIFormsTest extends TestCase
