@@ -1,3 +1,10 @@
+## [1.38.1](https://github.com/blashbrook/papiforms/compare/v1.38.0...v1.38.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* **laravel.yml:** Delete .github/workflows/laravel.yml ([74fe33b](https://github.com/blashbrook/papiforms/commit/74fe33ba4469b8c4dd9913c11ba11290dd096ec1))
+
 # [1.38.0](https://github.com/blashbrook/papiforms/compare/v1.37.5...v1.38.0) (2024-04-10)
 
 
