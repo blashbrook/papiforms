@@ -1,47 +1,48 @@
 <div class="relative bg-white">
+
     <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
     </div>
+
+    {{-- Grid Layout --}}
     <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
+
+        {{-- Left Panel --}}
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
             <x-papiforms::blocks.description title="Teen Pass Application">
                 Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
-                A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
+                A Teen Pass cardholder may check out up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
                 Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
             </x-papiforms::blocks.description>
         </div>
+        {{-- End of Left Panel Content --}}
+
+        {{-- Right Panel --}}
         <div class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+
+            {{-- Right Panel Content --}}
             <div class="max-w-lg mx-auto lg:max-w-none">
+
+                {{-- Form Submission Success Message --}}
                 @if ($successMessage)
                         <x-papiforms::modals.success title="{{ $modalTitle }}" barcode="{{ $modalBarcode }}" pin="{{ $modalPIN }}">
                             {{ $modalMessage }}
                         </x-papiforms::modals.success>
                 @endif
-                <div>
+
+                {{-- Form Submission Error Message--}}
                 @if ($errorMessage)
-{{--                        <div class="flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2" >
-                            <!-- icons -->
-                            <button wire:click="$set('errorMessage', false)" type="button" class="text-red-500 rounded-full bg-white mr-3">
-                                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                                </svg>
-                            </button>
-                            <!-- message -->
-                            <div class="text-white max-w-xs ">
-                                {{ $errorText }}
-                            </div>
-                        </div>--}}
                         <x-papiforms::modals.error title="{{ $modalTitle }}" ok="{{ $modalOK }}">
                             {{ $modalMessage }}
                         </x-papiforms::modals.error>
                 @endif
-                </div>
+
+                {{-- Form --}}
                 <form  wire:submit.prevent="submitForm" class="grid grid-cols-1 row-gap-6">
                     @csrf
 
-                    <div>
-                        <x-papiforms::input.section section="Full name">
+                    {{-- Full Name Section --}}
+                    <x-papiforms::input.section section="Full name">
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                                 <x-papiforms::input.group label="First name" for="NameFirst">
@@ -57,48 +58,63 @@
                         <x-papiforms::input.group label="Last name" for="NameLast">
                             <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
                             </x-papiforms::input.group>
-                        </x-papiforms::input.section>
                             </div>
                         </div>
+                    </x-papiforms::input.section>
+
+                    {{-- Parent or Guardian Section --}}
+                    <x-papiforms::input.section section="Parent or Guardian">
+                        <x-papiforms::input.group label="First name and Last Name" for="User1">
+                            <x-papiforms::input.text wire:model.defer="User1" id="User1" name="User1" type="text" placeholder="Full Name" value="{{ old('User1') }}"/>
+                        </x-papiforms::input.group>
+                    </x-papiforms::input.section>
+
+                    {{-- Address Section --}}
                     <x-papiforms::input.section section="Address">
                         <div class="flex flex-wrap -mx-3 mb-2">
-                         <div class="w-full md:w-2/3 px-3 md:mb-0">
-                    <x-papiforms::input.group label="Street address" for="StreetOne">
-                        <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
-                    </x-papiforms::input.group>
+                            <div class="w-full md:w-2/3 px-3 md:mb-0">
+                                <x-papiforms::input.group label="Street address" for="StreetOne">
+                                    <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
-                    <x-papiforms::input.group label="Apartment #" for="StreetTwo">
-                        <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
-                    </x-papiforms::input.group>
+                                <x-papiforms::input.group label="Apartment #" for="StreetTwo">
+                                    <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                         </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
                             <x-papiforms::input.select-postal-code wire:model.defer="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
-            </x-papiforms::input.section>
-                        <input wire:model="PostalCode" id="PostalCode" name="PostalCode" type="hidden" value="{{ old('PostalCode') }}" />
-                        <input wire:model="City" id="City" name="City" type="hidden" value="{{ old('City') }}" />
-                        <input wire:model="State" id="State" name="State" type="hidden" value="{{ old('State') }}" />
-                        <input wire:model="County" id="County" name="County" type="hidden" value="{{ old('County') }}" />
-                        <input wire:model="CountryID" id="CountryID" name="CountryID" type="hidden" value="{{ old('CountryID') }}" />
-            <x-papiforms::input.section section="Birthdate">
+                    </x-papiforms::input.section>
 
-                        <x-papiforms::input.group label="Birthdate" for="Birthdate">
+                    {{-- Hidden Address Fields --}}
+                    <input wire:model="PostalCode" id="PostalCode" name="PostalCode" type="hidden" value="{{ old('PostalCode') }}" />
+                    <input wire:model="City" id="City" name="City" type="hidden" value="{{ old('City') }}" />
+                    <input wire:model="State" id="State" name="State" type="hidden" value="{{ old('State') }}" />
+                    <input wire:model="County" id="County" name="County" type="hidden" value="{{ old('County') }}" />
+                    <input wire:model="CountryID" id="CountryID" name="CountryID" type="hidden" value="{{ old('CountryID') }}" />
+
+                    {{-- Birthdate Picker Section --}}
+                    <x-papiforms::input.section section="Birthdate">
+                         <x-papiforms::input.group label="Birthdate" for="Birthdate">
                             <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
-            </x-papiforms::input.section>
-            <x-papiforms::input.section section="School">
+                    </x-papiforms::input.section>
+
+                    {{-- School Selection Section (User4) --}}
+                    <x-papiforms::input.section section="School">
                         <x-papiforms::input.group label="School" for="User4">
                             <x-papiforms::input.select-udf-option wire:model="User4" id="User4" name="User4" value="{{ old('User4') }}"/>
                         </x-papiforms::input.group>
-            </x-papiforms::input.section>
-            <x-papiforms::input.section section="Contact information">
+                    </x-papiforms::input.section>
 
+                    {{-- Contact Information Section --}}
+                    <x-papiforms::input.section section="Contact information">
                         <x-papiforms::input.group label="Email" for="EmailAddress">
                             <x-papiforms::input.text wire:model.defer="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
                         </x-papiforms::input.group>
-                <div class="flex flex-wrap -mx-3 mb-2">
+                     <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/2 px-3 md:mb-0">
                         <x-papiforms::input.group label="Phone" for="PhoneVoice1">
                             <x-papiforms::input.text wire:model.defer="PhoneVoice1" id="PhoneVoice1" name="PhoneVoice1" type="text" placeholder="Phone number" value="{{ old('PhoneVoice1') }}"/>
@@ -118,17 +134,21 @@
                             <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
-            <x-papiforms::input.section section="PIN">
 
-            <x-papiforms::input.group label="Password" for="Password">
+                    {{-- Password or PIN Section --}}
+                    <x-papiforms::input.section section="PIN">
+                        <x-papiforms::input.group label="Password" for="Password">
                             <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Create PIN (4-6 digit number)" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
-
-                        <x-papiforms::input.group label="Confirm PIN" for="Password_confirmation">
+                         <x-papiforms::input.group label="Confirm PIN" for="Password_confirmation">
                             <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
-            </x-papiforms::input.section>
-                        <input wire:model="PatronCode" type="hidden" name="PatronCode" />
+                     </x-papiforms::input.section>
+
+                    {{-- Hidden PatronCode Section --}}
+                    <input wire:model="PatronCode" type="hidden" name="PatronCode" />
+
+                    {{-- Submit Button --}}
                     <div class="mt-10">
                         <span class="inline-flex rounded-md shadow-sm">
                             <button type="submit"
@@ -144,9 +164,18 @@
                             </button>
                         </span>
                     </div>
-                    </div>
+
+
                 </form>
+                {{-- End of Form --}}
+
             </div>
+            {{-- End of Right Panel Content --}}
+
         </div>
+        {{-- End of Right Panel --}}
+
     </div>
+    {{-- End of Grid Layout --}}
+
 </div>
