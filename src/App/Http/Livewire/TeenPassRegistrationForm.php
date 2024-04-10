@@ -53,6 +53,7 @@ class TeenPassRegistrationForm extends Component
     public $NameFirst = '';
     public $NameLast = '';
     public $NameMiddle = '';
+    public $User1 = '';
     public $User4 = '';
     public $Birthdate = '';
     public $PhoneVoice1 = '';
@@ -76,6 +77,7 @@ class TeenPassRegistrationForm extends Component
         'NameFirst' => 'required',
         'NameLast' => 'required',
         'NameMiddle' => 'required',
+        'User1' => 'required',
         'User4' => 'nullable',
         'Birthdate' => 'required|date_format:m/d/Y|bail|teenpass_birthdate',
         'PhoneVoice1' => 'required|digits:10',
@@ -99,6 +101,7 @@ class TeenPassRegistrationForm extends Component
             'Birthdate.required' => 'Birthdate is required.',
             'Birthdate.date_format' => 'Birthdate must be in MM/DD/YYYY format.',
             'Birthdate.teenpass_birthdate' => 'Must be 13-17 years old to get a Teen Pass.',
+            'User1.required' => 'Parent/Guardian name required to mail card',
             'PhoneVoice1.required' => 'Phone number is required',
             'PhoneVoice1.digits' => 'Phone number must be 10 numbers only.',
             'EmailAddress.required' => 'Email address is required.',
@@ -153,6 +156,7 @@ class TeenPassRegistrationForm extends Component
             'NameFirst' => Str::upper($this->NameFirst),
             'NameLast' => Str::upper($this->NameLast),
             'NameMiddle' => Str::upper($this->NameMiddle),
+            'User1' => Str::upper($this->User1),
             'User4' => $this->User4,
             'Birthdate' => $this->Birthdate,
             'PhoneVoice1' => $this->PhoneVoice1,
@@ -175,7 +179,6 @@ class TeenPassRegistrationForm extends Component
         }
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
         $json['appRecipient'] = $this->appRecipient;
-        $json['User2'] = '';
         $json['newUploadURL'] = '';
         if ($body['ErrorMessage'] === '') {
             $this->successMessage = true;
@@ -223,6 +226,7 @@ class TeenPassRegistrationForm extends Component
         $this->NameFirst = '';
         $this->NameLast = '';
         $this->NameMiddle = '';
+        $this->User1 = '';
         $this->User4 = '';
         $this->Birthdate = '';
         $this->PhoneVoice1 = '';
