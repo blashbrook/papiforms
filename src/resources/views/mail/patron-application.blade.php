@@ -3,6 +3,7 @@
 <p>First name: {{ $confirmation['NameFirst'] }}</p>
 <p>Middle name: {{ $confirmation['NameMiddle'] }}</p>
 <p>Last name: {{ $confirmation['NameLast'] }}</p>
+<p>Parent or Guardian: {{ $confirmation['User1'] }}</p>
 <p>Street address: {{ $confirmation['StreetOne'] }}</p>
 <p>Apt #: {{ $confirmation['StreetTwo'] }}</p>
 <p>City: {{ $confirmation['City'] }}</p>
