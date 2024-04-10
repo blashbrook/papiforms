@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/blashbrook/papiforms/compare/v1.37.5...v1.38.0) (2024-04-10)
+
+
+### Features
+
+* **laravel.yml:** add laravel github action ([626312c](https://github.com/blashbrook/papiforms/commit/626312c995874808cc734bc0eba5afff0871f348))
+
 ## [1.37.5](https://github.com/blashbrook/papiforms/compare/v1.37.4...v1.37.5) (2024-04-10)
 
 
