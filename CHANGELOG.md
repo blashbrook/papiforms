@@ -1,3 +1,10 @@
+## [1.38.2](https://github.com/blashbrook/papiforms/compare/v1.38.1...v1.38.2) (2024-04-10)
+
+
+### Bug Fixes
+
+* **composer:** set php requirement to ^8.1 ([df976e1](https://github.com/blashbrook/papiforms/commit/df976e1f96660de58bf07c1c22ae91a8943d58d6))
+
 ## [1.38.1](https://github.com/blashbrook/papiforms/compare/v1.38.0...v1.38.1) (2024-04-10)
 
 
