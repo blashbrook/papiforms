@@ -134,12 +134,13 @@
                                 </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
-                        <x-papiforms::input.group label="Last name" for="NameLast">
-                            <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
-                            </x-papiforms::input.group>
-                        </x-papiforms::input.section>
+                                <x-papiforms::input.group label="Last name" for="NameLast">
+                                    <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                         </div>
+                        </x-papiforms::input.section>
+                    </div>
                     <x-papiforms::input.section section="Address">
                         <div class="flex flex-wrap -mx-3 mb-2">
                          <div class="w-full md:w-2/3 px-3 md:mb-0">
@@ -206,7 +207,7 @@
             </x-papiforms::input.section>
                         <input wire:model="PatronCode" type="hidden" name="PatronCode" />
             <x-papiforms::input.section section="Identification">
-                <x-papiforms::input.group label="Indentification" for="User2">
+                <x-papiforms::input.group label="Identification" for="User2">
                     <x-papiforms::input.text wire:model="User2" id="User2" name="User2" placeholder="License or ID #" value="{{ old('User2') }}"/>
                 </x-papiforms::input.group>
                  <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
@@ -226,21 +227,21 @@
             </x-papiforms::input.section>
 
             <div class="mt-10">
-                        <span class="inline-flex rounded-md shadow-sm">
-                            <button type="submit"
+                <span class="inline-flex rounded-md shadow-sm">
+                    <button type="submit"
                                     class="inline-flex items-center justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 disabled:opacity-50">
-                                <svg wire:loading wire:target="submitForm" class="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        <svg wire:loading wire:target="submitForm" class="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
                                      viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor"
                                           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                     </path>
                                 </svg>
-                                <span>Submit</span>
-                            </button>
-                        </span>
-                    </div>
-                    </div>
+                        <span>Submit</span>
+                    </button>
+                </span>
+            </div>
+
                 </form>
             </div>
         </div>

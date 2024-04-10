@@ -6,7 +6,7 @@
         <div class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
             <x-papiforms::blocks.description title="Adult Card Application">
                 Teen Pass offers limited library services to Daviess County residents ages 13-17.  Application does not require a parent/guardian signature.
-                A Teen Pass cardholder may checkout up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
+                A Teen Pass cardholder may check out up to three materials, including books, PG-13/PG/G movies, E-rated video games, CDs, and audiobooks.
                 Teen Pass members my also use all digital collections such as Hoopla and Overdrive, and online resources such as Newsbank and the Learning Express Library.
             </x-papiforms::blocks.description>
         </div>
@@ -54,12 +54,13 @@
                                 </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
-                        <x-papiforms::input.group label="Last name" for="NameLast">
-                            <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
-                            </x-papiforms::input.group>
-                        </x-papiforms::input.section>
+                                <x-papiforms::input.group label="Last name" for="NameLast">
+                                <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
+                                </x-papiforms::input.group>
                             </div>
                         </div>
+                        </x-papiforms::input.section>
+                    </div>
                     <x-papiforms::input.section section="Address">
                         <div class="flex flex-wrap -mx-3 mb-2">
                          <div class="w-full md:w-2/3 px-3 md:mb-0">
@@ -110,9 +111,9 @@
                         <input wire:model="TxtPhoneNumber" name="TxtPhoneNumber" type="hidden" />
 
                         {{-- Delivery option --}}
-                        <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
-                            <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
-                        </x-papiforms::input.group>
+                <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
+                    <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
+                </x-papiforms::input.group>
             </x-papiforms::input.section>
             <x-papiforms::input.section section="Password">
 
@@ -124,25 +125,14 @@
                             <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm password" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
-                        <input wire:model="PatronCode" type="hidden" name="PatronCode" />
+                    <input wire:model="PatronCode" type="hidden" name="PatronCode" />
             <x-papiforms::input.section section="Identification">
-                <x-papiforms::input.group label="Indentification" for="User2">
+                <x-papiforms::input.group label="Identification" for="User2">
                     <x-papiforms::input.text wire:model="User2" id="User2" name="User2" placeholder="License or ID #" value="{{ old('User2') }}"/>
                 </x-papiforms::input.group>
-                 <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
-    {{--            <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative mb-3">
-                    @if($newUpload)
-                        <img src="{{ $newUpload->temporaryUrl() }}" alt="Photo ID preview">
-                    @else
-                    <span class="tracking-widest text-md title-font font-medium text-gray-600 mb-1 p-10">
-                        <p>Upload a picture of your driver's license or photo ID.</p>
-                        <p>The address on the ID must match the address on this application.</p>
-                    </span>
-                        @endif
-                </div>--}}
+                <x-papiforms::input.group label="Upload an image of your Driver's License or other government issued ID." for="newUpload">
                 <x-papiforms::input.filepond wire:model="newUpload" name="newUpload" />
                 </x-papiforms::input.group>
-
             </x-papiforms::input.section>
 
             <div class="mt-10">
@@ -159,7 +149,6 @@
                                 <span>Submit</span>
                             </button>
                         </span>
-                    </div>
                     </div>
                 </form>
             </div>
