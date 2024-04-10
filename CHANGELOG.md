@@ -1,3 +1,10 @@
+## [1.37.4](https://github.com/blashbrook/papiforms/compare/v1.37.3...v1.37.4) (2024-04-10)
+
+
+### Bug Fixes
+
+* **blade:** update form blades ([3a12d90](https://github.com/blashbrook/papiforms/commit/3a12d90fff3c02a06c131079a3a264f14987325e))
+
 ## [1.37.3](https://github.com/blashbrook/papiforms/compare/v1.37.2...v1.37.3) (2024-04-05)
 
 
