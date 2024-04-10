@@ -1,7 +1,6 @@
 {
     "name": "blashbrook/papiforms",
     "description": "Custom Forms for the Polaris ILS",
-    "version": "1",
     "license": "MIT",
     "authors": [
         {
