@@ -124,6 +124,11 @@ class PAPIFormsServiceProvider extends ServiceProvider
             __DIR__.'/resources/views' => base_path('resources/views/vendor/blashbrook'),
         ], 'papiforms.views');
 
+        // Publishing the tests.
+        $this->publishes([
+            __DIR__.'/Tests/Feature' => base_path('Tests/Feature'),
+        ], 'papiforms.Tests');
+
         // Publishing assets.
         /* $this->publishes([
              __DIR__.'/resources/assets' => public_path('vendor/blashbrook'),
