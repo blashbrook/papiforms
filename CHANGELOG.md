@@ -1,3 +1,10 @@
+# [1.39.0](https://github.com/blashbrook/papiforms/compare/v1.38.3...v1.39.0) (2024-04-10)
+
+
+### Features
+
+* **user2:** add parent/guardian field to teenpass form ([af648a9](https://github.com/blashbrook/papiforms/commit/af648a9b188039dfb288672df0d330390999826b))
+
 ## [1.38.3](https://github.com/blashbrook/papiforms/compare/v1.38.2...v1.38.3) (2024-04-10)
 
 
