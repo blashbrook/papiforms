@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc49d40cc00323c29f46eca6e9524085",
+    "content-hash": "e38bfd4680ad44743fa810a273f48c32",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -157,33 +157,32 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "dev-master",
+            "version": "v1.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "fdd48646fa46e264c6c0b49767822eabe69225fe"
+                "reference": "57d7e0839829ef7f1014b4289cda51dca4ac6af0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/fdd48646fa46e264c6c0b49767822eabe69225fe",
-                "reference": "fdd48646fa46e264c6c0b49767822eabe69225fe",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/57d7e0839829ef7f1014b4289cda51dca4ac6af0",
+                "reference": "57d7e0839829ef7f1014b4289cda51dca4ac6af0",
                 "shasum": ""
             },
             "require": {
                 "league/commonmark": "^2.4.0",
                 "nette/schema": "^v1.3.0",
-                "php": "^8.2"
+                "php": "^8.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^v8.22.2",
-                "phpunit/phpunit": "~10",
-                "symfony/console": "^v6.4.6",
-                "symfony/css-selector": "^v7.0.3",
-                "symfony/event-dispatcher": "^v7.0.3",
-                "symfony/stopwatch": "v7.0.3",
-                "symfony/string": "^v7.0.3"
+                "orchestra/testbench": "^7.17",
+                "phpunit/phpunit": "~9",
+                "symfony/console": "6.4",
+                "symfony/css-selector": "6.4",
+                "symfony/event-dispatcher": "6.4",
+                "symfony/stopwatch": "v6.4.3",
+                "symfony/string": "6.4"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -220,9 +219,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/master"
+                "source": "https://github.com/blashbrook/papiclient/tree/v1.3.11"
             },
-            "time": "2024-04-24T22:05:47+00:00"
+            "time": "2024-04-10T14:38:26+00:00"
         },
         {
             "name": "brick/math",
@@ -9257,9 +9256,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "blashbrook/papiclient": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
