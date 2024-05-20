@@ -1,3 +1,11 @@
+## [1.39.2](https://github.com/blashbrook/papiforms/compare/v1.39.1...v1.39.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* code style patch ([7deca1b](https://github.com/blashbrook/papiforms/commit/7deca1b7eae40c8b11e80ba1713f9d4d0e738c14))
+* **composer.lock:** update papiclient dependency ([d454e67](https://github.com/blashbrook/papiforms/commit/d454e675ff575f192c9fd00807fc02bfa2445590))
+
 ## [1.39.1](https://github.com/blashbrook/papiforms/compare/v1.39.0...v1.39.1) (2024-04-10)
 
 
