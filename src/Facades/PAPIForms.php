@@ -16,3 +16,4 @@ class PAPIForms extends Facade
         return 'papiforms';
     }
 }
+

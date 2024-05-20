@@ -1,7 +1,7 @@
 <?php
 
-use Blashbrook\PAPIForms\App\Http\Livewire\AdultRegistrationForm;
-use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
+use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Illuminate\Support\Facades\Route;
@@ -21,15 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['middleware' => ['web']], function () {
+
     Route::get('/teenpass', TeenPassRegistrationForm::class);
+
     Route::get('/adult', AdultRegistrationForm::class);
-    Route::get('/modal', function () {
-        return view('papiforms::registration-form-modal')
-            ->layout('papiforms::layouts.app');
-    });
-    Route::get('/patron', function () {
-        return view('papiforms::patron');
-    });
+
     Route::get('/teenpassemail', function () {
         return new TeenPassConfirmationMailable([
             'first_name' => 'Brian',
@@ -42,6 +38,7 @@ Route::group(['middleware' => ['web']], function () {
             'DeliveryOptionID' => '3',
         ]);
     });
+
     Route::get('/duplicate', function () {
         return new DuplicatePatronMailable([
             'first_name' => 'Brian',

@@ -1,0 +1,82 @@
+[
+  {
+    "StatisticalClassID": 1,
+    "OrganizationID": 3,
+    "Description": "Adult City Resident"
+  },
+  {
+    "StatisticalClassID": 2,
+    "OrganizationID": 3,
+    "Description": "Adult County Resident"
+  },
+  {
+    "StatisticalClassID": 3,
+    "OrganizationID": 3,
+    "Description": "Adult Courtesy"
+  },
+  {
+    "StatisticalClassID": 4,
+    "OrganizationID": 3,
+    "Description": "Adult Non-Resident"
+  },
+  {
+    "StatisticalClassID": 5,
+    "OrganizationID": 3,
+    "Description": "Business Use Only"
+  },
+  {
+    "StatisticalClassID": 6,
+    "OrganizationID": 3,
+    "Description": "Homebound"
+  },
+  {
+    "StatisticalClassID": 7,
+    "OrganizationID": 3,
+    "Description": "Interlibrary Loan"
+  },
+  {
+    "StatisticalClassID": 8,
+    "OrganizationID": 3,
+    "Description": "Juvenile City Resident"
+  },
+  {
+    "StatisticalClassID": 9,
+    "OrganizationID": 3,
+    "Description": "Juvenile County Resident"
+  },
+  {
+    "StatisticalClassID": 10,
+    "OrganizationID": 3,
+    "Description": "Juvenile Courtesy"
+  },
+  {
+    "StatisticalClassID": 11,
+    "OrganizationID": 3,
+    "Description": "Juvenile Non-Resident"
+  },
+  {
+    "StatisticalClassID": 12,
+    "OrganizationID": 3,
+    "Description": "Teen City Resident"
+  },
+  {
+    "StatisticalClassID": 13,
+    "OrganizationID": 3,
+    "Description": "Teen County Resident"
+  },
+  {
+    "StatisticalClassID": 14,
+    "OrganizationID": 3,
+    "Description": "Teen Courtesy"
+  },
+  {
+    "StatisticalClassID": 15,
+    "OrganizationID": 3,
+    "Description": "Teen Non-Resident"
+  },
+  {
+    "StatisticalClassID": 16,
+    "OrganizationID": 3,
+    "Description": "Teen Limited"
+  }
+]
