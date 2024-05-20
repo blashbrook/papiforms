@@ -7,8 +7,8 @@ use Blashbrook\PAPIForms\App\Http\Controllers\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
-use Blashbrook\PAPIForms\App\Http\Livewire\AdultRegistrationForm;
-use Blashbrook\PAPIForms\App\Http\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
+use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
@@ -140,6 +140,8 @@ class PAPIFormsServiceProvider extends ServiceProvider
         ], 'papiforms.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+        $this->commands([
+            app\Console\Commands\RunSeeders::class,
+        ]);
     }
 }

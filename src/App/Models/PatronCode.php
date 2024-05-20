@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PatronCode extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'PatronCodeID',
+        'Description',
+    ];
 }

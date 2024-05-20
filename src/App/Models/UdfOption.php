@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class UdfOption extends Model
 {
     use HasFactory;
-    //
+
+    protected $fillable = [
+        'UDFOptionID',
+        'AttrID',
+        'OptionDesc',
+    ];
 }

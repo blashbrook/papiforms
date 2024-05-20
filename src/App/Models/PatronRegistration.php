@@ -2,14 +2,16 @@
 
 namespace Blashbrook\PAPIForms\App\Models;
 
+use Blashbrook\PapiformsReact\Facades\DeliveryOption;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PatronRegistration extends Model
 {
     use HasFactory;
 
-    public $fillable = [
+    protected $fillable = [
         'LogonBranchID',
         'LogonUserID',
         'LogonWorkstationID',
@@ -50,12 +52,38 @@ class PatronRegistration extends Model
         'TxtPhoneNumber',
         'Barcode',
         'EReceiptOptionID',
-        'PatronCode',
+        'PatronCodeID',
         'ExpirationDate',
         'AddrCheckDate',
         'GenderID',
         'LegalNameFirst',
         'LegalNameLast',
         'LegalNameMiddle',
-        'UseLegalNameOnNotices', ];
+        'UseLegalNameOnNotices',
+    ];
+
+    public function phone1CarrierID(): BelongsTo
+    {
+        return $this->belongsTo(MobilePhoneCarrier::class, 'Phone1CarrierID');
+    }
+
+    public function phone2CarrierID(): BelongsTo
+    {
+        return $this->belongsTo(MobilePhoneCarrier::class, 'Phone2CarrierID');
+    }
+
+    public function phone3CarrierID(): BelongsTo
+    {
+        return $this->belongsTo(MobilePhoneCarrier::class, 'Phone3CarrierID');
+    }
+
+    public function deliveryOptionID(): BelongsTo
+    {
+        return $this->belongsTo(DeliveryOption::class, 'DeliveryOptionID');
+    }
+
+    public function patronCodeID(): BelongsTo
+    {
+        return $this->belongsTo(PatronCode::class, 'PatronCodeID');
+    }
 }
