@@ -15,13 +15,13 @@ class DeliveryOptionSeeder extends Seeder
     {
         DeliveryOption::truncate();
 
-        $json = File::get(__DIR__ . "/delivery_options.json");
+        $json = File::get(__DIR__.'/delivery_options.json');
         $delivery_options = json_decode($json);
 
         foreach ($delivery_options as $value) {
             DeliveryOption::query()->updateOrCreate([
-                "DeliveryOptionID" => $value->DeliveryOptionID,
-                "DeliveryOption" => $value->DeliveryOption
+                'DeliveryOptionID' => $value->DeliveryOptionID,
+                'DeliveryOption' => $value->DeliveryOption,
             ]);
         }
     }

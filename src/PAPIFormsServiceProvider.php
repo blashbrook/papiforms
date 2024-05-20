@@ -141,7 +141,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         // Registering package commands.
         $this->commands([
-            app\Console\Commands\RunSeeders::class
+            app\Console\Commands\RunSeeders::class,
         ]);
     }
 }

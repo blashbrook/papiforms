@@ -14,14 +14,14 @@ class PatronCodeSeeder extends Seeder
     public function run(): void
     {
         PatronCode::truncate();
-        
-        $json = File::get(__DIR__ . "/patron_codes.json");
+
+        $json = File::get(__DIR__.'/patron_codes.json');
         $patron_codes = json_decode($json);
-        
+
         foreach ($patron_codes as $value) {
             PatronCode::query()->updateOrCreate([
-                "PatronCodeID" => $value->PatronCodeID,
-                "Description" => $value->Description
+                'PatronCodeID' => $value->PatronCodeID,
+                'Description' => $value->Description,
             ]);
         }
     }

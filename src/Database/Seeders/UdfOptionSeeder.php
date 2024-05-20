@@ -14,15 +14,15 @@ class UdfOptionSeeder extends Seeder
     public function run(): void
     {
         UdfOption::truncate();
-        
-        $json = File::get(__DIR__ . "/udf_options.json");
+
+        $json = File::get(__DIR__.'/udf_options.json');
         $udf_options = json_decode($json);
-        
+
         foreach ($udf_options as $value) {
             UdfOption::query()->updateOrCreate([
-                "UDFOptionID" => $value->UDFOptionID,
-                "AttrID" => $value->AttrID,
-                "OptionDesc" => $value->OptionDesc
+                'UDFOptionID' => $value->UDFOptionID,
+                'AttrID' => $value->AttrID,
+                'OptionDesc' => $value->OptionDesc,
             ]);
         }
     }

@@ -1,15 +1,15 @@
 <?php
-    
-    namespace Blashbrook\PAPIForms\App\Policies;
-    
+
+namespace Blashbrook\PAPIForms\App\Policies;
+
     use App\User;
     use Blashbrook\PAPIForms\App\Models\PatronRegistration;
     use Illuminate\Auth\Access\HandlesAuthorization;
-    
+
     class PatronRegistrationPolicy
     {
         use HandlesAuthorization;
-        
+
         /**
          * Determine whether the user can view any patron registrations.
          *
@@ -18,9 +18,8 @@
          */
         public function viewAny(User $user): bool
         {
-        
         }
-        
+
         /**
          * Determine whether the user can view the patron registration.
          *
@@ -31,7 +30,7 @@
         public function view(User $user, PatronRegistration $patronRegistration): bool
         {
         }
-        
+
         /**
          * Determine whether the user can create patron registrations.
          *
@@ -41,7 +40,7 @@
         public function create(User $user): bool
         {
         }
-        
+
         /**
          * Determine whether the user can update the patron registration.
          *
@@ -52,7 +51,7 @@
         public function update(User $user, PatronRegistration $patronRegistration): bool
         {
         }
-        
+
         /**
          * Determine whether the user can delete the patron registration.
          *
@@ -63,7 +62,7 @@
         public function delete(User $user, PatronRegistration $patronRegistration): bool
         {
         }
-        
+
         /**
          * Determine whether the user can restore the patron registration.
          *
@@ -74,7 +73,7 @@
         public function restore(User $user, PatronRegistration $patronRegistration): bool
         {
         }
-        
+
         /**
          * Determine whether the user can permanently delete the patron registration.
          *

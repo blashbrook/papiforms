@@ -14,20 +14,19 @@ class PostalCodeSeeder extends Seeder
     public function run(): void
     {
         PostalCode::truncate();
-        
-        $json = File::get(__DIR__ . "/postal_codes.json");
+
+        $json = File::get(__DIR__.'/postal_codes.json');
         $postal_codes = json_decode($json);
-        
+
         foreach ($postal_codes as $value) {
             PostalCode::query()->updateOrCreate([
-                "PostalCode" => $value->PostalCode,
-                "PostalCodeID" => $value->PostalCodeID,
-                "City" => $value->City,
-                "State" => $value->State,
-                "CountryID" => $value->CountryID,
-                "County" => $value->County
+                'PostalCode' => $value->PostalCode,
+                'PostalCodeID' => $value->PostalCodeID,
+                'City' => $value->City,
+                'State' => $value->State,
+                'CountryID' => $value->CountryID,
+                'County' => $value->County,
             ]);
         }
-
     }
 }

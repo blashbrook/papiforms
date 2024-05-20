@@ -24,8 +24,7 @@ class RunSeeders extends Command
     public function handle(): void
     {
         foreach ($this->seeders as $seeder) {
-            Artisan::call('db:seed', ['class' => $seeder],$this->getOutput());
-
+            Artisan::call('db:seed', ['class' => $seeder], $this->getOutput());
         }
     }
 }
