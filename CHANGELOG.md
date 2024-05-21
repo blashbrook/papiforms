@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/blashbrook/papiforms/compare/v1.40.0...v1.40.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* **PAPIFormsServiceProvider:** fix namespace for RunSeeders command ([433c214](https://github.com/blashbrook/papiforms/commit/433c2140b6379f1bd21d5ce42985ffec2fb3acff))
+
 # [1.40.0](https://github.com/blashbrook/papiforms/compare/v1.39.2...v1.40.0) (2024-05-20)
 
 
