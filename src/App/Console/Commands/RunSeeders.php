@@ -9,16 +9,16 @@ class RunSeeders extends Command
 {
     protected $signature = 'papiforms:seed';
 
-    protected $description = 'Populate database with defaults from json files';
+    protected $description = 'Populate Database with defaults from json files';
 
     protected $seeders = [
-        'Blashbrook\\PAPIForms\\database\\seeders\\UdfOptionSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\UdfOptionDefSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\PostalCodeSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\PatronCodeSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\MobilePhoneCarrierSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\PatronStatClassCodeSeeder',
-        'Blashbrook\\PAPIForms\\database\\seeders\\DeliveryOptionSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\UdfOptionSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\UdfOptionDefSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\PostalCodeSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\PatronCodeSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\MobilePhoneCarrierSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\PatronStatClassCodeSeeder',
+        'Blashbrook\\PAPIForms\\Database\\Seeders\\DeliveryOptionSeeder',
     ];
 
     public function handle(): void
