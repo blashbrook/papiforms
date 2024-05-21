@@ -2,7 +2,7 @@
 
 namespace Blashbrook\PAPIForms\Database\Seeders;
 
-use Blashbrook\PAPIForms\App\models\UdfOption;
+use Blashbrook\PAPIForms\App\Models\UdfOption;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
