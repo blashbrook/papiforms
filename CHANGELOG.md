@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/blashbrook/papiforms/compare/v1.39.2...v1.40.0) (2024-05-20)
+
+
+### Features
+
+* **package-lock:** update ([7a8f77f](https://github.com/blashbrook/papiforms/commit/7a8f77ff65a250121c5f885769fdb6ced78f0ead))
+
 ## [1.39.2](https://github.com/blashbrook/papiforms/compare/v1.39.1...v1.39.2) (2024-05-20)
 
 
