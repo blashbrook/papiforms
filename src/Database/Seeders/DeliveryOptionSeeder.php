@@ -1,50 +1,28 @@
 <?php
 
-namespace Database\Seeders;
+namespace Blashbrook\PAPIForms\Database\Seeders;
 
 use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DeliveryOptionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
-        DeliveryOption::create([
-            'DeliveryOptionID' => 1,
-            'DeliveryOption' => 'Mailing Address',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 2,
-            'DeliveryOption' => 'Email Address',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 3,
-            'DeliveryOption' => 'Phone 1',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 4,
-            'DeliveryOption' => 'Phone 2',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 5,
-            'DeliveryOption' => 'Phone 3',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 6,
-            'DeliveryOption' => 'FAX',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 7,
-            'DeliveryOption' => 'EDI',
-        ]);
-        DeliveryOption::create([
-            'DeliveryOptionID' => 8,
-            'DeliveryOption' => 'TXT Messaging',
-        ]);
+        DeliveryOption::truncate();
+
+        $json = File::get(__DIR__.'/delivery_options.json');
+        $delivery_options = json_decode($json);
+
+        foreach ($delivery_options as $value) {
+            DeliveryOption::query()->updateOrCreate([
+                'DeliveryOptionID' => $value->DeliveryOptionID,
+                'DeliveryOption' => $value->DeliveryOption,
+            ]);
+        }
     }
 }

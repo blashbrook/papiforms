@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class MobilePhoneCarrier extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'CarrierID',
+        'CarrierName',
+        'Email2SMSEmailAddress',
+        'NumberOfDigits',
+        'Display',
+    ];
 }
