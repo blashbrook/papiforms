@@ -1,0 +1,302 @@
+[
+  {
+    "UDFOptionID": 1,
+    "AttrID": 59,
+    "OptionDesc": "Full-time Student"
+  },
+  {
+    "UDFOptionID": 2,
+    "AttrID": 59,
+    "OptionDesc": "Employed in DC"
+  },
+  {
+    "UDFOptionID": 3,
+    "AttrID": 59,
+    "OptionDesc": "DC Property Owner"
+  },
+  {
+    "UDFOptionID": 4,
+    "AttrID": 60,
+    "OptionDesc": "Apollo High"
+  },
+  {
+    "UDFOptionID": 5,
+    "AttrID": 60,
+    "OptionDesc": "Audubon Elementary"
+  },
+  {
+    "UDFOptionID": 6,
+    "AttrID": 60,
+    "OptionDesc": "Burns Elementary"
+  },
+  {
+    "UDFOptionID": 7,
+    "AttrID": 60,
+    "OptionDesc": "Burns Middle"
+  },
+  {
+    "UDFOptionID": 8,
+    "AttrID": 60,
+    "OptionDesc": "College View Middle"
+  },
+  {
+    "UDFOptionID": 9,
+    "AttrID": 61,
+    "OptionDesc": "Roosevelt House 1"
+  },
+  {
+    "UDFOptionID": 10,
+    "AttrID": 61,
+    "OptionDesc": "Roosevelt House 2"
+  },
+  {
+    "UDFOptionID": 11,
+    "AttrID": 61,
+    "OptionDesc": "One Park Place"
+  },
+  {
+    "UDFOptionID": 12,
+    "AttrID": 61,
+    "OptionDesc": "Park Regency"
+  },
+  {
+    "UDFOptionID": 13,
+    "AttrID": 61,
+    "OptionDesc": "Owensboro Place"
+  },
+  {
+    "UDFOptionID": 14,
+    "AttrID": 61,
+    "OptionDesc": "Fern Terrace Lodge"
+  },
+  {
+    "UDFOptionID": 15,
+    "AttrID": 61,
+    "OptionDesc": "Active Day"
+  },
+  {
+    "UDFOptionID": 16,
+    "AttrID": 61,
+    "OptionDesc": "Compassionate Care"
+  },
+  {
+    "UDFOptionID": 17,
+    "AttrID": 61,
+    "OptionDesc": "Maple Mount"
+  },
+  {
+    "UDFOptionID": 18,
+    "AttrID": 61,
+    "OptionDesc": "Wendell Foster Center"
+  },
+  {
+    "UDFOptionID": 19,
+    "AttrID": 61,
+    "OptionDesc": " DAVCO"
+  },
+  {
+    "UDFOptionID": 20,
+    "AttrID": 61,
+    "OptionDesc": "Fern Terrace Suites"
+  },
+  {
+    "UDFOptionID": 21,
+    "AttrID": 59,
+    "OptionDesc": "None"
+  },
+  {
+    "UDFOptionID": 22,
+    "AttrID": 61,
+    "OptionDesc": "None"
+  },
+  {
+    "UDFOptionID": 23,
+    "AttrID": 60,
+    "OptionDesc": "None"
+  },
+  {
+    "UDFOptionID": 24,
+    "AttrID": 59,
+    "OptionDesc": "Non-res Fee Paid"
+  },
+  {
+    "UDFOptionID": 25,
+    "AttrID": 60,
+    "OptionDesc": "Country Heights Elementary"
+  },
+  {
+    "UDFOptionID": 26,
+    "AttrID": 60,
+    "OptionDesc": "Cravens Elementary"
+  },
+  {
+    "UDFOptionID": 27,
+    "AttrID": 60,
+    "OptionDesc": "Daviess County High"
+  },
+  {
+    "UDFOptionID": 28,
+    "AttrID": 60,
+    "OptionDesc": "Daviess County Middle"
+  },
+  {
+    "UDFOptionID": 29,
+    "AttrID": 60,
+    "OptionDesc": "Deer Park Elementary"
+  },
+  {
+    "UDFOptionID": 30,
+    "AttrID": 60,
+    "OptionDesc": "East View Elementary"
+  },
+  {
+    "UDFOptionID": 31,
+    "AttrID": 60,
+    "OptionDesc": "Emerson Academy"
+  },
+  {
+    "UDFOptionID": 32,
+    "AttrID": 60,
+    "OptionDesc": "Estes Elementary"
+  },
+  {
+    "UDFOptionID": 33,
+    "AttrID": 60,
+    "OptionDesc": "Foust Elementary"
+  },
+  {
+    "UDFOptionID": 34,
+    "AttrID": 60,
+    "OptionDesc": "Grace Christian Academy"
+  },
+  {
+    "UDFOptionID": 35,
+    "AttrID": 60,
+    "OptionDesc": "Hager Preschool"
+  },
+  {
+    "UDFOptionID": 36,
+    "AttrID": 60,
+    "OptionDesc": "Heritage Park"
+  },
+  {
+    "UDFOptionID": 37,
+    "AttrID": 60,
+    "OptionDesc": "Highland Elementary"
+  },
+  {
+    "UDFOptionID": 38,
+    "AttrID": 60,
+    "OptionDesc": "Mary Carrico Catholic"
+  },
+  {
+    "UDFOptionID": 39,
+    "AttrID": 60,
+    "OptionDesc": "Meadow Lands Elementary"
+  },
+  {
+    "UDFOptionID": 40,
+    "AttrID": 60,
+    "OptionDesc": "Newton Parrish Elementary"
+  },
+  {
+    "UDFOptionID": 41,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Catholic 4-6 Campus"
+  },
+  {
+    "UDFOptionID": 42,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Catholic High"
+  },
+  {
+    "UDFOptionID": 43,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Catholic K-3 Campus"
+  },
+  {
+    "UDFOptionID": 44,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Catholic Middle"
+  },
+  {
+    "UDFOptionID": 45,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Virtual Academy"
+  },
+  {
+    "UDFOptionID": 46,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro High"
+  },
+  {
+    "UDFOptionID": 47,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Innovation Academy"
+  },
+  {
+    "UDFOptionID": 48,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Innovation Middle"
+  },
+  {
+    "UDFOptionID": 49,
+    "AttrID": 60,
+    "OptionDesc": "Owensboro Middle"
+  },
+  {
+    "UDFOptionID": 50,
+    "AttrID": 60,
+    "OptionDesc": "Seven Hills Headstart Preschool"
+  },
+  {
+    "UDFOptionID": 51,
+    "AttrID": 60,
+    "OptionDesc": "Sorgho Elementary"
+  },
+  {
+    "UDFOptionID": 52,
+    "AttrID": 60,
+    "OptionDesc": "Southern Oaks Elementary"
+  },
+  {
+    "UDFOptionID": 53,
+    "AttrID": 60,
+    "OptionDesc": "St. Mary of the Woods"
+  },
+  {
+    "UDFOptionID": 54,
+    "AttrID": 60,
+    "OptionDesc": "Suttons Elementary"
+  },
+  {
+    "UDFOptionID": 55,
+    "AttrID": 60,
+    "OptionDesc": "Tamarack Elementary"
+  },
+  {
+    "UDFOptionID": 56,
+    "AttrID": 60,
+    "OptionDesc": "Trinity High"
+  },
+  {
+    "UDFOptionID": 57,
+    "AttrID": 60,
+    "OptionDesc": "Valley"
+  },
+  {
+    "UDFOptionID": 58,
+    "AttrID": 60,
+    "OptionDesc": "West Louisville Elementary"
+  },
+  {
+    "UDFOptionID": 59,
+    "AttrID": 60,
+    "OptionDesc": "Whitesville Elementary"
+  },
+  {
+    "UDFOptionID": 60,
+    "AttrID": 60,
+    "OptionDesc": "Homeschooled"
+  }
+]

@@ -1,3 +1,54 @@
+## [1.40.3](https://github.com/blashbrook/papiforms/compare/v1.40.2...v1.40.3) (2024-05-21)
+
+
+### Bug Fixes
+
+* correct namespaces in runseeders command ([6999f04](https://github.com/blashbrook/papiforms/commit/6999f04f6efca2b693c87aa71d27ca5e01344685))
+* correct namespaces in runseeders command ([9a457d2](https://github.com/blashbrook/papiforms/commit/9a457d253c149997ca925e4708fda39cc41a35ea))
+
+## [1.40.2](https://github.com/blashbrook/papiforms/compare/v1.40.1...v1.40.2) (2024-05-21)
+
+
+### Bug Fixes
+
+* correct namespaces in runseeders command ([11aac77](https://github.com/blashbrook/papiforms/commit/11aac77c0a0b689e16c046825c037a5aff1391ee))
+
+## [1.40.1](https://github.com/blashbrook/papiforms/compare/v1.40.0...v1.40.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* **PAPIFormsServiceProvider:** fix namespace for RunSeeders command ([433c214](https://github.com/blashbrook/papiforms/commit/433c2140b6379f1bd21d5ce42985ffec2fb3acff))
+
+# [1.40.0](https://github.com/blashbrook/papiforms/compare/v1.39.2...v1.40.0) (2024-05-20)
+
+
+### Features
+
+* **package-lock:** update ([7a8f77f](https://github.com/blashbrook/papiforms/commit/7a8f77ff65a250121c5f885769fdb6ced78f0ead))
+
+## [1.39.2](https://github.com/blashbrook/papiforms/compare/v1.39.1...v1.39.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* code style patch ([7deca1b](https://github.com/blashbrook/papiforms/commit/7deca1b7eae40c8b11e80ba1713f9d4d0e738c14))
+* **composer.lock:** update papiclient dependency ([d454e67](https://github.com/blashbrook/papiforms/commit/d454e675ff575f192c9fd00807fc02bfa2445590))
+
+## [1.39.1](https://github.com/blashbrook/papiforms/compare/v1.39.0...v1.39.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* **user1:** add parent/guardian name to email ([6b76da4](https://github.com/blashbrook/papiforms/commit/6b76da4984ab748d4ce49026957b563900717b00))
+
+# [1.39.0](https://github.com/blashbrook/papiforms/compare/v1.38.3...v1.39.0) (2024-04-10)
+
+
+### Features
+
+* **user2:** add parent/guardian field to teenpass form ([af648a9](https://github.com/blashbrook/papiforms/commit/af648a9b188039dfb288672df0d330390999826b))
+
 ## [1.38.3](https://github.com/blashbrook/papiforms/compare/v1.38.2...v1.38.3) (2024-04-10)
 
 

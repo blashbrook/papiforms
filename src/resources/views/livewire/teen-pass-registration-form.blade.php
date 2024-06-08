@@ -38,7 +38,7 @@
                 @endif
 
                 {{-- Form --}}
-                <form  wire:submit.prevent="submitForm" class="grid grid-cols-1 row-gap-6">
+                <form  wire:submit="submitForm" class="grid grid-cols-1 row-gap-6">
                     @csrf
 
                     {{-- Full Name Section --}}
@@ -46,17 +46,17 @@
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                                 <x-papiforms::input.group label="First name" for="NameFirst">
-                                    <x-papiforms::input.text wire:model.defer="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
+                                    <x-papiforms::input.text wire:model="NameFirst" id="NameFirst" name="NameFirst" type="text" placeholder="First name" value="{{ old('NameFirst') }}"/>
                                 </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                                 <x-papiforms::input.group label="Middle name" for="NameMiddle">
-                                    <x-papiforms::input.text wire:model.defer="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
+                                    <x-papiforms::input.text wire:model="NameMiddle" id="NameMiddle" name="NameMiddle" type="text" placeholder="Middle name" value="{{ old('NameMiddle') }}"/>
                                 </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                         <x-papiforms::input.group label="Last name" for="NameLast">
-                            <x-papiforms::input.text wire:model.defer="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
+                            <x-papiforms::input.text wire:model="NameLast" id="NameLast" name="NameLast" type="text" placeholder="Last name" value="{{ old('NameLast') }}"/>
                             </x-papiforms::input.group>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                     {{-- Parent or Guardian Section --}}
                     <x-papiforms::input.section section="Parent or Guardian">
                         <x-papiforms::input.group label="First name and Last Name" for="User1">
-                            <x-papiforms::input.text wire:model.defer="User1" id="User1" name="User1" type="text" placeholder="Full Name" value="{{ old('User1') }}"/>
+                            <x-papiforms::input.text wire:model="User1" id="User1" name="User1" type="text" placeholder="Full Name" value="{{ old('User1') }}"/>
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
@@ -74,17 +74,17 @@
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full md:w-2/3 px-3 md:mb-0">
                                 <x-papiforms::input.group label="Street address" for="StreetOne">
-                                    <x-papiforms::input.text wire:model.defer="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
+                                    <x-papiforms::input.text wire:model="StreetOne" id="StreetOne" name="text" type="StreetOne" placeholder="Street address" value="{{ old('StreetOne') }}"/>
                                 </x-papiforms::input.group>
                             </div>
                             <div class="w-full md:w-1/3 px-3 md:mb-0">
                                 <x-papiforms::input.group label="Apartment #" for="StreetTwo">
-                                    <x-papiforms::input.text wire:model.defer="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
+                                    <x-papiforms::input.text wire:model="StreetTwo" id="StreetTwo" name="text" type="StreetTwo" placeholder="Apt #" value="{{ old('StreetTwo') }}"/>
                                 </x-papiforms::input.group>
                             </div>
                         </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
-                            <x-papiforms::input.select-postal-code wire:model.defer="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
+                            <x-papiforms::input.select-postal-code wire:model="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
@@ -98,7 +98,7 @@
                     {{-- Birthdate Picker Section --}}
                     <x-papiforms::input.section section="Birthdate">
                          <x-papiforms::input.group label="Birthdate" for="Birthdate">
-                            <x-papiforms::input.datepicker wire:model.defer="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
+                            <x-papiforms::input.datepicker wire:model="Birthdate" id="Birthdate" name="Birthdate" type="text" placeholder="MM/DD/YYYY" value="{{ old('Birthdate') }}"/>
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
@@ -112,18 +112,18 @@
                     {{-- Contact Information Section --}}
                     <x-papiforms::input.section section="Contact information">
                         <x-papiforms::input.group label="Email" for="EmailAddress">
-                            <x-papiforms::input.text wire:model.defer="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
+                            <x-papiforms::input.text wire:model="EmailAddress" id="EmailAddress" name="EmailAddress" type="text" placeholder="Email address" value="{{ old('EmailAddress') }}"/>
                         </x-papiforms::input.group>
                      <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/2 px-3 md:mb-0">
                         <x-papiforms::input.group label="Phone" for="PhoneVoice1">
-                            <x-papiforms::input.text wire:model.defer="PhoneVoice1" id="PhoneVoice1" name="PhoneVoice1" type="text" placeholder="Phone number" value="{{ old('PhoneVoice1') }}"/>
+                            <x-papiforms::input.text wire:model="PhoneVoice1" id="PhoneVoice1" name="PhoneVoice1" type="text" placeholder="Phone number" value="{{ old('PhoneVoice1') }}"/>
                         </x-papiforms::input.group>
                     </div>
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
                         {{-- Phone Carrier Selection --}}
                         <x-papiforms::input.group label="Mobile carrier" for="Phone1CarrierID">
-                            <x-papiforms::input.select-mobile-phone-carrier wire:model.defer="Phone1CarrierID" id="Phone1CarrierID" name="Phone1CarrierID"  value="{{ old('Phone1CarrierID') }}" />
+                            <x-papiforms::input.select-mobile-phone-carrier wire:model="Phone1CarrierID" id="Phone1CarrierID" name="Phone1CarrierID"  value="{{ old('Phone1CarrierID') }}" />
                         </x-papiforms::input.group>
                         </div>
                 </div>
@@ -131,17 +131,17 @@
 
                         {{-- Delivery option --}}
                         <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
-                            <x-papiforms::input.select-delivery-option wire:model.defer="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
+                            <x-papiforms::input.select-delivery-option wire:model="DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
                         </x-papiforms::input.group>
             </x-papiforms::input.section>
 
                     {{-- Password or PIN Section --}}
                     <x-papiforms::input.section section="PIN">
                         <x-papiforms::input.group label="Password" for="Password">
-                            <x-papiforms::input.text wire:model.defer="Password" id="Password" name="Password" type="password" placeholder="Create PIN (4-6 digit number)" value="{{ old('Password') }}"/>
+                            <x-papiforms::input.text wire:model="Password" id="Password" name="Password" type="password" placeholder="Create PIN (4-6 digit number)" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
                          <x-papiforms::input.group label="Confirm PIN" for="Password_confirmation">
-                            <x-papiforms::input.text wire:model.defer="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
+                            <x-papiforms::input.text wire:model="Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
                      </x-papiforms::input.section>
 
