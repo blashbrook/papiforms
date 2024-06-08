@@ -157,31 +157,31 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v1.3.11",
+            "version": "v1.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "57d7e0839829ef7f1014b4289cda51dca4ac6af0"
+                "reference": "c4234fc48680d5c130edb6dbf3a6b8aff378c440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/57d7e0839829ef7f1014b4289cda51dca4ac6af0",
-                "reference": "57d7e0839829ef7f1014b4289cda51dca4ac6af0",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/c4234fc48680d5c130edb6dbf3a6b8aff378c440",
+                "reference": "c4234fc48680d5c130edb6dbf3a6b8aff378c440",
                 "shasum": ""
             },
             "require": {
                 "league/commonmark": "^2.4.0",
                 "nette/schema": "^v1.3.0",
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
-                "orchestra/testbench": "^7.17",
-                "phpunit/phpunit": "~9",
-                "symfony/console": "6.4",
-                "symfony/css-selector": "6.4",
-                "symfony/event-dispatcher": "6.4",
-                "symfony/stopwatch": "v6.4.3",
-                "symfony/string": "6.4"
+                "orchestra/testbench": "^v8.22.2",
+                "phpunit/phpunit": "~10",
+                "symfony/console": "^v6.4.6",
+                "symfony/css-selector": "^v7.0.3",
+                "symfony/event-dispatcher": "^v7.0.3",
+                "symfony/stopwatch": "v7.1.0",
+                "symfony/string": "^v7.0.3"
             },
             "type": "library",
             "extra": {
@@ -190,11 +190,15 @@
                         "Blashbrook\\PAPIClient\\PAPIClientServiceProvider"
                     ],
                     "aliases": {
-                        "PAPIClient": "Blashbrook\\PAPIClient\\Facades\\PAPIClient"
+                        "PAPIClient": "Blashbrook\\PAPIClient\\Clients\\PAPIClient",
+                        "PAPICLientServiceProvider": "Blashbrook\\PAPIClient\\PAPIClientServiceProvider"
                     }
                 }
             },
             "autoload": {
+                "files": [
+                    "src/PAPIClientServiceProvider.php"
+                ],
                 "psr-4": {
                     "Blashbrook\\PAPIClient\\": "src/"
                 }
@@ -213,15 +217,17 @@
             "description": "Provides Client for Polaris ILS API",
             "homepage": "https://github.com/blashbrook/papiclient",
             "keywords": [
+                "PAPI",
                 "PAPIClient",
+                "api",
                 "laravel",
                 "polaris"
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/v1.3.11"
+                "source": "https://github.com/blashbrook/papiclient/tree/v1.3.13"
             },
-            "time": "2024-04-10T14:38:26+00:00"
+            "time": "2024-06-04T17:57:46+00:00"
         },
         {
             "name": "brick/math",
