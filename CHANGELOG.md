@@ -1,3 +1,10 @@
+## [1.40.4](https://github.com/blashbrook/papiforms/compare/v1.40.3...v1.40.4) (2024-11-12)
+
+
+### Bug Fixes
+
+* **Teenpassregistrationform:** correct papiclient namespace ([f0566bc](https://github.com/blashbrook/papiforms/commit/f0566bc5969808177003ef1b0ae5a0e9f5d41efe))
+
 ## [1.40.3](https://github.com/blashbrook/papiforms/compare/v1.40.2...v1.40.3) (2024-05-21)
 
 
