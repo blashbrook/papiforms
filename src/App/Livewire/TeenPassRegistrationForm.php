@@ -2,7 +2,7 @@
 
 namespace Blashbrook\PAPIForms\App\Livewire;
 
-use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIClient\Clients\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
