@@ -1,3 +1,10 @@
+## [1.40.6](https://github.com/blashbrook/papiforms/compare/v1.40.5...v1.40.6) (2025-01-08)
+
+
+### Bug Fixes
+
+* **node.js.yml:** update node github action ([debe6e1](https://github.com/blashbrook/papiforms/commit/debe6e10bfc34bd2c1309f3f94057a995690e8e4))
+
 ## [1.40.4](https://github.com/blashbrook/papiforms/compare/v1.40.3...v1.40.4) (2024-11-12)
 
 
