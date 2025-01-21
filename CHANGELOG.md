@@ -1,3 +1,10 @@
+## [1.40.7](https://github.com/blashbrook/papiforms/compare/v1.40.6...v1.40.7) (2025-01-21)
+
+
+### Bug Fixes
+
+* **TeenPassRegistrationForm:** add CC recipient for confirmation emails ([269dd68](https://github.com/blashbrook/papiforms/commit/269dd68ad1220aba86f19c75ef3e3b645af31486))
+
 ## [1.40.6](https://github.com/blashbrook/papiforms/compare/v1.40.5...v1.40.6) (2025-01-08)
 
 
