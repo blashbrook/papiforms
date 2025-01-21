@@ -17,7 +17,7 @@ class DuplicatePatronMailable extends Mailable
     public function build()
     {
         return $this->to($this->confirmation['appRecipient'])
-            ->cc('blashbrook@dcplibrary.org')
+            ->cc($this->confirmation['appRecipientCC'])
             ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
                 $this->confirmation['NameMiddle'].' - DUPLICATE '.
