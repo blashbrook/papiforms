@@ -40,7 +40,7 @@
         "package-lock.json"
     ],
     "dependencies": {
-        "marked": "^15.0.7",
+        "marked": "^15.0.10",
         "npm": "^11.1.0"
     },
     "engines": {
