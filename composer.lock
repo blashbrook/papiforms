@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6f8100c2153e2d542f59dbb9b645707",
+    "content-hash": "5edbf70d57b5dd37533776a077b0e8f0",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -159,7 +159,7 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v1.3.17",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
@@ -185,6 +185,7 @@
                 "symfony/stopwatch": "v7.3.0",
                 "symfony/string": "^v7.0.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8520,7 +8521,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "blashbrook/papiclient": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
