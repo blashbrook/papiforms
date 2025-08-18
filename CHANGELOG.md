@@ -1,3 +1,10 @@
+## [1.40.9](https://github.com/blashbrook/papiforms/compare/v1.40.8...v1.40.9) (2025-08-18)
+
+
+### Bug Fixes
+
+* **teen-pass-confirmation:** update links ([c515fee](https://github.com/blashbrook/papiforms/commit/c515feef9a441aff12724b2df5e9fcc7c31977b1))
+
 ## [1.40.8](https://github.com/blashbrook/papiforms/compare/v1.40.7...v1.40.8) (2025-06-05)
 
 
