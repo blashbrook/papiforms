@@ -1,3 +1,10 @@
+## [1.40.10](https://github.com/blashbrook/papiforms/compare/v1.40.9...v1.40.10) (2025-08-20)
+
+
+### Bug Fixes
+
+* **Confirmations:** remove cc address from confirmation emails ([dc1b039](https://github.com/blashbrook/papiforms/commit/dc1b039bc26c4ea2c54c88a54fe164b702177f19))
+
 ## [1.40.9](https://github.com/blashbrook/papiforms/compare/v1.40.8...v1.40.9) (2025-08-18)
 
 
