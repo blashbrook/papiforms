@@ -24,8 +24,6 @@ class AdultRegistrationForm extends Component
 
     public $appRecipient = 'sfrey@dcplibrary.org';
 
-    public $appRecipientCC = 'dcrowley@dcplibrary.org';
-
     public $postalCodes;
     public $selectedPostalCodeArray;
     public $selectedPostalCodeID = '';
@@ -190,7 +188,6 @@ class AdultRegistrationForm extends Component
         $filename = $this->newUpload->store('/', 'uploads');
         $json['newUploadURL'] = \Storage::disk('uploads')->url($filename);
         $json['appRecipient'] = $this->appRecipient;
-        $json['appRecipientCC'] = $this->appRecipientCC;
         $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
 

@@ -1,5 +1,5 @@
 @component('papiforms::mail.html.message')
-<center><a href="https://www.dcplibrary.org"><img src="https://app.dcplibrary.org/storage/images/logo.png" height="131px" width="184px" alt="Daviess County Public Library"></a></center>
+<center><a href="https://www.dcplibrary.org"><img src="https://www.dcplibrary.org/wp-content/themes/dcplibrary/_elements/logo.png" height="121px" width="174px" alt="Daviess County Public Library"></a></center>
 {{--# Introduction--}}
 
 <h4>Welcome {{ $confirmation['first_name'] }}!</h4>
@@ -19,7 +19,7 @@
 
 <h4>Getting Started</h4>
 
-<p>Your Daviess County Public Library card gives you to access thousands of books, movies, and music at the library or online.  For more informaton about borrowing and other library services, download the brochure for <a href="https://www.dcplibrary.org/wp-content/uploads/2020/02/DCPL_Cardholder_Information.pdf">New Cardholders [PDF]</a>.</p>
+<p>Your Daviess County Public Library card gives you to access thousands of books, movies, and music at the library or online.  For more informaton about borrowing and other library services, download the brochure for <a href="https://dcplky.patronpoint.com/asset/2:library-cardholders-brochure">New Cardholders [PDF]</a>.</p>
 
 @component('papiforms::mail.html.button', ['url' => 'https://dcpl.bibliocommons.com', 'color' => 'success'])
     ACCESS THE CATALOG
@@ -30,8 +30,8 @@
     ACCESS ONLINE RESOURCES
 @endcomponent
 
-<p>Sign up for <a href="http://www.libraryaware.com/2528/Subscribers/Subscribe">Newsletters</a> with information on new or recommended reads and upcoming events, delivered straight to your inbox.</p>
-<p>View the <a href="http://dcplibrary.evanced.info/signup">Events Calendar</a> to find out what's going on at library.</p>
+<p>Sign up for <a href="https://www.dcplibrary.org/newsletters">Newsletters</a> with information on new or recommended reads and upcoming events, delivered straight to your inbox.</p>
+<p>View the <a href="https://daviesscounty.librarycalendar.com">Events Calendar</a> to find out what's going on at library.</p>
 <p>Visit our website at <a href="https://www.dcplibrary.org">https://www.dcplibrary.org</a> to learn more, and find us on social media @dcplibrary</p>
 
 <h4>Important Information about Notifications</h4>
