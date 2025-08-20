@@ -1,3 +1,10 @@
+## [1.40.11](https://github.com/blashbrook/papiforms/compare/v1.40.10...v1.40.11) (2025-08-20)
+
+
+### Bug Fixes
+
+* update packages ([1907798](https://github.com/blashbrook/papiforms/commit/1907798d349861fc511caa2b2dc2b30383084b23))
+
 ## [1.40.10](https://github.com/blashbrook/papiforms/compare/v1.40.9...v1.40.10) (2025-08-20)
 
 
