@@ -20,7 +20,6 @@ class TeenPassRegistrationForm extends Component
     //public $success = false;
 
     public $appRecipient = 'sfrey@dcplibrary.org';
-    public $appRecipientCC = 'dcrowley@dcplibrary.org';
 
     public $postalCodes;
     public $selectedPostalCodeArray;
@@ -180,7 +179,6 @@ class TeenPassRegistrationForm extends Component
         }
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
         $json['appRecipient'] = $this->appRecipient;
-        $json['appRecipientCC'] = $this->appRecipientCC;
         $json['newUploadURL'] = '';
         if ($body['ErrorMessage'] === '') {
             $this->successMessage = true;
