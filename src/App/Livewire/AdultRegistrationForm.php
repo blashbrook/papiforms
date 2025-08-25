@@ -268,6 +268,6 @@ class AdultRegistrationForm extends Component
         $this->PatronCode = PatronCodeController::getPatronCode('Adult');
 
         return view('papiforms::livewire.adult-registration-form')
-            ->layout('papiforms::layouts.app');
+            ->layout('papiforms::components.layouts.app');
     }
 }
