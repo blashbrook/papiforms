@@ -1,3 +1,10 @@
+## [1.40.14](https://github.com/blashbrook/papiforms/compare/v1.40.13...v1.40.14) (2025-08-25)
+
+
+### Bug Fixes
+
+* **AdultRegistration:** fix layout path ([e23e0d9](https://github.com/blashbrook/papiforms/commit/e23e0d99e918c988d07749b2d49f3839dfaf4fd6))
+
 ## [1.40.13](https://github.com/blashbrook/papiforms/compare/v1.40.12...v1.40.13) (2025-08-25)
 
 
