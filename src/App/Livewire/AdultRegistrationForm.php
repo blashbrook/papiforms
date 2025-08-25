@@ -12,10 +12,10 @@ use Blashbrook\PAPIForms\Facades\PatronCodeController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use Blashbrook\PAPIForms\Facades\UdfOptionController;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
 
 class AdultRegistrationForm extends Component
 {

@@ -1,3 +1,11 @@
+## [1.40.13](https://github.com/blashbrook/papiforms/compare/v1.40.12...v1.40.13) (2025-08-25)
+
+
+### Bug Fixes
+
+* **adultregistrationform:** update adult registration form ([8643961](https://github.com/blashbrook/papiforms/commit/8643961bc01e6cf65a4f753edb65dbce3d2332bc))
+* **Merge branch 'dev-master':** update adult registration ([f53a381](https://github.com/blashbrook/papiforms/commit/f53a381674d1f8d348ba9d1cb1c4a54c321af74a))
+
 ## [1.40.12](https://github.com/blashbrook/papiforms/compare/v1.40.11...v1.40.12) (2025-08-25)
 
 
