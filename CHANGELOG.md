@@ -1,3 +1,12 @@
+## [1.40.12](https://github.com/blashbrook/papiforms/compare/v1.40.11...v1.40.12) (2025-08-25)
+
+
+### Bug Fixes
+
+* **code:** remove code folder ([fc5f163](https://github.com/blashbrook/papiforms/commit/fc5f1636490519cc7860a5f8cf4a790bf376b2d0))
+* **composer:** require papiclient dev ([6570e6e](https://github.com/blashbrook/papiforms/commit/6570e6e98336a5a0426ee6f2d3dd785391e2d020))
+* **TeenPassRegistrationForm:** add User2 variable ([2355b88](https://github.com/blashbrook/papiforms/commit/2355b8896954f01828a350ecb70b9ff9d2ee9356))
+
 ## [1.40.11](https://github.com/blashbrook/papiforms/compare/v1.40.10...v1.40.11) (2025-08-20)
 
 
