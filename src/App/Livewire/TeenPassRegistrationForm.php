@@ -54,6 +54,7 @@ class TeenPassRegistrationForm extends Component
     public $NameLast = '';
     public $NameMiddle = '';
     public $User1 = '';
+    public $User2 = '';
     public $User4 = '';
     public $Birthdate = '';
     public $PhoneVoice1 = '';
@@ -78,6 +79,7 @@ class TeenPassRegistrationForm extends Component
         'NameLast' => 'required',
         'NameMiddle' => 'required',
         'User1' => 'required',
+        'User2' => 'nullable',
         'User4' => 'nullable',
         'Birthdate' => 'required|date_format:m/d/Y|bail|teenpass_birthdate',
         'PhoneVoice1' => 'required|digits:10',
@@ -157,6 +159,7 @@ class TeenPassRegistrationForm extends Component
             'NameLast' => Str::upper($this->NameLast),
             'NameMiddle' => Str::upper($this->NameMiddle),
             'User1' => Str::upper($this->User1),
+            'User2' => $this->User2,
             'User4' => $this->User4,
             'Birthdate' => $this->Birthdate,
             'PhoneVoice1' => $this->PhoneVoice1,
@@ -227,6 +230,7 @@ class TeenPassRegistrationForm extends Component
         $this->NameLast = '';
         $this->NameMiddle = '';
         $this->User1 = '';
+        $this->User2 = '';
         $this->User4 = '';
         $this->Birthdate = '';
         $this->PhoneVoice1 = '';
