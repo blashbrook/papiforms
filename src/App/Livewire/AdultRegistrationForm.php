@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class AdultRegistrationForm extends Component
 {
@@ -22,7 +23,7 @@ class AdultRegistrationForm extends Component
 
     use WithFileUploads;
 
-    public $appRecipient = 'sfrey@dcplibrary.org';
+    public $appRecipient = 'blashbrook@dcplibrary.org';
 
     public $postalCodes;
     public $selectedPostalCodeArray;
@@ -59,8 +60,9 @@ class AdultRegistrationForm extends Component
     public $NameFirst = '';
     public $NameLast = '';
     public $NameMiddle = '';
-    public $User4 = '';
+    public $User1 = '';
     public $User2 = '';
+    public $User4 = '';
     public $Birthdate = '';
     public $PhoneVoice1 = '';
     public $Phone1CarrierID = '';
@@ -83,6 +85,7 @@ class AdultRegistrationForm extends Component
         'NameFirst' => 'required',
         'NameLast' => 'required',
         'NameMiddle' => 'required',
+        'User1' => 'nullable',
         'User2' => 'required',
         'User4' => 'nullable',
         'Birthdate' => 'required|date_format:m/d/Y|bail|adult_birthdate',
@@ -168,8 +171,9 @@ class AdultRegistrationForm extends Component
             'NameFirst' => Str::upper($this->NameFirst),
             'NameLast' => Str::upper($this->NameLast),
             'NameMiddle' => Str::upper($this->NameMiddle),
-            'User4' => $this->User4,
-            'User2' => $this->User2,
+            'User1' => $this->User4,
+            'User2' => $this->User4,
+            'User4' => $this->User2,
             'Birthdate' => $this->Birthdate,
             'PhoneVoice1' => $this->PhoneVoice1,
             'Phone1CarrierID' => $this->Phone1CarrierID,
@@ -186,7 +190,7 @@ class AdultRegistrationForm extends Component
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
         $this->requestCompleted = true;
         $filename = $this->newUpload->store('/', 'uploads');
-        $json['newUploadURL'] = \Storage::disk('uploads')->url($filename);
+        $json['newUploadURL'] = Storage::disk('uploads')->url($filename);
         $json['appRecipient'] = $this->appRecipient;
         $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
@@ -239,7 +243,9 @@ class AdultRegistrationForm extends Component
         $this->NameFirst = '';
         $this->NameLast = '';
         $this->NameMiddle = '';
+        $this->User1 = '';
         $this->User2 = '';
+        $this->User4 = '';
         $this->Birthdate = '';
         $this->PhoneVoice1 = '';
         $this->Phone1CarrierID = '';
