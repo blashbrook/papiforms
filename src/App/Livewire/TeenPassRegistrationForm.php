@@ -144,6 +144,10 @@ class TeenPassRegistrationForm extends Component
 
     public function submitForm()
     {
+        if($this->DeliveryOptionID === '8') {
+            $this->Phone1CarrierID = '1';
+            $this->TxtPhoneNumber = '1';
+        }
         //$this->successMessage = '';
         $this->validate();
 

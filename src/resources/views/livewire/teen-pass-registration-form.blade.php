@@ -121,10 +121,6 @@
                         </x-papiforms::input.group>
                     </div>
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
-                        {{-- Phone Carrier Selection --}}
-                        <x-papiforms::input.group label="Mobile carrier" for="Phone1CarrierID">
-                            <x-papiforms::input.select-mobile-phone-carrier wire:model="Phone1CarrierID" id="Phone1CarrierID" name="Phone1CarrierID"  value="{{ old('Phone1CarrierID') }}" />
-                        </x-papiforms::input.group>
                         </div>
                 </div>
                         <input wire:model="TxtPhoneNumber" name="TxtPhoneNumber" type="hidden" />
