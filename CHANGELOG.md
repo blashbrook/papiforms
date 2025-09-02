@@ -1,3 +1,10 @@
+## [1.40.15](https://github.com/blashbrook/papiforms/compare/v1.40.14...v1.40.15) (2025-09-02)
+
+
+### Bug Fixes
+
+* **teenpassregistration:** remove mobilephonecarrier option ([b53519b](https://github.com/blashbrook/papiforms/commit/b53519b5e02e3c2ee4cd68219a36d9e340e480f6))
+
 ## [1.40.14](https://github.com/blashbrook/papiforms/compare/v1.40.13...v1.40.14) (2025-08-25)
 
 
