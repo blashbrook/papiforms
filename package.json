@@ -28,10 +28,10 @@
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "^13.0.1",
         "@semantic-release/git": "^10.0.1",
-        "@semantic-release/github": "^11.0.5",
+        "@semantic-release/github": "^11.0.6",
         "@semantic-release/npm": "^12.0.2",
         "@semantic-release/release-notes-generator": "^14.0.3",
-        "semantic-release": "^24.2.7"
+        "semantic-release": "^24.2.8"
     },
     "files": [
         "index.js",
@@ -41,7 +41,7 @@
     ],
     "dependencies": {
         "marked": "^16.2.1",
-        "npm": "^11.5.2"
+        "npm": "^11.6.0"
     },
     "engines": {
         "node": ">=18.0.0"
