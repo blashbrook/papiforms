@@ -3,7 +3,6 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
-use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
@@ -23,8 +22,6 @@ class AdultRegistrationForm extends Component
     //public $success = false;
 
     use WithFileUploads;
-
-    public PatronForm $form;
 
     public $newUpload;
     public $newUploadFilename;

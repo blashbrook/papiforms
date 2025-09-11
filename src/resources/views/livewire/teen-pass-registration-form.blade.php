@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
-                            <x-papiforms::input.select-postal-code wire:model="form.selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
+                            <x-papiforms::input.select-postal-code wire:model="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
@@ -145,8 +145,8 @@
                         <x-papiforms::input.group label="Password" for="Password">
                             <x-papiforms::input.text wire:model="form.Password" id="Password" name="Password" type="password" placeholder="Create PIN (4-6 digit number)" value="{{ old('Password') }}"/>
                         </x-papiforms::input.group>
-                         <x-papiforms::input.group label="Confirm PIN" for="Password_confirmation">
-                            <x-papiforms::input.text wire:model="form.Password_confirmation" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
+                         <x-papiforms::input.group label="Confirm PIN" for="Password2">
+                            <x-papiforms::input.text wire:model="form.Password2" id="Password_confirmation" name="Password_confirmation" type="password" placeholder="Confirm PIN" value="{{ old('Password_confirmation') }}"/>
                         </x-papiforms::input.group>
                      </x-papiforms::input.section>
 

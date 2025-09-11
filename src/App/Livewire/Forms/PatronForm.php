@@ -9,12 +9,6 @@ class PatronForm extends Form
 {
     public $appRecipient = '';
 
-    public $postalCodes;
-    public $selectedPostalCodeArray;
-
-    //#[Validate('required')]
-    public $selectedPostalCodeID = '';
-
     public $udfOptions;
 
     public $CarrierName = '';
@@ -33,22 +27,7 @@ class PatronForm extends Form
     public $errorMessage = false;
     public $errorText = '';
 
-    //#[Validate('required')]
-    public $PostalCode = '';
 
-    //#[Validate('required')]
-
-    //#[Validate('required')]
-    public $City = '';
-
-    //#[Validate('required')]
-    public $State = '';
-
-    //#[Validate('required')]
-    public $County = '';
-
-    //#[Validate('required')]
-    public $CountryID = '';
 
     //#[Validate('required')]
     public $StreetOne = '';
@@ -87,6 +66,8 @@ class PatronForm extends Form
 
     public $Password = '';
 
+    public $Password2 = '';
+
     //#[Validate('required')]
     public $DeliveryOptionID = '';
 
@@ -99,12 +80,7 @@ class PatronForm extends Form
     public function rules()
     {
         return [
-            'selectedPostalCodeID' => 'required',
-            'PostalCode' => 'required',
-            'City' => 'required',
-            'State' => 'required',
-            'County' => 'required',
-            'CountryID' => 'required',
+
             'StreetOne' => 'required',
             'StreetTwo' => 'nullable',
             'NameFirst' => 'required',
@@ -116,8 +92,8 @@ class PatronForm extends Form
             'PhoneVoice1' => 'required|digits:10',
             'Phone1CarrierID' => 'required_if:DeliveryOptionID,8',
             'EmailAddress' => 'required|email',
-            'Password' => 'required|digits_between:4,6|confirmed',
-            //'Password_confirmation'  => 'required',
+            'Password' => 'required|digits_between:4,6|same:Password2',
+            'Password2' => 'required',
             'DeliveryOptionID' => 'required',
             'TxtPhoneNumber' => 'nullable',
             'PatronCode' => 'required',
@@ -129,12 +105,7 @@ class PatronForm extends Form
      */
     public function resetForm(): void
     {
-        $this->selectedPostalCodeID = '';
-        $this->PostalCode = '';
-        $this->City = '';
-        $this->State = '';
-        $this->County = '';
-        $this->CountryID = '';
+
         $this->StreetOne = '';
         $this->StreetTwo = '';
         $this->NameFirst = '';
@@ -147,7 +118,7 @@ class PatronForm extends Form
         $this->Phone1CarrierID = '';
         $this->EmailAddress = '';
         $this->Password = '';
-        $this->Password_confirmation = '';
+        $this->Password2 = '';
         $this->DeliveryOptionID = '';
         $this->TxtPhoneNumber = '';
         $this->PatronCode = '';
