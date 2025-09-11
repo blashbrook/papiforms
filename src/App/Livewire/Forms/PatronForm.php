@@ -27,8 +27,6 @@ class PatronForm extends Form
     public $errorMessage = false;
     public $errorText = '';
 
-
-
     //#[Validate('required')]
     public $StreetOne = '';
 
@@ -105,7 +103,6 @@ class PatronForm extends Form
      */
     public function resetForm(): void
     {
-
         $this->StreetOne = '';
         $this->StreetTwo = '';
         $this->NameFirst = '';

@@ -34,6 +34,7 @@ class TeenPassRegistrationForm extends Component
     public $State = '';
     public $County = '';
     public $CountryID = '';
+
     /**
      * @return string[]
      */
@@ -184,11 +185,11 @@ class TeenPassRegistrationForm extends Component
         }
     }
 
-
     public function boot(PAPIClient $papiclient)
     {
         $this->papiclient = $papiclient;
     }
+
     /**
      * @return Application|Factory|View|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
