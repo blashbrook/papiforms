@@ -31,7 +31,7 @@ $ composer test
 
 ## Contributing
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+Please see [contributing.md](contributing.md) for details and a todolist. 
 
 ## Security
 
