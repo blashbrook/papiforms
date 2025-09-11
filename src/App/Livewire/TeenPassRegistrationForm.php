@@ -3,6 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\Clients\PAPIClient;
+use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
@@ -11,7 +12,6 @@ use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use Blashbrook\PAPIForms\Facades\UdfOptionController;
-use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -90,22 +90,20 @@ class TeenPassRegistrationForm extends Component
         //$this->form->resetForm();
     }
 
-
     /**
      * @return void
+     *
      * @throws GuzzleException
      * @throws \JsonException
      */
     public function submitForm(): void
     {
-
         if ($this->form->DeliveryOptionID === '8') {
             $this->form->Phone1CarrierID = '1';
             $this->form->TxtPhoneNumber = '1';
         }
 
-$this->form->validate();
-
+        $this->form->validate();
 
         $json = [
             'PostalCode' => $this->form->PostalCode,

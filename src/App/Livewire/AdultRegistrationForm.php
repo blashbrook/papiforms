@@ -29,7 +29,6 @@ class AdultRegistrationForm extends Component
     public $newUpload;
     public $newUploadFilename;
 
-
     protected $rules = [
         'newUpload' => 'required',
     ];

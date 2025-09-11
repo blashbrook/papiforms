@@ -85,7 +85,6 @@ class PatronForm extends Form
     //#[Validate('required|email')]
     public $EmailAddress = '';
 
-
     public $Password = '';
 
     //#[Validate('required')]
@@ -97,7 +96,8 @@ class PatronForm extends Form
     //#[Validate('required')]
     public $PatronCode = '';
 
-    public function rules() {
+    public function rules()
+    {
         return [
             'selectedPostalCodeID' => 'required',
             'PostalCode' => 'required',
@@ -123,7 +123,6 @@ class PatronForm extends Form
             'PatronCode' => 'required',
         ];
     }
-
 
     /**
      * @return void
