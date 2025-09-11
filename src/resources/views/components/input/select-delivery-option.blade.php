@@ -1,5 +1,5 @@
 @props([
-    'deliveryOptions' => $this->deliveryOptions
+    'deliveryOptions' => $this->form->deliveryOptions
 ])
 <div>
     <select {{ $attributes }} class = "form-input block w-full px-4 py-3 border

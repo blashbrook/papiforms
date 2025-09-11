@@ -1,5 +1,5 @@
 @props([
-    'mobilePhoneCarriers' => $this->mobilePhoneCarriers
+    'mobilePhoneCarriers' => $this->form->mobilePhoneCarriers
 ])
 <div>
     <select {{ $attributes }} class = "form-input block w-full px-4 py-3 border

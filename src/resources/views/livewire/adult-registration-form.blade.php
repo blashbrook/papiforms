@@ -1,3 +1,12 @@
+@props([
+    'successMessage'=> $this->form->successMessage,
+    'errorMessage' => $this->form->errorMessage,
+    'modalTitle' => $this->form->modalTitle,
+    'modalMessage' => $this->form->modalMessage,
+    'modalOK' => $this->form->modalOK,
+    'modalBarcode' => $this->form->modalBarcode,
+    'modalPIN' => $this->form->modalPIN
+])
 <div class="relative bg-white">
     <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>

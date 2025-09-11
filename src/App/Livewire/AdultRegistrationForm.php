@@ -3,6 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
+use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
@@ -23,82 +24,14 @@ class AdultRegistrationForm extends Component
 
     use WithFileUploads;
 
-    public $appRecipient = 'blashbrook@dcplibrary.org';
-
-    public $postalCodes;
-    public $selectedPostalCodeArray;
-    public $selectedPostalCodeID = '';
-
-    public $udfOptions;
-
-    public $CarrierName = '';
-    public $CarrierID = '';
-    public $mobilePhoneCarriers;
-
-    public $deliveryOptions;
+    public PatronForm $form;
 
     public $newUpload;
     public $newUploadFilename;
 
-    public $modalTitle = '';
-    public $modalMessage = '';
-    public $modalBarcode = '';
-    public $modalPIN = '';
-    public $modalOK = '';
-    public bool $requestCompleted = false;
-    public $successMessage = false;
-    public $errorMessage = false;
-    public $errorText = '';
-
-    public $PostalCode = '';
-    public $City = '';
-    public $State = '';
-    public $County = '';
-    public $CountryID = '';
-    public $StreetOne = '';
-    public $StreetTwo = '';
-    public $NameFirst = '';
-    public $NameLast = '';
-    public $NameMiddle = '';
-    public $User1 = '';
-    public $User2 = '';
-    public $User4 = '';
-    public $Birthdate = '';
-    public $PhoneVoice1 = '';
-    public $Phone1CarrierID = '';
-    public $EmailAddress = '';
-    public $Password = '';
-    public $Password_confirmation = '';
-    public $DeliveryOptionID = '';
-    public $TxtPhoneNumber = '';
-    public $PatronCode = '';
 
     protected $rules = [
-        'selectedPostalCodeID' => 'required',
-        'PostalCode' => 'required',
-        'City' => 'required',
-        'State' => 'required',
-        'County' => 'required',
-        'CountryID' => 'required',
-        'StreetOne' => 'required',
-        'StreetTwo' => 'nullable',
-        'NameFirst' => 'required',
-        'NameLast' => 'required',
-        'NameMiddle' => 'required',
-        'User1' => 'nullable',
-        'User2' => 'required',
-        'User4' => 'nullable',
-        'Birthdate' => 'required|date_format:m/d/Y|bail|adult_birthdate',
-        'PhoneVoice1' => 'required|digits:10',
-        'Phone1CarrierID' => 'required_if:DeliveryOptionID,8',
-        'EmailAddress' => 'required|regex:/^.+@.+\\..+$/i',
-        'Password' => 'required|digits_between:4,6|confirmed',
-        //'Password_confirmation'  => 'required',
-        'DeliveryOptionID' => 'required',
-        'TxtPhoneNumber' => 'nullable',
-        'PatronCode' => 'required',
         'newUpload' => 'required',
-
     ];
 
     public function messages()
@@ -131,22 +64,22 @@ class AdultRegistrationForm extends Component
 
     public function updatedselectedPostalCodeID()
     {
-        $this->selectedPostalCodeArray = $this->postalCodes->find($this->selectedPostalCodeID);
-        $this->PostalCode = $this->selectedPostalCodeArray->PostalCode;
-        $this->City = $this->selectedPostalCodeArray->City;
-        $this->State = $this->selectedPostalCodeArray->State;
-        $this->County = $this->selectedPostalCodeArray->County;
-        $this->CountryID = $this->selectedPostalCodeArray->CountryID;
+        $this->form->selectedPostalCodeArray = $this->form->postalCodes->find($this->form->selectedPostalCodeID);
+        $this->form->PostalCode = $this->form->selectedPostalCodeArray->PostalCode;
+        $this->form->City = $this->form->selectedPostalCodeArray->City;
+        $this->form->State = $this->form->selectedPostalCodeArray->State;
+        $this->form->County = $this->form->selectedPostalCodeArray->County;
+        $this->form->CountryID = $this->form->selectedPostalCodeArray->CountryID;
     }
 
     public function updatedPhone1CarrierID()
     {
-        $this->TxtPhoneNumber = '1';
+        $this->form->TxtPhoneNumber = '1';
     }
 
     public function closeErrorMessage()
     {
-        $this->errorMessage = false;
+        $this->form->errorMessage = false;
         $this->resetForm();
     }
 
@@ -161,111 +94,90 @@ class AdultRegistrationForm extends Component
         $this->validate();
 
         $json = [
-            'PostalCode' => $this->PostalCode,
-            'City' => $this->City,
-            'State' => $this->State,
-            'County' => $this->County,
-            'CountryID' => $this->CountryID,
-            'StreetOne' => Str::upper($this->StreetOne),
-            'StreetTwo' => Str::upper($this->StreetTwo),
-            'NameFirst' => Str::upper($this->NameFirst),
-            'NameLast' => Str::upper($this->NameLast),
-            'NameMiddle' => Str::upper($this->NameMiddle),
-            'User1' => $this->User4,
-            'User2' => $this->User4,
-            'User4' => $this->User2,
-            'Birthdate' => $this->Birthdate,
-            'PhoneVoice1' => $this->PhoneVoice1,
-            'Phone1CarrierID' => $this->Phone1CarrierID,
-            'EmailAddress' => $this->EmailAddress,
-            'Password' => $this->Password,
-            'Password2' => $this->Password,
-            'DeliveryOptionID' => $this->DeliveryOptionID,
-            'TxtPhoneNumber' => $this->TxtPhoneNumber,
-            'PatronCode' => $this->PatronCode,
+            'PostalCode' => $this->form->PostalCode,
+            'City' => $this->form->City,
+            'State' => $this->form->State,
+            'County' => $this->form->County,
+            'CountryID' => $this->form->CountryID,
+            'StreetOne' => Str::upper($this->form->StreetOne),
+            'StreetTwo' => Str::upper($this->form->StreetTwo),
+            'NameFirst' => Str::upper($this->form->NameFirst),
+            'NameLast' => Str::upper($this->form->NameLast),
+            'NameMiddle' => Str::upper($this->form->NameMiddle),
+            'User1' => $this->form->User4,
+            'User2' => $this->form->User4,
+            'User4' => $this->form->User2,
+            'Birthdate' => $this->form->Birthdate,
+            'PhoneVoice1' => $this->form->PhoneVoice1,
+            'Phone1CarrierID' => $this->form->Phone1CarrierID,
+            'EmailAddress' => $this->form->EmailAddress,
+            'Password' => $this->form->Password,
+            'Password2' => $this->form->Password,
+            'DeliveryOptionID' => $this->form->DeliveryOptionID,
+            'TxtPhoneNumber' => $this->form->TxtPhoneNumber,
+            'PatronCode' => $this->form->PatronCode,
             //'Barcode'           => $this->Barcode,
             //'successMessage'    => $this->successMessage
         ];
+
         $response = PAPIClient::publicRequest('POST', 'patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-        $this->requestCompleted = true;
+        $this->form->requestCompleted = true;
         $filename = $this->newUpload->store('/', 'uploads');
         $json['newUploadURL'] = Storage::disk('uploads')->url($filename);
-        $json['appRecipient'] = $this->appRecipient;
-        $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->DeliveryOptionID);
-        $json['patronCodeDesc'] = PatronCodeController::getSelection($this->PatronCode);
+        $json['appRecipient'] = env('PAPI_ACCOUNTMGR_EMAIL');
+        $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->form->DeliveryOptionID);
+        $json['patronCodeDesc'] = PatronCodeController::getSelection($this->form->PatronCode);
 
         if ($body['ErrorMessage'] === '') {
-            $this->successMessage = true;
-            $this->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
-            $this->modalMessage =
+            $this->form->successMessage = true;
+            $this->form->modalTitle = 'Your temporary barcode is '.$body['Barcode'].'.';
+            $this->form->modalMessage =
                 'You will receive an email from no-reply@dcplibrary.org with more information.
                 If the email is not in your Inbox, please check your spam or junk folder.
                 Click Continue to complete your online account registration.';
-            $this->modalBarcode = $body['Barcode'];
-            $this->modalPIN = $json['Password'];
+            $this->form->modalBarcode = $body['Barcode'];
+            $this->form->modalPIN = $json['Password'];
             $json['Barcode'] = $body['Barcode'];
-            $json['first_name'] = $this->NameFirst;
-            if ($this->Phone1CarrierID !== '') {
-                $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->Phone1CarrierID);
+            $json['first_name'] = $this->form->NameFirst;
+            if ($this->form->Phone1CarrierID !== '') {
+                $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->form->Phone1CarrierID);
             }
             Mail::to($json['EmailAddress'])->send(new AdultConfirmationMailable($json));
             Mail::to($this->appRecipient)->send(new PatronApplicationMailable($json));
             $this->resetForm();
         } else {
-            $this->errorMessage = true;
+            $this->form->errorMessage = true;
             if ($body['ErrorMessage'] == 'Duplicate patron name is specified') {
-                $this->modalTitle = 'Duplicate account detected';
-                $this->modalMessage = 'You may already have a library account.
+                $this->form->modalTitle = 'Duplicate account detected';
+                $this->form->modalMessage = 'You may already have a library account.
                                 Your application has been forwarded to a library
                                 representative for review.  You will be contacted shortly
                                 with more information.';
                 Mail::to($this->appRecipient)->send(new DuplicatePatronMailable($json));
             } else {
-                $this->modalTitle = 'There was an error with your application!';
-                $this->modalMessage = $body['ErrorMessage'];
-                $this->modalMessage .= 'Please try again later, or contact the library.';
+                $this->form->modalTitle = 'There was an error with your application!';
+                $this->form->modalMessage = $body['ErrorMessage'];
+                $this->form->modalMessage .= 'Please try again later, or contact the library.';
             }
-            $this->modalOK = 'closeErrorMessage';
+            $this->form->modalOK = 'closeErrorMessage';
         }
     }
 
     public function resetForm()
     {
-        $this->selectedPostalCodeID = '';
-        $this->PostalCode = '';
-        $this->City = '';
-        $this->State = '';
-        $this->County = '';
-        $this->CountryID = '';
-        $this->StreetOne = '';
-        $this->StreetTwo = '';
-        $this->NameFirst = '';
-        $this->NameLast = '';
-        $this->NameMiddle = '';
-        $this->User1 = '';
-        $this->User2 = '';
-        $this->User4 = '';
-        $this->Birthdate = '';
-        $this->PhoneVoice1 = '';
-        $this->Phone1CarrierID = '';
-        $this->EmailAddress = '';
-        $this->Password = '';
-        $this->Password_confirmation = '';
-        $this->DeliveryOptionID = '';
-        $this->TxtPhoneNumber = '';
-        $this->PatronCode = '';
         $this->newUpload = '';
         $this->newUploadFilename = '';
+        $this->form->resetForm();
     }
 
     public function render()
     {
-        $this->postalCodes = PostalCodeController::createSelection();
-        $this->mobilePhoneCarriers = MobilePhoneCarrierController::index();
-        $this->udfOptions = UdfOptionController::createSelection();
-        $this->deliveryOptions = DeliveryOptionController::createSelection();
-        $this->PatronCode = PatronCodeController::getPatronCode('Adult');
+        $this->form->postalCodes = PostalCodeController::createSelection();
+        $this->form->mobilePhoneCarriers = MobilePhoneCarrierController::index();
+        $this->form->udfOptions = UdfOptionController::createSelection();
+        $this->form->deliveryOptions = DeliveryOptionController::createSelection();
+        $this->form->PatronCode = PatronCodeController::getPatronCode('Adult');
 
         return view('papiforms::livewire.adult-registration-form')
             ->layout('papiforms::components.layouts.app');

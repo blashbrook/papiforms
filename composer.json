@@ -33,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Blashbrook\\PAPIForms\\Tests\\": "Tests"
+            "Blashbrook\\PAPIForms\\Tests\\": "src/Tests"
         }
     },
     "extra": {

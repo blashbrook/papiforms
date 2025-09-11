@@ -1,5 +1,5 @@
 @props([
-    'udfOptions' => $this->udfOptions
+    'udfOptions' => $this->form->udfOptions
 ])
 <div>
     <select {{ $attributes }} class="form-input block w-full px-4 py-3 border

@@ -1,6 +1,6 @@
 @props([
-    'selectedPostalCodeID' => $this->selectedPostalCodeID,
-    'postalCodes' => $this->postalCodes
+    'selectedPostalCodeID' => $this->form->selectedPostalCodeID,
+    'postalCodes' => $this->form->postalCodes
 ])
 <div>
     <select {{ $attributes }} class = "form-input block w-full px-4 py-3 border
