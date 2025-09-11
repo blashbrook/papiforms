@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/blashbrook/papiforms/compare/v1.40.15...v1.41.0) (2025-09-11)
+
+
+### Features
+
+* **composer:** update dependencies ([68966a2](https://github.com/blashbrook/papiforms/commit/68966a2b51ea447c8fb86439aa2e365363741356))
+
 ## [1.40.15](https://github.com/blashbrook/papiforms/compare/v1.40.14...v1.40.15) (2025-09-02)
 
 
