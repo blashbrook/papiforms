@@ -2,10 +2,10 @@
 
 namespace Blashbrook\PAPIForms\App\Providers;
 
-use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronUdfs;
 use Blashbrook\PAPIForms\App;
 use Blashbrook\PAPIForms\App\Console\Commands\RunSeeders;
 use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronCodes;
+use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronUdfs;
 use Blashbrook\PAPIForms\App\Http\Controllers\DeliveryOptionController;
 use Blashbrook\PAPIForms\App\Http\Controllers\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
@@ -152,7 +152,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->commands([
             RunSeeders::class,
             UpdatePatronCodes::class,
-            UpdatePatronUdfs::class
+            UpdatePatronUdfs::class,
         ]);
     }
 }

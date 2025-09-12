@@ -1,9 +1,9 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Console\Commands;
+namespace Blashbrook\PAPIForms\App\Console\Commands;
 
-    use Illuminate\Console\Command;
-    use Blashbrook\PAPIForms\App\Services\PatronCodeFetcher; // Import the new service class
+    use Blashbrook\PAPIForms\App\Services\PatronCodeFetcher;
+    use Illuminate\Console\Command; // Import the new service class
 
     class UpdatePatronCodes extends Command
     {
@@ -33,7 +33,7 @@
          *
          * The service is injected automatically by Laravel's service container.
          *
-         * @param Blashbrook\PAPIForms\App\Services\PatronCodeFetcher $patronCodeFetcher
+         * @param  Blashbrook\PAPIForms\App\Services\PatronCodeFetcher  $patronCodeFetcher
          * @return void
          */
         public function __construct(PatronCodeFetcher $patronCodeFetcher)
@@ -49,11 +49,12 @@
         {
             $this->info('Starting data fetch from external API...');
 
- /*           try {*/
-                // Call the service to perform the core logic.
-                $this->patronCodeFetcher->fetch();
+            /*           try {*/
+            // Call the service to perform the core logic.
+            $this->patronCodeFetcher->fetch();
 
-                $this->info("Successfully imported Patron Codes from Polaris.");
-                return Command::SUCCESS;
+            $this->info('Successfully imported Patron Codes from Polaris.');
+
+            return Command::SUCCESS;
         }
     }

@@ -1,14 +1,13 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Services;
+namespace Blashbrook\PAPIForms\App\Services;
 
+    use Blashbrook\PAPIClient\PAPIClient;
     use Blashbrook\PAPIForms\App\Concerns\APIHelpers;
     use Blashbrook\PAPIForms\App\Models\PatronUdf;
-    use Blashbrook\PAPIClient\PAPIClient;
 
     class PatronUdfFetcher
     {
-
         use APIHelpers;
 
         protected PAPIClient $papiclient;
@@ -20,7 +19,7 @@
 
         public function fetch(): int
         {
-            $patronUdfs = $this->fetchData('patronudfs', 'PatronUdfConfigsRows' );
+            $patronUdfs = $this->fetchData('patronudfs', 'PatronUdfConfigsRows');
             $patronUdfIds = [];
 
             foreach ($patronUdfs as $patronUdf) {
@@ -30,7 +29,7 @@
                     'Display' => $patronUdf['Display'],
                     'Values' => $patronUdf['Values'],
                     'Required' => $patronUdf['Required'],
-                    'DefaultValue' => $patronUdf['DefaultValue']
+                    'DefaultValue' => $patronUdf['DefaultValue'],
                 ]);
                 $patronUdfIds[] = $patronUdf['PatronUdfID'];
             }
