@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Services;
+namespace Blashbrook\PAPIForms\App\Services;
 
     use Blashbrook\PAPIClient\PAPIClient;
     use Blashbrook\PAPIForms\App\Concerns\APIHelpers;
@@ -12,14 +12,14 @@
 
         protected PAPIClient $papiclient;
 
-       public function __construct(PAPIClient $papiclient)
-       {
-           $this->papiclient = $papiclient;
-       }
+        public function __construct(PAPIClient $papiclient)
+        {
+            $this->papiclient = $papiclient;
+        }
 
         public function fetch(): int
         {
-            $patronCodes = $this->fetchData('patroncodes', 'PatronCodesRows' );
+            $patronCodes = $this->fetchData('patroncodes', 'PatronCodesRows');
             $patronCodeIds = [];
 
             foreach ($patronCodes as $patronCode) {
@@ -35,5 +35,4 @@
 
             return count($patronCodeIds);
         }
-
     }

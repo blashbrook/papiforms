@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Console\Commands;
+namespace Blashbrook\PAPIForms\App\Console\Commands;
 
     use Blashbrook\PAPIForms\App\Services\PatronUdfFetcher;
     use Illuminate\Console\Command;
@@ -35,7 +35,7 @@
          *
          * The service is injected automatically by Laravel's service container.
          *
-         * @param PatronUdfFetcher $patronUdfFetcher
+         * @param  PatronUdfFetcher  $patronUdfFetcher
          * @return void
          */
         public function __construct(PatronUdfFetcher $patronUdfFetcher)
@@ -53,9 +53,8 @@
 
             $this->patronUdfFetcher->fetch();
 
-            $this->info("Successfully imported Patron UDFs from Polaris into local database.");
+            $this->info('Successfully imported Patron UDFs from Polaris into local database.');
 
             return Command::SUCCESS;
-
         }
     }
