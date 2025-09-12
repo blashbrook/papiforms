@@ -1,14 +1,20 @@
 <?php
 
-namespace Blashbrook\PAPIForms;
+namespace Blashbrook\PAPIForms\App\Providers;
 
+use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronUdfs;
+use Blashbrook\PAPIForms\App;
+use Blashbrook\PAPIForms\App\Console\Commands\RunSeeders;
+use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronCodes;
 use Blashbrook\PAPIForms\App\Http\Controllers\DeliveryOptionController;
 use Blashbrook\PAPIForms\App\Http\Controllers\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
+use Blashbrook\PAPIForms\App\Http\Controllers\PatronUdfController;
 use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
 use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
 use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\PAPIForms;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
@@ -25,9 +31,9 @@ class PAPIFormsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'papiforms');
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'papiforms');
-        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'papiforms');
+        $this->loadMigrationsFrom(__DIR__.'/../../Database/Migrations');
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
 
         Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
         Livewire::component('adult-registration-form', AdultRegistrationForm::class);
@@ -60,7 +66,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/config/papiforms.php', 'papiforms');
+        $this->mergeConfigFrom(__DIR__.'/../../config/papiforms.php', 'papiforms');
 
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
@@ -79,6 +85,9 @@ class PAPIFormsServiceProvider extends ServiceProvider
         });
         $this->app->singleton('patron_code_controller', function ($app) {
             return new PatronCodeController();
+        });
+        $this->app->singleton('patron_udf_controller', function ($app) {
+            return new PatronUdfController();
         });
 
         // Dynamically configure uploads disks and links
@@ -116,17 +125,17 @@ class PAPIFormsServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/config/papiforms.php' => config_path('papiforms.php'),
+            __DIR__.'/../../config/papiforms.php' => config_path('papiforms.php'),
         ], 'papiforms.config');
 
         // Publishing the views.
         $this->publishes([
-            __DIR__.'/resources/views' => base_path('resources/views/vendor/blashbrook'),
+            __DIR__.'/../../resources/views' => base_path('resources/views/vendor/blashbrook'),
         ], 'papiforms.views');
 
         // Publishing the tests.
         $this->publishes([
-            __DIR__.'/Tests/Feature' => base_path('Tests/Feature'),
+            __DIR__.'/../../Tests/Feature' => base_path('Tests/Feature'),
         ], 'papiforms.Tests');
 
         // Publishing assets.
@@ -141,7 +150,9 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         // Registering package commands.
         $this->commands([
-            App\Console\Commands\RunSeeders::class,
+            RunSeeders::class,
+            UpdatePatronCodes::class,
+            UpdatePatronUdfs::class
         ]);
     }
 }

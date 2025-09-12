@@ -10,6 +10,7 @@ use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
+use Blashbrook\PAPIForms\Facades\PatronUdfController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use Blashbrook\PAPIForms\Facades\UdfOptionController;
 use GuzzleHttp\Exception\GuzzleException;
@@ -34,6 +35,7 @@ class TeenPassRegistrationForm extends Component
     public $State = '';
     public $County = '';
     public $CountryID = '';
+    public $patronUdfOptions;
 
     /**
      * @return string[]
@@ -197,7 +199,7 @@ class TeenPassRegistrationForm extends Component
     {
         $this->postalCodes = PostalCodeController::createSelection();
         $this->form->mobilePhoneCarriers = MobilePhoneCarrierController::index();
-        $this->form->udfOptions = UdfOptionController::createSelection();
+        $this->form->patronUdfOptions = PatronUdfController::createSelection();
         $this->form->deliveryOptions = DeliveryOptionController::createSelection();
         $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
 

@@ -27,8 +27,12 @@
         "symfony/console": "6.4"
     },
     "autoload": {
+        "files": [
+            "src/PAPIForms.php"
+        ],
         "psr-4": {
-            "Blashbrook\\PAPIForms\\": "src/"
+            "Blashbrook\\PAPIForms\\": "src/",
+            "Blashbrook\\PAPIForms\\App\\": "src/app/"
         }
     },
     "autoload-dev": {
@@ -39,12 +43,15 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Blashbrook\\PAPIForms\\PAPIFormsServiceProvider"
+                "Blashbrook\\PAPIForms\\App\\Providers\\PAPIFormsServiceProvider"
             ],
             "aliases": {
                 "PAPIForms": "Blashbrook\\PAPIForms\\Facades\\PAPIForms",
                 "DeliveryOptionController": "Blashbrook\\PAPIForms\\Facades\\DeliveryOptionController",
-                "MobilePhoneCarrierController": "Blashbrook\\PAPIForms\\Facades\\MobilePhoneCarrierController"
+                "MobilePhoneCarrierController": "Blashbrook\\PAPIForms\\Facades\\MobilePhoneCarrierController",
+                "PatronCodeController": "Blashbrook\\PAPIForms\\Facades\\PatronCodeController",
+                "PostalCodeController": "Blashbrook\\PAPIForms\\Facades\\PostalCodeController",
+                "UdfOptionController": "Blashbrook\\PAPIForms\\Facades\\UdfOptionController"
             }
         }
     }

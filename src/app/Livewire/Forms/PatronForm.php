@@ -9,7 +9,7 @@ class PatronForm extends Form
 {
     public $appRecipient = '';
 
-    public $udfOptions;
+    public $patronUdfOptions;
 
     public $CarrierName = '';
     public $CarrierID = '';

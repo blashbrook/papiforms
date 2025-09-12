@@ -114,7 +114,7 @@
                     {{-- School Selection Section (User4) --}}
                     <x-papiforms::input.section section="School">
                         <x-papiforms::input.group label="School" for="User4">
-                            <x-papiforms::input.select-udf-option wire:model="form.User4" id="User4" name="User4" value="{{ old('User4') }}"/>
+                            <x-papiforms::input.select-patron-udf-option wire:model="form.User4" id="User4" name="User4" value="{{ old('User4') }}"/>
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
