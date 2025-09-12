@@ -3,12 +3,12 @@
 namespace Blashbrook\PAPIForms\App\Services;
 
     use Blashbrook\PAPIClient\PAPIClient;
-    use Blashbrook\PAPIForms\App\Concerns\APIHelpers;
+    use Blashbrook\PAPIForms\App\Concerns\PAPIHelpers;
     use Blashbrook\PAPIForms\App\Models\PatronUdf;
 
     class PatronUdfFetcher
     {
-        use APIHelpers;
+        use PAPIHelpers;
 
         protected PAPIClient $papiclient;
 

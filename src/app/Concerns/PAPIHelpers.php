@@ -2,7 +2,7 @@
 
 namespace Blashbrook\PAPIForms\App\Concerns;
 
-    trait APIHelpers
+    trait PAPIHelpers
     {
         protected function fetchData($uri, $key)
         {

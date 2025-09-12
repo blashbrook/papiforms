@@ -96,14 +96,7 @@ $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 - AWS S3 SDK (league/flysystem-aws-s3-v3)
 
 ### Required Environment Variables
-```bash
-AWS_ACCESS_KEY_ID=              # S3 access key
-AWS_SECRET_ACCESS_KEY=          # S3 secret key
-AWS_DEFAULT_REGION=             # S3 region
-AWS_BUCKET_UPLOADS=             # S3 bucket for uploads
-AWS_URL=                        # S3 base URL
-AWS_ENDPOINT=                   # S3 endpoint (if using compatible service)
-```
+(https://github.com/blashbrook/papiclient/)[See required variables in PAPIClient readme.md]
 
 ## CI/CD Pipeline
 
@@ -121,7 +114,7 @@ AWS_ENDPOINT=                   # S3 endpoint (if using compatible service)
 ## Testing Strategy
 
 - PHPUnit configuration in `phpunit.xml`
-- Test directory structure: `./tests/`
+- Test directory structure: `./Tests/`
 - Orchestra Testbench for Laravel package testing
 - Feature tests can be published to consuming applications
 
