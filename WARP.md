@@ -96,7 +96,7 @@ $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 - AWS S3 SDK (league/flysystem-aws-s3-v3)
 
 ### Required Environment Variables
-(https://github.com/blashbrook/papiclient/)[See required variables in PAPIClient readme.md]
+[https://github.com/blashbrook/papiclient/](See required variables in PAPIClient readme.md)
 
 ## CI/CD Pipeline
 
