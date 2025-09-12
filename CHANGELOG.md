@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/blashbrook/papiforms/compare/v2.0.0...v2.1.0) (2025-09-12)
+
+
+### Features
+
+* **composer:** update dependencies ([8c7f918](https://github.com/blashbrook/papiforms/commit/8c7f918a355459e5b4ff189d81328a790ef6de26))
+* **PatronUdfController:** add ability to update patron udf fields directly from Polaris ([253c120](https://github.com/blashbrook/papiforms/commit/253c120674d63af58a274a5cfc4702fabb47b8bb))
+
 # [1.41.0](https://github.com/blashbrook/papiforms/compare/v1.40.15...v1.41.0) (2025-09-11)
 
 
