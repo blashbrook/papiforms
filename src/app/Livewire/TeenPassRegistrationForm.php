@@ -3,13 +3,13 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\PAPIClient;
+use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 //use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
+use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
-use Blashbrook\PAPIForms\App\Livewire\Settings\DeliveryOptionSelect;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
 use Blashbrook\PAPIForms\Facades\PatronUdfController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
@@ -20,11 +20,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 
 class TeenPassRegistrationForm extends Component
 {
-
     use PatronFormConcerns;
 
     public PatronForm $form;

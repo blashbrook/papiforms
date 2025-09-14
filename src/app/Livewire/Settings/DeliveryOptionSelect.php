@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Livewire\Settings;
+namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
     use Blashbrook\PAPIForms\App\Models\DeliveryOption;
     use Illuminate\Support\Collection;
