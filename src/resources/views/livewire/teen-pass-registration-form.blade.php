@@ -135,9 +135,15 @@
                         <input wire:model="form.TxtPhoneNumber" name="TxtPhoneNumber" type="hidden" />
 
                         {{-- Delivery option --}}
-                        <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
-                            <x-papiforms::input.select-delivery-option wire:model="form.DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
-                        </x-papiforms::input.group>
+                        <div>
+                            <label for="delivery_option" class="form-label">Delivery Option</label>
+                            <livewire:delivery-option-select />
+
+                            {{-- Handle the error in the parent component's view --}}
+                            @error('form.DeliveryOptionID')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
             </x-papiforms::input.section>
 
                     {{-- Password or PIN Section --}}

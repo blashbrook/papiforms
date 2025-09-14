@@ -7,8 +7,9 @@ use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
-use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
+//use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
+use Blashbrook\PAPIForms\App\Livewire\Settings\DeliveryOptionSelect;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
 use Blashbrook\PAPIForms\Facades\PatronUdfController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
@@ -19,10 +20,13 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 
 class TeenPassRegistrationForm extends Component
 {
-    //public $success = false;
+
+    use PatronFormConcerns;
+
     public PatronForm $form;
     protected PAPIClient $papiclient;
 
@@ -35,6 +39,9 @@ class TeenPassRegistrationForm extends Component
     public $County = '';
     public $CountryID = '';
     public $patronUdfOptions;
+
+    public string $deliveryOptionName = '';
+    protected $listeners = ['deliveryOptionUpdated'];
 
     /**
      * @return string[]
@@ -145,7 +152,7 @@ class TeenPassRegistrationForm extends Component
 
         $body = $this->papiclient->method('POST')->uri('patron')->params($json)->execRequest();
         $this->form->requestCompleted = true;
-        $json['deliveryOptionDesc'] = DeliveryOptionController::getSelection($this->form->DeliveryOptionID);
+        $json['deliveryOptionDesc'] = $this->deliveryOptionName;
         if ($this->form->Phone1CarrierID !== '') {
             $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->form->Phone1CarrierID);
         }
@@ -199,7 +206,6 @@ class TeenPassRegistrationForm extends Component
         $this->postalCodes = PostalCodeController::createSelection();
         $this->form->mobilePhoneCarriers = MobilePhoneCarrierController::index();
         $this->form->patronUdfOptions = PatronUdfController::createSelection();
-        $this->form->deliveryOptions = DeliveryOptionController::createSelection();
         $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
 
         return view('papiforms::livewire.teen-pass-registration-form')

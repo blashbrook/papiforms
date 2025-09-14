@@ -15,8 +15,6 @@ class PatronForm extends Form
     public $CarrierID = '';
     public $mobilePhoneCarriers;
 
-    public $deliveryOptions;
-
     public $modalTitle = '';
     public $modalMessage = '';
     public $modalBarcode = '';
