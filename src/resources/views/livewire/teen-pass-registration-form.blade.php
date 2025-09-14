@@ -113,9 +113,12 @@
 
                     {{-- School Selection Section (User4) --}}
                     <x-papiforms::input.section section="School">
-                        <x-papiforms::input.group label="School" for="User4">
-                            <x-papiforms::input.select-patron-udf-option wire:model="form.User4" id="User4" name="User4" value="{{ old('User4') }}"/>
-                        </x-papiforms::input.group>
+                        <div>
+                            <livewire:patron-udf-school-select wire:model="form.User4" />
+                            @error('form.User4')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
                     </x-papiforms::input.section>
 
                     {{-- Contact Information Section --}}
@@ -137,7 +140,7 @@
                         {{-- Delivery option --}}
                         <div>
                             <label for="delivery_option" class="form-label">Delivery Option</label>
-                            <livewire:delivery-option-select />
+                            <livewire:delivery-option-select :availableDeliveryOptions="$this->form->availableDeliveryOptions" />
 
                             {{-- Handle the error in the parent component's view --}}
                             @error('form.DeliveryOptionID')

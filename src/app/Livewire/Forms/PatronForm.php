@@ -7,6 +7,14 @@ use Livewire\Form;
 
 class PatronForm extends Form
 {
+
+    public $availableDeliveryOptions = [
+        'Mailing Address',
+        'Email Address',
+        'Phone 1',
+        'TXT Messaging',
+    ];
+
     public $appRecipient = '';
 
     public $patronUdfOptions;

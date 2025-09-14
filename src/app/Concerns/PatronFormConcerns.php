@@ -5,10 +5,15 @@
     trait PatronFormConcerns
     {
 
-
         public function deliveryOptionUpdated($data): void
         {
             $this->form->DeliveryOptionID = $data['id'];
             $this->deliveryOptionName = $data['name'];
         }
+
+        public function schoolOptionUpdated($value)
+        {
+            $this->form->User4 = $value;
+        }
+
     }

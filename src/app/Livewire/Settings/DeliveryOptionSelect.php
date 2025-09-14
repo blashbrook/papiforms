@@ -15,8 +15,8 @@
 
         // Public property to hold the options for the select menu.
         public Collection $options; // This is the variable the view expects
-
-        public function mount()
+        public array $availableDeliveryOptions;
+        public function mount($availableDeliveryOptions)
         {
             // Change the assignment to use $this->options
             $this->options = DeliveryOption::select('DeliveryOptionID')
@@ -29,12 +29,7 @@
                     ELSE DeliveryOption
                 END AS DeliveryOption
             ")
-                ->whereIn('DeliveryOption', [
-                    'Mailing Address',
-                    'Email Address',
-                    'Phone 1',
-                    'TXT Messaging',
-                ])
+                ->whereIn('DeliveryOption', $availableDeliveryOptions)
                 ->pluck('DeliveryOption', 'DeliveryOptionID');
         }
 
