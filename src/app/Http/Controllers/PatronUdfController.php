@@ -11,14 +11,6 @@ namespace Blashbrook\PAPIForms\App\Http\Controllers;
         {
         }
 
-        public static function createSelection()
-        {
-            $collection = PatronUdf::select('Values')->where('PatronUdfID', 4)->get();
-            $string = $collection[0]['Values'];
-
-            return array_filter(array_map('trim', explode(',', $string)));
-        }
-
         public function store()
         {
         }

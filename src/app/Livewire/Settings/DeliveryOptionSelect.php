@@ -4,22 +4,24 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
 use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Illuminate\Support\Collection;
-use Livewire\Attributes\Modelable;
 use Livewire\Component;
+use Livewire\Attributes\Modelable;
+
 
 class DeliveryOptionSelect extends Component
 {
-    // Public property to bind the selected value to.
+
     #[Modelable]
     public $selectedOption = null;
 
-        // Public property to hold the options for the select menu.
-    public Collection $options; // This is the variable the view expects
-    public array $availableDeliveryOptions;
+    public Collection $options;
+    public array $availableDeliveryOptions = [];
+    public array $attrs = [];
 
-    public function mount($availableDeliveryOptions)
+    public function mount($availableDeliveryOptions, $attrs)
     {
-        // Change the assignment to use $this->options
+        $this->availableDeliveryOptions = $availableDeliveryOptions;
+        $this->attrs = $attrs;
         $this->options = DeliveryOption::select('DeliveryOptionID')
             ->selectRaw("
                 CASE DeliveryOption

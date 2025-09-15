@@ -33,7 +33,7 @@ namespace Blashbrook\PAPIForms\App\Console\Commands;
          *
          * The service is injected automatically by Laravel's service container.
          *
-         * @param  Blashbrook\PAPIForms\App\Services\PatronCodeFetcher  $patronCodeFetcher
+         * @param  PatronCodeFetcher  $patronCodeFetcher
          * @return void
          */
         public function __construct(PatronCodeFetcher $patronCodeFetcher)

@@ -8,14 +8,16 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
     class PatronUDFSchoolSelect extends Component
     {
-        // The name of the property that the parent component will bind to
+
         #[Modelable]
         public $selectedOption = null;
 
-        public array $options = [];
+        public $options;
+        public $attrs = [];
 
-        public function mount()
+        public function mount($attrs)
         {
+            $this->attrs = $attrs;
             $patronUdf = PatronUdf::where('Label', 'School')->first();
 
             if ($patronUdf && $patronUdf->Values) {

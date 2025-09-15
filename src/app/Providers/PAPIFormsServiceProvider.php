@@ -75,17 +75,8 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
         });
-        $this->app->singleton('delivery_option_controller', function ($app) {
-            return new DeliveryOptionController();
-        });
-        $this->app->singleton('mobile_phone_carrier_controller', function ($app) {
-            return new MobilePhoneCarrierController();
-        });
         $this->app->singleton('postal_code_controller', function ($app) {
             return new PostalCodeController();
-        });
-        $this->app->singleton('udf_option_controller', function ($app) {
-            return new UdfOptionController();
         });
         $this->app->singleton('patron_code_controller', function ($app) {
             return new PatronCodeController();

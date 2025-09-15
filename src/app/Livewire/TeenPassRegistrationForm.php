@@ -201,8 +201,7 @@ class TeenPassRegistrationForm extends Component
     public function render(): \Illuminate\Foundation\Application|View|Factory|\Illuminate\View\View|Application
     {
         $this->postalCodes = PostalCodeController::createSelection();
-        $this->form->mobilePhoneCarriers = MobilePhoneCarrierController::index();
-        $this->form->patronUdfOptions = PatronUdfController::createSelection();
+
         $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
 
         return view('papiforms::livewire.teen-pass-registration-form')
