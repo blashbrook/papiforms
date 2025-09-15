@@ -15,10 +15,10 @@ class PatronForm extends Form
     ];
 
     public $user4UdfSelectOptions = [
-        'Label'=> 'School',
-        'Select Prompt' => 'Select a school'
-        ];
-   // public $user4UdfSelectOptions = [];
+        'Label' => 'School',
+        'Select Prompt' => 'Select a school',
+    ];
+    // public $user4UdfSelectOptions = [];
 
     public $appRecipient = '';
 

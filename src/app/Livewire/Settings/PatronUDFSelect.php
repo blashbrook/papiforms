@@ -5,7 +5,6 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 use Blashbrook\PAPIForms\App\Models\PatronUdf;
 use Livewire\Attributes\Modelable;
 use Livewire\Component;
-use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 
 class PatronUDFSelect extends Component
 {
@@ -21,7 +20,7 @@ class PatronUDFSelect extends Component
         $this->udfSelectOptions = $udfSelectOptions;
         $this->attrs = $attrs;
         $udfSelectOptions = $this->udfSelectOptions;
-        $label= $udfSelectOptions['Label'];
+        $label = $udfSelectOptions['Label'];
         $patronUdf = PatronUdf::where('Label', $label)->first();
 
         if ($patronUdf && $patronUdf->Values) {
