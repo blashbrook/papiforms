@@ -10,7 +10,6 @@ use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
-use Blashbrook\PAPIForms\Facades\PatronUdfController;
 use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;

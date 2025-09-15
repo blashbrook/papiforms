@@ -4,13 +4,11 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
 use Blashbrook\PAPIForms\App\Models\DeliveryOption;
 use Illuminate\Support\Collection;
-use Livewire\Component;
 use Livewire\Attributes\Modelable;
-
+use Livewire\Component;
 
 class DeliveryOptionSelect extends Component
 {
-
     #[Modelable]
     public $selectedOption = null;
 
