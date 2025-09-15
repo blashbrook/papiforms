@@ -3,21 +3,13 @@
 namespace Blashbrook\PAPIForms\App\Providers;
 
 use Blashbrook\PAPIForms\App;
-use Blashbrook\PAPIForms\App\Console\Commands\RunSeeders;
-use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronCodes;
-use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronUdfs;
-use Blashbrook\PAPIForms\App\Http\Controllers\DeliveryOptionController;
-use Blashbrook\PAPIForms\App\Http\Controllers\MobilePhoneCarrierController;
+use Blashbrook\PAPIForms\App\Console\Commands\{RunSeeders, UpdatePatronCodes, UpdatePatronUdfs};
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
-use Blashbrook\PAPIForms\App\Http\Controllers\PatronUdfController;
-use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
-use Blashbrook\PAPIForms\App\Http\Controllers\UdfOptionController;
-use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
-use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
+use Blashbrook\PAPIForms\App\Livewire\Settings\{ DeliveryOptionSelect, PatronUDFSelect, PostalCodeSelect};
+use Blashbrook\PAPIForms\App\Livewire\{AdultRegistrationForm, TeenPassRegistrationForm};
 use Blashbrook\PAPIForms\PAPIForms;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\{ Config, Validator};
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -37,7 +29,11 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
         Livewire::component('adult-registration-form', AdultRegistrationForm::class);
+        Livewire::component('delivery-option-select', DeliveryOptionSelect::class);
+        Livewire::component('patron-udf-select', PatronUDFSelect::class);
+        Livewire::component('postal-code-select', PostalCodeSelect::class);
 
+        /* Validate Teen Pass Birthdate */
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
@@ -46,6 +42,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
             return $birthDate > $firstDate && $birthDate < $lastDate;
         });
 
+        /* Validate Adult Birthdate */
         Validator::extend('adult_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
@@ -71,23 +68,11 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
         });
-        $this->app->singleton('delivery_option_controller', function ($app) {
-            return new DeliveryOptionController();
-        });
-        $this->app->singleton('mobile_phone_carrier_controller', function ($app) {
-            return new MobilePhoneCarrierController();
-        });
-        $this->app->singleton('postal_code_controller', function ($app) {
-            return new PostalCodeController();
-        });
-        $this->app->singleton('udf_option_controller', function ($app) {
-            return new UdfOptionController();
-        });
+        /*        $this->app->singleton('postal_code_controller', function ($app) {
+                    return new PostalCodeController();
+                });*/
         $this->app->singleton('patron_code_controller', function ($app) {
             return new PatronCodeController();
-        });
-        $this->app->singleton('patron_udf_controller', function ($app) {
-            return new PatronUdfController();
         });
 
         // Dynamically configure uploads disks and links

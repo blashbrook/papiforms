@@ -93,9 +93,17 @@
                             </div>
                         </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
+{{--
                             <x-papiforms::input.select-postal-code wire:model="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
+--}}
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
+
+                    <livewire:postal-code-select
+                        :attrs="['class' => 'form-input block w-full px-4 py-3 border border-gray-300
+                                rounded-md placeholder-gray-500 focus:outline-none focus:shadow-outline-blue
+                                 focus:border-blue-300 transition duration-150 ease-in-out']"
+                    />
 
                     {{-- Hidden Address Fields --}}
                     <input wire:model="form.PostalCode" id="PostalCode" name="PostalCode" type="hidden" value="{{ old('PostalCode') }}" />
@@ -113,8 +121,16 @@
 
                     {{-- School Selection Section (User4) --}}
                     <x-papiforms::input.section section="School">
-                        <x-papiforms::input.group label="School" for="User4">
-                            <x-papiforms::input.select-patron-udf-option wire:model="form.User4" id="User4" name="User4" value="{{ old('User4') }}"/>
+                        <x-papiforms::input.group>
+                            <livewire:patron-udf-select wire:model="form.User4"
+                               :attrs="['class' => 'form-input block w-full px-4 py-3 border border-gray-300
+                                rounded-md placeholder-gray-500 focus:outline-none focus:shadow-outline-blue
+                                 focus:border-blue-300 transition duration-150 ease-in-out']"
+                                :udf-select-options="$this->form->user4UdfSelectOptions"
+                            />
+                            @error('form.User4')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
@@ -135,9 +151,19 @@
                         <input wire:model="form.TxtPhoneNumber" name="TxtPhoneNumber" type="hidden" />
 
                         {{-- Delivery option --}}
-                        <x-papiforms::input.group label="Notification preference" for="DeliveryOptionID">
-                            <x-papiforms::input.select-delivery-option wire:model="form.DeliveryOptionID" id="DeliveryOptionID" name="DeliveryOptionID"  value="{{ old('DeliveryOptionID') }}" />
-                        </x-papiforms::input.group>
+
+                            <x-papiforms::input.group label="Delivery Options" for="DeliveryOptionID">
+                            <livewire:delivery-option-select
+                                :attrs="['class' => 'form-input block w-full px-4 py-3 border border-gray-300
+                                        rounded-md placeholder-gray-500 focus:outline-none focus:shadow-outline-blue
+                                        focus:border-blue-300 transition duration-150 ease-in-out']"
+                               :availableDeliveryOptions="$this->form->availableDeliveryOptions"
+                            />
+
+                            @error('form.DeliveryOptionID')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                            </x-papiforms::input.group>
             </x-papiforms::input.section>
 
                     {{-- Password or PIN Section --}}

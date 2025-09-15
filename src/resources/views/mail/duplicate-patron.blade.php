@@ -12,9 +12,8 @@
     <p>School: {{ $confirmation['User4'] }}</p>
 @endif
 <p>Phone: {{ $confirmation['PhoneVoice1'] }}</p>
-<p>Mobile phone carrier: {{ $confirmation['mobilePhoneCarrierDesc'] ?? '' }}</p>
 <p>Email: {{ $confirmation['EmailAddress'] }}</p>
-<p>Notification preference: {{ $confirmation['deliveryOptionDesc'] }}</p>
+<p>Notification preference: {{ $confirmation['deliveryOptionName'] }}</p>
 <p>Patron code: {{ $confirmation['patronCodeDesc'] }}</p>
 @if($confirmation['User2'])
     <p>ID #: {{ $confirmation['User2'] }}</p>
