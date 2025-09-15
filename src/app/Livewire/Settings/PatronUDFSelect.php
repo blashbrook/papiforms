@@ -5,19 +5,24 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 use Blashbrook\PAPIForms\App\Models\PatronUdf;
 use Livewire\Attributes\Modelable;
 use Livewire\Component;
+use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 
 class PatronUDFSelect extends Component
 {
     #[Modelable]
     public $selectedOption = null;
 
-    public $options;
-    public $attrs = [];
+    public $options = [];
+    public $udfSelectOptions = [];
+    public array $attrs = [];
 
-    public function mount($attrs)
+    public function mount($udfSelectOptions, $attrs)
     {
+        $this->udfSelectOptions = $udfSelectOptions;
         $this->attrs = $attrs;
-        $patronUdf = PatronUdf::where('Label', 'School')->first();
+        $udfSelectOptions = $this->udfSelectOptions;
+        $label= $udfSelectOptions['Label'];
+        $patronUdf = PatronUdf::where('Label', $label)->first();
 
         if ($patronUdf && $patronUdf->Values) {
             $string = $patronUdf->Values;

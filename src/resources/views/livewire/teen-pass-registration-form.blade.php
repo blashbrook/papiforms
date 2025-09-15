@@ -117,7 +117,9 @@
                         <livewire:patron-udf-select wire:model="form.User4"
                            :attrs="['class' => 'form-input block w-full px-4 py-3 border border-gray-300
                             rounded-md placeholder-gray-500 focus:outline-none focus:shadow-outline-blue
-                             focus:border-blue-300 transition duration-150 ease-in-out']"/>
+                             focus:border-blue-300 transition duration-150 ease-in-out']"
+                            :udf-select-options="$this->form->user4UdfSelectOptions"
+                        />
                         @error('form.User4')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -150,7 +152,6 @@
                                :availableDeliveryOptions="$this->form->availableDeliveryOptions"
                             />
 
-                            {{-- Handle the error in the parent component's view --}}
                             @error('form.DeliveryOptionID')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror

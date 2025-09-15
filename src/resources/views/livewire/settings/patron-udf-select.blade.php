@@ -4,7 +4,7 @@
         id="School"
         name="School"
         class="{{ $attrs['class'] ?? '' }}">
-        <option value="">Select an option</option>
+        <option value="">{{ $udfSelectOptions['Select Prompt'] }}</option>
         @foreach($options as $option)
             <option value="{{ $option }}">{{ $option }}</option>
         @endforeach

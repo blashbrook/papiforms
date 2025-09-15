@@ -14,6 +14,12 @@ class PatronForm extends Form
         'TXT Messaging',
     ];
 
+    public $user4UdfSelectOptions = [
+        'Label'=> 'School',
+        'Select Prompt' => 'Select a school'
+        ];
+   // public $user4UdfSelectOptions = [];
+
     public $appRecipient = '';
 
     public $patronUdfOptions;
