@@ -19,11 +19,29 @@ class PostalCodeSelect extends Component
     public function mount($attrs = [])
     {
         $this->attrs = $attrs;
-        $this->options = PostalCode::all()->sortBy('PostalCode');
+        $this->options = PostalCode::select(
+            'id',
+            'City',
+            'State',
+            'PostalCode',
+            'County',
+            'CountryID'
+        )
+        ->orderBy('PostalCode')
+        ->get();
     }
 
-    public function handleUpdate()
+    public function handleUpdate($selectedPostalCodeID)
     {
+        $postalCode = $this->options->firstWhere('id', $selectedPostalCodeID);
+        $this->dispatch('postalCodeUpdated', [
+            'id' => $postalCode->id,
+            'City' => $postalCode->City,
+            'State' => $postalCode->State,
+            'PostalCode' => $postalCode->PostalCode,
+            'County' => $postalCode->County,
+            'CountryID' => $postalCode->CountryID
+        ]);
     }
 
     public function render()

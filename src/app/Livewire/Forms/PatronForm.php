@@ -7,6 +7,7 @@ use Livewire\Form;
 
 class PatronForm extends Form
 {
+
     public $availableDeliveryOptions = [
         'Mailing Address',
         'Email Address',
@@ -16,17 +17,15 @@ class PatronForm extends Form
 
     public $user4UdfSelectOptions = [
         'Label' => 'School',
-        'Select Prompt' => 'Select a school',
+        'Select Prompt' => 'Select a school (if applicable)',
     ];
-    // public $user4UdfSelectOptions = [];
+
 
     public $appRecipient = '';
 
-    public $patronUdfOptions;
 
-    public $CarrierName = '';
-    public $CarrierID = '';
-    public $mobilePhoneCarriers;
+    //public $CarrierName = '';
+    //public $CarrierID = '';
 
     public $modalTitle = '';
     public $modalMessage = '';
@@ -43,6 +42,12 @@ class PatronForm extends Form
 
     //#[Validate('nullable')]
     public $StreetTwo = '';
+
+    public $City = '';
+    public $State = '';
+    public $PostalCode = '';
+    public $County = '';
+    public $CountryID = '';
 
     //#[Validate('required')]
     public $NameFirst = '';
@@ -97,6 +102,7 @@ class PatronForm extends Form
             'NameMiddle' => 'required',
             'User1' => 'required',
             'User4' => 'nullable',
+            //@TODO Move Birthdate validation to TeenPass
             'Birthdate' => 'required|date_format:m/d/Y|bail|teenpass_birthdate',
             'PhoneVoice1' => 'required|digits:10',
             'Phone1CarrierID' => 'required_if:DeliveryOptionID,8',

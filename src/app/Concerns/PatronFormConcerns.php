@@ -10,8 +10,13 @@ trait PatronFormConcerns
         $this->deliveryOptionName = $data['name'];
     }
 
-    public function schoolOptionUpdated($value)
+    public function postalCodeUpdated($data): void
     {
-        $this->form->User4 = $value;
+        $this->selectedPostalCodeID = $data['id'];
+        $this->form->PostalCode = $data['PostalCode'];
+        $this->form->City = $data['City'];
+        $this->form->State = $data['State'];
+        $this->form->County = $data['County'];
+        $this->form->CountryID = $data['CountryID'];
     }
 }

@@ -26,18 +26,8 @@ class TeenPassRegistrationForm extends Component
     public PatronForm $form;
     protected PAPIClient $papiclient;
 
-    public $postalCodes;
-    public $selectedPostalCodeArray;
-    public $selectedPostalCodeID = '';
-    public $PostalCode = '';
-    public $City = '';
-    public $State = '';
-    public $County = '';
-    public $CountryID = '';
-    public $patronUdfOptions;
-
     public string $deliveryOptionName = '';
-    protected $listeners = ['deliveryOptionUpdated'];
+    protected $listeners = ['deliveryOptionUpdated', 'postalCodeUpdated'];
 
     /**
      * @return string[]
@@ -71,20 +61,7 @@ class TeenPassRegistrationForm extends Component
      */
     public function mount(): void
     {
-        $this->City = 'OWENSBORO';
-    }
-
-    /**
-     * @return void
-     */
-    public function updateselectedPostalCodeID(): void
-    {
-        $this->selectedPostalCodeArray = $this->postalCodes->find($this->selectedPostalCodeID);
-        $this->form->PostalCode = $this->selectedPostalCodeArray->PostalCode;
-        $this->form->City = $this->selectedPostalCodeArray->City;
-        $this->form->State = $this->selectedPostalCodeArray->State;
-        $this->form->County = $this->selectedPostalCodeArray->County;
-        $this->form->CountryID = $this->selectedPostalCodeArray->CountryID;
+        //$this->City = 'OWENSBORO';
     }
 
     /**
@@ -120,11 +97,11 @@ class TeenPassRegistrationForm extends Component
         $this->form->validate();
 
         $json = [
-            'PostalCode' => $this->PostalCode,
-            'City' => $this->City,
-            'State' => $this->State,
-            'County' => $this->County,
-            'CountryID' => $this->CountryID,
+            'PostalCode' => $this->form->PostalCode,
+            'City' => $this->form->City,
+            'State' => $this->form->State,
+            'County' => $this->form->County,
+            'CountryID' => $this->form->CountryID,
             'StreetOne' => Str::upper($this->form->StreetOne),
             'StreetTwo' => Str::upper($this->form->StreetTwo),
             'NameFirst' => Str::upper($this->form->NameFirst),
@@ -145,13 +122,9 @@ class TeenPassRegistrationForm extends Component
             //'Barcode'           => $this->form->Barcode,
             //'successMessage'    => $this->form->successMessage
         ];
-
         $body = $this->papiclient->method('POST')->uri('patron')->params($json)->execRequest();
         $this->form->requestCompleted = true;
-        $json['deliveryOptionDesc'] = $this->deliveryOptionName;
-        if ($this->form->Phone1CarrierID !== '') {
-            $json['mobilePhoneCarrierDesc'] = MobilePhoneCarrierController::getSelection($this->form->Phone1CarrierID);
-        }
+        $json['deliveryOptionName'] = $this->deliveryOptionName;
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->form->PatronCode);
         //Change before push
         $json['appRecipient'] = env('PAPI_ACCOUNTMGR_EMAIL');
@@ -199,7 +172,6 @@ class TeenPassRegistrationForm extends Component
      */
     public function render(): \Illuminate\Foundation\Application|View|Factory|\Illuminate\View\View|Application
     {
-        $this->postalCodes = PostalCodeController::createSelection();
 
         $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
 

@@ -93,7 +93,9 @@
                             </div>
                         </div>
                         <x-papiforms::input.group label="City, State, Postal Code" for="selectedPostalCodeID">
+{{--
                             <x-papiforms::input.select-postal-code wire:model="selectedPostalCodeID" id="selectedPostalCodeID" name="selectedPostalCodeID" value="{{ old('selectedPostalCodeID') }}"/>
+--}}
                         </x-papiforms::input.group>
                     </x-papiforms::input.section>
 
