@@ -21,7 +21,6 @@ class PatronForm extends Form
 
     public $appRecipient = '';
 
-
     public $modalTitle = '';
     public $modalMessage = '';
     public $modalBarcode = '';
