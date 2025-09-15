@@ -3,6 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\PAPIClient;
+use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
@@ -18,11 +19,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 
 class TeenPassRegistrationForm extends Component
 {
-
     use PatronFormConcerns;
 
     public PatronForm $form;
