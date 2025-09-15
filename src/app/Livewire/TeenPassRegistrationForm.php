@@ -8,9 +8,7 @@ use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
 use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
 use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
 use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
-use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
-use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -172,7 +170,6 @@ class TeenPassRegistrationForm extends Component
      */
     public function render(): \Illuminate\Foundation\Application|View|Factory|\Illuminate\View\View|Application
     {
-
         $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
 
         return view('papiforms::livewire.teen-pass-registration-form')

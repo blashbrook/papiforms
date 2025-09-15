@@ -40,7 +40,7 @@ class PostalCodeSelect extends Component
             'State' => $postalCode->State,
             'PostalCode' => $postalCode->PostalCode,
             'County' => $postalCode->County,
-            'CountryID' => $postalCode->CountryID
+            'CountryID' => $postalCode->CountryID,
         ]);
     }
 
