@@ -40,7 +40,6 @@ class TeenPassRegistrationForm extends Component
     public string $deliveryOptionName = '';
     protected $listeners = ['deliveryOptionUpdated'];
 
-
     /**
      * @return string[]
      */
