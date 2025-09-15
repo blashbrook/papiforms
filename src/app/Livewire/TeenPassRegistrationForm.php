@@ -5,16 +5,11 @@ namespace Blashbrook\PAPIForms\App\Livewire;
 use Blashbrook\PAPIClient\PAPIClient;
 use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
-use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
-use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
-use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
+use Blashbrook\PAPIForms\App\Mail\{DuplicatePatronMailable,PatronApplicationMailable,TeenPassConfirmationMailable};
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
-use Blashbrook\PAPIForms\Facades\PostalCodeController;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\{Factory,View};
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -127,7 +122,7 @@ class TeenPassRegistrationForm extends Component
         $json['deliveryOptionName'] = $this->deliveryOptionName;
         $json['patronCodeDesc'] = PatronCodeController::getSelection($this->form->PatronCode);
         //Change before push
-        $json['appRecipient'] = env('PAPI_ACCOUNTMGR_EMAIL');
+        $json['appRecipient'] = config('papiforms.accountMgrEmail');
         $json['newUploadURL'] = '';
         if ($body['ErrorMessage'] === '') {
             $this->form->successMessage = true;

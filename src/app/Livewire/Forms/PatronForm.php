@@ -23,10 +23,6 @@ class PatronForm extends Form
 
     public $appRecipient = '';
 
-
-    //public $CarrierName = '';
-    //public $CarrierID = '';
-
     public $modalTitle = '';
     public $modalMessage = '';
     public $modalBarcode = '';

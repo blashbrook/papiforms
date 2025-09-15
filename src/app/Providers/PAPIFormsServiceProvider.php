@@ -3,22 +3,14 @@
 namespace Blashbrook\PAPIForms\App\Providers;
 
 use Blashbrook\PAPIForms\App;
-use Blashbrook\PAPIForms\App\Console\Commands\RunSeeders;
-use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronCodes;
-use Blashbrook\PAPIForms\App\Console\Commands\UpdatePatronUdfs;
+use Blashbrook\PAPIForms\App\Console\Commands\{ RunSeeders, UpdatePatronUdfs, UpdatePatronCodes};
+use Blashbrook\PAPIForms\App\Livewire\Settings\{ DeliveryOptionSelect, PatronUDFSelect, PostalCodeSelect};
+use Blashbrook\PAPIForms\App\Livewire\{TeenPassRegistrationForm, AdultRegistrationForm};
 use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
-use Blashbrook\PAPIForms\App\Http\Controllers\PatronUdfController;
-use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
-use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
-use Blashbrook\PAPIForms\App\Livewire\Settings\DeliveryOptionSelect;
-use Blashbrook\PAPIForms\App\Livewire\Settings\PatronUDFSelect;
-use Blashbrook\PAPIForms\App\Livewire\Settings\PostalCodeSelect;
-use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\PAPIForms;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\{ Config, Validator};
 use Illuminate\Support\ServiceProvider;
+use Carbon\Carbon;
 use Livewire\Livewire;
 
 class PAPIFormsServiceProvider extends ServiceProvider
@@ -35,24 +27,24 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../../Database/Migrations');
         $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
 
-        Livewire::component('teen-pass-registration-form', TeenPassRegistrationForm::class);
+        Livewire::component('teen-pass-registration-form',TeenPassRegistrationForm::class);
         Livewire::component('adult-registration-form', AdultRegistrationForm::class);
         Livewire::component('delivery-option-select', DeliveryOptionSelect::class);
         Livewire::component('patron-udf-select', PatronUDFSelect::class);
         Livewire::component('postal-code-select', PostalCodeSelect::class);
 
+        /* Validate Teen Pass Birthdate */
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
             $lastDate = Carbon::now()->subYears(13);
-
             return $birthDate > $firstDate && $birthDate < $lastDate;
         });
 
+        /* Validate Adult Birthdate */
         Validator::extend('adult_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);
-
             return $birthDate <= $firstDate;
         });
 
@@ -74,14 +66,11 @@ class PAPIFormsServiceProvider extends ServiceProvider
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
         });
-        $this->app->singleton('postal_code_controller', function ($app) {
+/*        $this->app->singleton('postal_code_controller', function ($app) {
             return new PostalCodeController();
-        });
+        });*/
         $this->app->singleton('patron_code_controller', function ($app) {
             return new PatronCodeController();
-        });
-        $this->app->singleton('patron_udf_controller', function ($app) {
-            return new PatronUdfController();
         });
 
         // Dynamically configure uploads disks and links

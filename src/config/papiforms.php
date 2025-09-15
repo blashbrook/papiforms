@@ -1,19 +1,8 @@
 <?php
 
-return [
-
-    'disks' => [
-        'uploads' => [
-            'driver' => 'local',
-            'root' => storage_path('app/uploads'),
-            'url' => env('APP_URL').'/uploads',
-            'visibility' => 'public',
-        ],
-    ],
-
-    'links' => [
-        public_path('uploads') => storage_path('app/uploads'),
-
-    ],
-
-];
+    return [
+            'accountMgrEmail' => env('PAPI_ACCOUNTMGR_EMAIL'),
+            'accountMgrName' => env('PAPI_ACCOUNTMGR_NAME'),
+            'adminEmail' => env('PAPI_ADMIN_EMAIL'),
+            'adminName' => env('PAPI_ADMIN_NAME'),
+        ];
