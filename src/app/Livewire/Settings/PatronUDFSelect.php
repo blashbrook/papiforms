@@ -6,7 +6,7 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
     use Livewire\Attributes\Modelable;
     use Livewire\Component;
 
-    class PatronUDFSchoolSelect extends Component
+    class PatronUDFSelect extends Component
     {
 
         #[Modelable]
@@ -28,6 +28,6 @@ namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
         public function render()
         {
-            return view('papiforms::livewire.settings.patron-udf-school-select');
+            return view('papiforms::livewire.settings.patron-udf-select');
         }
     }

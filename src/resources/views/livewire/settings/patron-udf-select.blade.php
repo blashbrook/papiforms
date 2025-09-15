@@ -4,7 +4,7 @@
         id="School"
         name="School"
         class="{{ $attrs['class'] ?? '' }}">
-        <option value="">Select a school</option>
+        <option value="">Select an option</option>
         @foreach($options as $option)
             <option value="{{ $option }}">{{ $option }}</option>
         @endforeach
