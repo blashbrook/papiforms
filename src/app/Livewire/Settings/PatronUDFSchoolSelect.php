@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Livewire\Settings;
+namespace Blashbrook\PAPIForms\App\Livewire\Settings;
 
     use Blashbrook\PAPIForms\App\Models\PatronUdf;
     use Livewire\Attributes\Modelable;
@@ -28,5 +28,4 @@
         {
             return view('papiforms::livewire.settings.patron-udf-school-select');
         }
-
     }

@@ -7,7 +7,6 @@ use Livewire\Form;
 
 class PatronForm extends Form
 {
-
     public $availableDeliveryOptions = [
         'Mailing Address',
         'Email Address',
