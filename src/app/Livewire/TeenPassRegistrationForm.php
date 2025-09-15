@@ -5,13 +5,7 @@ namespace Blashbrook\PAPIForms\App\Livewire;
 use Blashbrook\PAPIClient\PAPIClient;
 use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
-<<<<<<< HEAD
 use Blashbrook\PAPIForms\App\Mail\{DuplicatePatronMailable,PatronApplicationMailable,TeenPassConfirmationMailable};
-=======
-use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
-use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
->>>>>>> f890f7589f1ed96f45bb4989bc2a453606fb9ca1
 use Blashbrook\PAPIForms\Facades\PatronCodeController;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
