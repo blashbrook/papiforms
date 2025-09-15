@@ -7,7 +7,6 @@ use Livewire\Form;
 
 class PatronForm extends Form
 {
-
     public $availableDeliveryOptions = [
         'Mailing Address',
         'Email Address',
@@ -20,9 +19,14 @@ class PatronForm extends Form
         'Select Prompt' => 'Select a school (if applicable)',
     ];
 
-
     public $appRecipient = '';
 
+<<<<<<< HEAD
+=======
+    //public $CarrierName = '';
+    //public $CarrierID = '';
+
+>>>>>>> f890f7589f1ed96f45bb4989bc2a453606fb9ca1
     public $modalTitle = '';
     public $modalMessage = '';
     public $modalBarcode = '';
