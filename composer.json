@@ -24,7 +24,8 @@
         "symfony/css-selector": "^v7.0.3",
         "symfony/event-dispatcher": "^v7.0.3",
         "symfony/string": "^v7.0.3",
-        "symfony/console": "6.4"
+        "symfony/console": "6.4",
+        "laravel/pint": "^1.24"
     },
     "autoload": {
         "files": [
