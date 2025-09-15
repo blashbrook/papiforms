@@ -41,7 +41,6 @@ class PAPIFormsServiceProvider extends ServiceProvider
         Livewire::component('patron-udf-select', PatronUDFSelect::class);
         Livewire::component('postal-code-select', PostalCodeSelect::class);
 
-
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
             $firstDate = Carbon::now()->subYears(18);

@@ -24,7 +24,6 @@ class PostalCodeSelect extends Component
 
     public function handleUpdate()
     {
-
     }
 
     public function render()
