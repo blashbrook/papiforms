@@ -12,6 +12,7 @@ use Blashbrook\PAPIForms\App\Http\Controllers\PostalCodeController;
 use Blashbrook\PAPIForms\App\Livewire\AdultRegistrationForm;
 use Blashbrook\PAPIForms\App\Livewire\Settings\DeliveryOptionSelect;
 use Blashbrook\PAPIForms\App\Livewire\Settings\PatronUDFSelect;
+use Blashbrook\PAPIForms\App\Livewire\Settings\PostalCodeSelect;
 use Blashbrook\PAPIForms\App\Livewire\TeenPassRegistrationForm;
 use Blashbrook\PAPIForms\PAPIForms;
 use Carbon\Carbon;
@@ -38,6 +39,8 @@ class PAPIFormsServiceProvider extends ServiceProvider
         Livewire::component('adult-registration-form', AdultRegistrationForm::class);
         Livewire::component('delivery-option-select', DeliveryOptionSelect::class);
         Livewire::component('patron-udf-select', PatronUDFSelect::class);
+        Livewire::component('postal-code-select', PostalCodeSelect::class);
+
 
         Validator::extend('teenpass_birthdate', function ($attribute, $value, $parameters, $validator) {
             $birthDate = Carbon::create($value);
