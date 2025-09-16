@@ -1,9 +1,7 @@
-<h1>New patron account created</h1>
-<p>Barcode: {{ $confirmation['Barcode'] }}</p>
+<h1>This application has been flagged as a duplicate by Polaris.</h1>
 <p>First name: {{ $confirmation['NameFirst'] }}</p>
 <p>Middle name: {{ $confirmation['NameMiddle'] }}</p>
 <p>Last name: {{ $confirmation['NameLast'] }}</p>
-<p>Parent or Guardian: {{ $confirmation['User1'] }}</p>
 <p>Street address: {{ $confirmation['StreetOne'] }}</p>
 <p>Apt #: {{ $confirmation['StreetTwo'] }}</p>
 <p>City: {{ $confirmation['City'] }}</p>
@@ -11,15 +9,15 @@
 <p>Postal code: {{ $confirmation['PostalCode'] }}</p>
 <p>Birthdate: {{ $confirmation['Birthdate'] }}</p>
 @if($confirmation['User4'])
-<p>School: {{ $confirmation['User4'] }}</p>
+    <p>School: {{ $confirmation['User4'] }}</p>
 @endif
 <p>Phone: {{ $confirmation['PhoneVoice1'] }}</p>
 <p>Email: {{ $confirmation['EmailAddress'] }}</p>
 <p>Notification preference: {{ $confirmation['deliveryOptionName'] }}</p>
-<p>Patron code: {{ $confirmation['patronCodeDesc'] }}</p>
-{{---@if($confirmation['User2'])
-<p>ID #: {{ $confirmation['User2'] }}</p>
+<p>Patron code: {{ $confirmation['patronCodeDescription'] }}</p>
+@if($confirmation['User2'])
+    <p>ID #: {{ $confirmation['User2'] }}</p>
 @endif
 @if($confirmation['newUploadURL'])
     <p>Uploaded image: <a href="{{ $confirmation['newUploadURL'] }}" alt="Link to patron image">{{ $confirmation['newUploadURL'] }}</a></p>
-@endif--}}
+@endif

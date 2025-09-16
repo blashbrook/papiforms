@@ -5,17 +5,13 @@ namespace Blashbrook\PAPIForms\App\Livewire;
 use Blashbrook\PAPIClient\PAPIClient;
 use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
-<<<<<<< HEAD
-use Blashbrook\PAPIForms\App\Mail\{DuplicatePatronMailable,PatronApplicationMailable,TeenPassConfirmationMailable};
-=======
-use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
-use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
-use Blashbrook\PAPIForms\App\Mail\TeenPassConfirmationMailable;
->>>>>>> f890f7589f1ed96f45bb4989bc2a453606fb9ca1
-use Blashbrook\PAPIForms\Facades\PatronCodeController;
+use Blashbrook\PAPIForms\App\Mail\{Patron\DuplicatePatronMailable,
+    Patron\TeenPassConfirmationMailable,
+    Staff\PatronApplicationMailable};
+use Blashbrook\PAPIForms\App\Models\PatronCode;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\{Factory,View};
+use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -30,6 +26,9 @@ class TeenPassRegistrationForm extends Component
     public string $deliveryOptionName = '';
     protected $listeners = ['deliveryOptionUpdated', 'postalCodeUpdated'];
 
+    public string $patronCodeDescription = 'Teen Pass';
+
+    //public $patronCodeID;
     /**
      * @return string[]
      */
@@ -62,7 +61,7 @@ class TeenPassRegistrationForm extends Component
      */
     public function mount(): void
     {
-        //$this->City = 'OWENSBORO';
+        $this->form->PatronCode = PatronCode::getPatronCodeID($this->patronCodeDescription);
     }
 
     /**
@@ -126,7 +125,7 @@ class TeenPassRegistrationForm extends Component
         $body = $this->papiclient->method('POST')->uri('patron')->params($json)->execRequest();
         $this->form->requestCompleted = true;
         $json['deliveryOptionName'] = $this->deliveryOptionName;
-        $json['patronCodeDesc'] = PatronCodeController::getSelection($this->form->PatronCode);
+        $json['patronCodeDescription'] = $this->patronCodeDescription;
         //Change before push
         $json['appRecipient'] = config('papiforms.accountMgrEmail');
         $json['newUploadURL'] = '';
@@ -171,10 +170,8 @@ class TeenPassRegistrationForm extends Component
     /**
      * @return Application|Factory|View|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
-    public function render(): \Illuminate\Foundation\Application|View|Factory|\Illuminate\View\View|Application
+    public function render()
     {
-        $this->form->PatronCode = PatronCodeController::getPatronCode('Teen Pass');
-
         return view('papiforms::livewire.teen-pass-registration-form')
             ->layout('papiforms::components.layouts.app');
     }

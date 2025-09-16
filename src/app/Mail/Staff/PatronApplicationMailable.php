@@ -1,10 +1,10 @@
 <?php
 
-namespace Blashbrook\PAPIForms\App\Mail;
+namespace Blashbrook\PAPIForms\App\Mail\Staff;
 
 use Illuminate\Mail\Mailable;
 
-class DuplicatePatronMailable extends Mailable
+class PatronApplicationMailable extends Mailable
 {
     public $confirmation;
     public $theme = 'papiforms::mail.html.themes.default';
@@ -19,8 +19,8 @@ class DuplicatePatronMailable extends Mailable
         return $this->to($this->confirmation['appRecipient'])
             ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
-                $this->confirmation['NameMiddle'].' - DUPLICATE '.
-                $this->confirmation['patronCodeDesc'])
-            ->markdown('papiforms::mail.duplicate-patron');
+                $this->confirmation['NameMiddle'].' - NEW '.
+                $this->confirmation['patronCodeDescription'])
+            ->markdown('papiforms::mail.staff.patron-application');
     }
 }

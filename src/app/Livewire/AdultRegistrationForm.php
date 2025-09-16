@@ -3,9 +3,9 @@
 namespace Blashbrook\PAPIForms\App\Livewire;
 
 use Blashbrook\PAPIClient\Facades\PAPIClient;
-use Blashbrook\PAPIForms\App\Mail\AdultConfirmationMailable;
-use Blashbrook\PAPIForms\App\Mail\DuplicatePatronMailable;
-use Blashbrook\PAPIForms\App\Mail\PatronApplicationMailable;
+use Blashbrook\PAPIForms\App\Mail\Patron\AdultConfirmationMailable;
+use Blashbrook\PAPIForms\App\Mail\Patron\DuplicatePatronMailable;
+use Blashbrook\PAPIForms\App\Mail\Staff\PatronApplicationMailable;
 use Blashbrook\PAPIForms\Facades\DeliveryOptionController;
 use Blashbrook\PAPIForms\Facades\MobilePhoneCarrierController;
 use Blashbrook\PAPIForms\Facades\PatronCodeController;

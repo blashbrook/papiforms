@@ -2,8 +2,8 @@
 
 namespace app\Policies;
 
-use App\Models\User;
 use Blashbrook\PAPIForms\App\Models\PostalCode;
+use Blashbrook\PAPIForms\App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostalCodePolicy

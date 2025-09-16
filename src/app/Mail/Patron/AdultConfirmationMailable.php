@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\App\Mail;
+namespace Blashbrook\PAPIForms\App\Mail\Patron;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -31,6 +31,6 @@ class AdultConfirmationMailable extends Mailable
     {
         return $this->to($this->confirmation['EmailAddress'])
             ->subject('Library Registration Confirmation')
-            ->markdown('papiforms::mail.adult-confirmation');
+            ->markdown('papiforms::mail.patron.adult-confirmation');
     }
 }

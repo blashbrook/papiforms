@@ -3,8 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Providers;
 
 use Blashbrook\PAPIForms\App;
-use Blashbrook\PAPIForms\App\Console\Commands\{RunSeeders, UpdatePatronCodes, UpdatePatronUdfs};
-use Blashbrook\PAPIForms\App\Http\Controllers\PatronCodeController;
+use Blashbrook\PAPIForms\App\Console\Commands\{RunSeeders, UpdatePatronCodes, UpdatePatronStatCodes, UpdatePatronUdfs};
 use Blashbrook\PAPIForms\App\Livewire\Settings\{ DeliveryOptionSelect, PatronUDFSelect, PostalCodeSelect};
 use Blashbrook\PAPIForms\App\Livewire\{AdultRegistrationForm, TeenPassRegistrationForm};
 use Blashbrook\PAPIForms\PAPIForms;
@@ -67,12 +66,6 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
-        });
-        /*        $this->app->singleton('postal_code_controller', function ($app) {
-                    return new PostalCodeController();
-                });*/
-        $this->app->singleton('patron_code_controller', function ($app) {
-            return new PatronCodeController();
         });
 
         // Dynamically configure uploads disks and links
@@ -138,6 +131,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
             RunSeeders::class,
             UpdatePatronCodes::class,
             UpdatePatronUdfs::class,
+            UpdatePatronStatCodes::class,
         ]);
     }
 }
