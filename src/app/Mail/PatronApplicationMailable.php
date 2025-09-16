@@ -20,7 +20,7 @@ class PatronApplicationMailable extends Mailable
             ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
                 $this->confirmation['NameMiddle'].' - NEW '.
-                $this->confirmation['patronCodeDesc'])
+                $this->confirmation['patronCodeDescription'])
             ->markdown('papiforms::mail.patron-application');
     }
 }

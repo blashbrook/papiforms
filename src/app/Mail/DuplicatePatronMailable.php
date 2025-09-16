@@ -20,7 +20,7 @@ class DuplicatePatronMailable extends Mailable
             ->subject($this->confirmation['NameLast'].', '.
                 $this->confirmation['NameFirst'].' '.
                 $this->confirmation['NameMiddle'].' - DUPLICATE '.
-                $this->confirmation['patronCodeDesc'])
+                $this->confirmation['patronCodeDescription'])
             ->markdown('papiforms::mail.duplicate-patron');
     }
 }

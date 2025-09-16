@@ -20,6 +20,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     public function boot(): void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'papiforms');
@@ -67,12 +68,6 @@ class PAPIFormsServiceProvider extends ServiceProvider
 
         $this->app->singleton('papiforms', function ($app) {
             return new PAPIForms();
-        });
-        /*        $this->app->singleton('postal_code_controller', function ($app) {
-                    return new PostalCodeController();
-                });*/
-        $this->app->singleton('patron_code_controller', function ($app) {
-            return new PatronCodeController();
         });
 
         // Dynamically configure uploads disks and links
