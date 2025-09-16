@@ -1,12 +1,12 @@
 <?php
 
-namespace Blashbrook\PAPIForms\App\Mail;
+namespace Blashbrook\PAPIForms\App\Mail\Patron;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TeenPassConfirmationMailable extends Mailable
+class AdultConfirmationMailable extends Mailable
 {
     use Queueable, SerializesModels;
     public $confirmation;
@@ -30,7 +30,7 @@ class TeenPassConfirmationMailable extends Mailable
     public function build()
     {
         return $this->to($this->confirmation['EmailAddress'])
-            ->subject('DCPL Teen Pass Registration Confirmation')
-            ->markdown('papiforms::mail.patron.teen-pass-confirmation');
+            ->subject('Library Registration Confirmation')
+            ->markdown('papiforms::mail.patron.adult-confirmation');
     }
 }

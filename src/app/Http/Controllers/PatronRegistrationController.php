@@ -2,7 +2,6 @@
 
 namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Blashbrook\PAPIForms\App\Models\PatronRegistration;
 use Illuminate\Http\Request;
 
@@ -42,7 +41,7 @@ class PatronRegistrationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \Blashbrook\PAPIForms\App\Models\PatronRegistration  $patronRegistration
      * @return \Illuminate\Http\Response
      */
     public function show(PatronRegistration $patronRegistration)
@@ -53,7 +52,7 @@ class PatronRegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \Blashbrook\PAPIForms\App\Models\PatronRegistration  $patronRegistration
      * @return \Illuminate\Http\Response
      */
     public function edit(PatronRegistration $patronRegistration)
@@ -65,7 +64,7 @@ class PatronRegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \Blashbrook\PAPIForms\App\Models\PatronRegistration  $patronRegistration
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, PatronRegistration $patronRegistration)
@@ -76,7 +75,7 @@ class PatronRegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PatronRegistration  $patronRegistration
+     * @param  \Blashbrook\PAPIForms\App\Models\PatronRegistration  $patronRegistration
      * @return \Illuminate\Http\Response
      */
     public function destroy(PatronRegistration $patronRegistration)

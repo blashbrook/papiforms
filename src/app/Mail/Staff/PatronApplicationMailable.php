@@ -1,6 +1,6 @@
 <?php
 
-namespace Blashbrook\PAPIForms\App\Mail;
+namespace Blashbrook\PAPIForms\App\Mail\Staff;
 
 use Illuminate\Mail\Mailable;
 

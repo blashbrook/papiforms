@@ -2,8 +2,8 @@
 
 namespace Blashbrook\PAPIForms\App\Policies;
 
-use App\Models\User;
 use Blashbrook\PAPIforms\App\Models\DeliveryOption;
+use Blashbrook\PAPIForms\App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class DeliveryOptionPolicy
