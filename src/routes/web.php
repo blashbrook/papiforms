@@ -17,37 +17,37 @@
     |
     */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/teenpass', TeenPassRegistrationForm::class);
-
-    Route::get('/adult', AdultRegistrationForm::class);
-
-    Route::get('/teenpassemail', function () {
-        return new TeenPassConfirmationMailable([
-            'first_name' => 'Brian',
-            'Barcode' => '4444444444',
-            'EmailAddress' => 'blashbrook@dcplibrary.org',
-            'logo' => 'assets/dcpl_logo_banner.png',
-            'NameFirst' => 'John',
-            'NameMiddle' => 'Queue',
-            'NameLast' => 'Public',
-            'DeliveryOptionID' => '3',
-        ]);
+    Route::get('/', function () {
+        return view('welcome');
     });
+    Route::group(['middleware' => ['web']], function () {
+        Route::get('/teenpass', TeenPassRegistrationForm::class);
 
-    Route::get('/duplicate', function () {
-        return new DuplicatePatronMailable([
-            'first_name' => 'Brian',
-            'Barcode' => '4444444444',
-            'EmailAddress' => 'blashbrook@dcplibrary.org',
-            'logo' => 'assets/dcpl_logo_banner.png',
-            'NameFirst' => 'John',
-            'NameMiddle' => 'Queue',
-            'NameLast' => 'Public',
-            'DeliveryOptionID' => '3',
-        ]);
+        Route::get('/adult', AdultRegistrationForm::class);
+
+        Route::get('/teenpassemail', function () {
+            return new TeenPassConfirmationMailable([
+                'first_name' => 'Brian',
+                'Barcode' => '4444444444',
+                'EmailAddress' => 'blashbrook@dcplibrary.org',
+                'logo' => 'assets/dcpl_logo_banner.png',
+                'NameFirst' => 'John',
+                'NameMiddle' => 'Queue',
+                'NameLast' => 'Public',
+                'DeliveryOptionID' => '3',
+            ]);
+        });
+
+        Route::get('/duplicate', function () {
+            return new DuplicatePatronMailable([
+                'first_name' => 'Brian',
+                'Barcode' => '4444444444',
+                'EmailAddress' => 'blashbrook@dcplibrary.org',
+                'logo' => 'assets/dcpl_logo_banner.png',
+                'NameFirst' => 'John',
+                'NameMiddle' => 'Queue',
+                'NameLast' => 'Public',
+                'DeliveryOptionID' => '3',
+            ]);
+        });
     });
-});

@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Mail\Patron;
+namespace Blashbrook\PAPIForms\App\Mail\Patron;
 
     use Illuminate\Bus\Queueable;
     use Illuminate\Mail\Mailable;
@@ -12,6 +12,7 @@
         use Queueable, SerializesModels;
 
         protected $token;
+
         /**
          * Create a new message instance.
          */

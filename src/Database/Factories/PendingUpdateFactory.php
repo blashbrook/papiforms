@@ -1,7 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\Database\Factories;
-
+namespace Blashbrook\PAPIForms\Database\Factories;
 
     use App\Models\User;
     use Blashbrook\PAPIForms\App\Models\PendingUpdate;

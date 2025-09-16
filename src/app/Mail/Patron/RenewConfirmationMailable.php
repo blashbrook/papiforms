@@ -1,17 +1,15 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Mail\Patron;
+namespace Blashbrook\PAPIForms\App\Mail\Patron;
 
     use Illuminate\Bus\Queueable;
     use Illuminate\Mail\Mailable;
-    use Illuminate\Mail\Mailables\Address;
     use Illuminate\Mail\Mailables\{Attachment,Content,Envelope};
     use Illuminate\Queue\SerializesModels;
 
     class RenewConfirmationMailable extends Mailable
     {
         use Queueable, SerializesModels;
-
 
         /**
          * @return Envelope
@@ -23,7 +21,6 @@
             );
         }
 
-
         /**
          * @return Content
          */
@@ -33,7 +30,6 @@
                 markdown: 'mail.patron.renew-confirmation',
             );
         }
-
 
         /**
          * Get the attachments for the message.

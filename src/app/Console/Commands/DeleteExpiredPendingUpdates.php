@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Console\Commands;
+namespace Blashbrook\PAPIForms\App\Console\Commands;
 
     use Blashbrook\PAPIForms\App\Models\PendingUpdate;
     use Carbon\Carbon;

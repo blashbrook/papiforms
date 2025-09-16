@@ -55,14 +55,11 @@ class RenewConfirmationStaffMailable extends Mailable
      */
     public function attachments(): array
     {
-        if($this->attachment != null)
-        {
+        if ($this->attachment != null) {
             return [
-                Attachment::fromPath($this->attachment)
+                Attachment::fromPath($this->attachment),
             ];
-        }
-        else
-        {
+        } else {
             return [];
         }
     }

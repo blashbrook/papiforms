@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\Database\Factories;
+namespace Blashbrook\PAPIForms\Database\Factories;
 
     use Blashbrook\PAPIForms\App\Models\PatronUdf;
     use Illuminate\Database\Eloquent\Factories\Factory;

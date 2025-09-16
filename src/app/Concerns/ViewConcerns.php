@@ -1,6 +1,6 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Concerns;
+namespace Blashbrook\PAPIForms\App\Concerns;
 
     use Blashbrook\PAPIForms\App\Models\PendingUpdate;
     use Illuminate\Support\Facades\Mail;
@@ -12,14 +12,17 @@
         {
             $this->current = 'patron-information';
         }
+
         public function showContact()
         {
             $this->current = 'patron-contact';
         }
+
         public function showNotifications()
         {
             $this->current = 'patron-notifications';
         }
+
         public function showRenew()
         {
             $this->current = 'patron-renew';
@@ -42,7 +45,7 @@
 
         protected function update($key, $value): void
         {
-            session([$key=>$value]);
-            Patron::edit($key,$value);
+            session([$key => $value]);
+            Patron::edit($key, $value);
         }
     }

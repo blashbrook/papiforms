@@ -2,9 +2,9 @@
 
 namespace Blashbrook\PAPIForms\App\Http\Controllers;
 
+use Blashbrook\PAPIClient\PAPIClient;
 use Blashbrook\PAPIForms\App\Mail\Patron\RenewConfirmationMailable;
 use Blashbrook\PAPIForms\App\Mail\Staff\RenewConfirmationStaffMailable;
-use Blashbrook\PAPIClient\PAPIClient;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
@@ -17,34 +17,39 @@ use JsonException;
 class Patron extends Controller
 {
     /**
-     * @param $barcode
-     * @param $password
+     * @param  $barcode
+     * @param  $password
      * @return mixed
+     *
      * @throws GuzzleException
      * @throws JsonException
      */
     public static function auth($barcode, $password)
     {
         $json = [
-            "Barcode" => $barcode,
-            "Password" => $password
+            'Barcode' => $barcode,
+            'Password' => $password,
         ];
         $response = PAPIClient::publicRequest('POST', 'authenticator/patron', $json);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
+
         return $body['AccessSecret'];
     }
 
     /**
-     * @param $barcode
-     * @param $accessSecret
+     * @param  $barcode
+     * @param  $accessSecret
      * @return mixed
+     *
      * @throws GuzzleException
      * @throws JsonException
      */
-    public static function open($barcode,$accessSecret){
+    public static function open($barcode, $accessSecret)
+    {
         $uri = 'patron/'.$barcode.'/basicdata?addresses=true&notes=true';
         $response = PAPIClient::authenticatedPatronRequest('GET', $uri, $accessSecret);
         $body = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
+
         return $body['PatronBasicData'];
     }
 
@@ -55,14 +60,15 @@ class Patron extends Controller
     public static function edit($key, $value): void
     {
         $json = [
-            $key => $value
+            $key => $value,
         ];
         self::save($json);
     }
 
     /**
-     * @param $json
+     * @param  $json
      * @return mixed
+     *
      * @throws GuzzleException
      * @throws JsonException
      */
@@ -70,11 +76,12 @@ class Patron extends Controller
     {
         $uri = 'patron/'.session('Barcode').'?ignoresa=true';
         $response = PAPIClient::authenticatedPatronRequest('PUT', $uri, session('AccessSecret'), $json);
+
         return json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
-     * @param $photo
+     * @param  $photo
      * @return void
      */
     public static function savePhoto($photo)
@@ -87,19 +94,20 @@ class Patron extends Controller
             ->send(new RenewConfirmationMailable($filePath));
         Mail::to([env('PAPI_ADMIN_EMAIL')])
             ->send(new RenewConfirmationStaffMailable($filePath));
-        session(['photoUploaded'=> true]);
+        session(['photoUploaded' => true]);
         redirect('dashboard/renew');
         File::delete($filePath);
     }
 
     /**
-     * @param $file
+     * @param  $file
      * @return string
      */
     private static function setFileName($file)
     {
         $fileExt = $file->getClientOriginalExtension();
-        return sprintf("%s_%s_%s.%s",
+
+        return sprintf('%s_%s_%s.%s',
             session('NameLast'),
             session('NameFirst'),
             session('NameMiddle'),
@@ -112,8 +120,7 @@ class Patron extends Controller
     public static function logout()
     {
         session()->flush();
-        return redirect("/");
+
+        return redirect('/');
     }
 }
-
-
