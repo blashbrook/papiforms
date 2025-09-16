@@ -18,7 +18,6 @@ use Livewire\Component;
 
 class PatronContactConfirm extends Component
 {
-
     #[Url(as: 'token')]
     public $token;
 

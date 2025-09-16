@@ -6,6 +6,7 @@ use App\Http\Controllers\Patron;
 use App\Traits\ViewHelpers;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+
 class PatronRenew extends Component
 {
     use withFileUploads, ViewHelpers;
@@ -21,5 +22,4 @@ class PatronRenew extends Component
     {
         return view('livewire.patron.renew');
     }
-
 }

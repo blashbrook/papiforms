@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Traits\ViewHelpers;
 use Livewire\Component;
 
-
 class PatronContact extends Component
 {
     use ViewHelpers;
@@ -17,14 +16,12 @@ class PatronContact extends Component
 
     public function updateContactInformation(): void
     {
-        if ($this->emailAddressCurrent != $this->emailAddressChanged)
-        {
+        if ($this->emailAddressCurrent != $this->emailAddressChanged) {
             $this->emailAddressCurrent = $this->emailAddressChanged;
             $this->pendingUpdate('EmailAddress', $this->emailAddressCurrent);
         }
 
-        if ($this->phoneNumberCurrent != $this->phoneNumberChanged)
-        {
+        if ($this->phoneNumberCurrent != $this->phoneNumberChanged) {
             $this->phoneNumberCurrent = $this->phoneNumberChanged;
             $this->update('PhoneVoice1', $this->phoneNumberCurrent);
         }
