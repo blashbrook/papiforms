@@ -1,3 +1,19 @@
+# [2.3.0](https://github.com/blashbrook/papiforms/compare/v2.2.0...v2.3.0) (2025-09-16)
+
+
+### Bug Fixes
+
+* **account:** roll back addition of account files ([9f0f1ed](https://github.com/blashbrook/papiforms/commit/9f0f1ed6dc542c1ab6df30dd1483f3546a507ced))
+* **mail:** sort patron and staff mail into folders ([17619b2](https://github.com/blashbrook/papiforms/commit/17619b22c22693349e4834414e2a6f47cf01e521))
+
+
+### Features
+
+* **account:** add files from account management app ([8c2d321](https://github.com/blashbrook/papiforms/commit/8c2d321a9b0ce87a84b7a613a0bce5a627925ee3))
+* **fluxui:** add views that depend on fluxui pro ([1fb83ba](https://github.com/blashbrook/papiforms/commit/1fb83ba027a30543ce4472a86ff8ee6d7e1e9331))
+* **PostalCode:** moved postalcodeid function to postalcode model ([b25fe35](https://github.com/blashbrook/papiforms/commit/b25fe35ac3664fef1f21f419424afdc67d76cd4a))
+* **UpdatePatronStatClassCode:** create command to fetch statistical class codes from polaris and store in local database ([2a62c3f](https://github.com/blashbrook/papiforms/commit/2a62c3f03eff0bbd44fc61f802733d5442598b0b))
+
 # [2.2.0](https://github.com/blashbrook/papiforms/compare/v2.1.0...v2.2.0) (2025-09-16)
 
 
