@@ -1,3 +1,11 @@
+## [2.3.1](https://github.com/blashbrook/papiforms/compare/v2.3.0...v2.3.1) (2025-09-16)
+
+
+### Bug Fixes
+
+* **composer:** update dependencies ([aebd763](https://github.com/blashbrook/papiforms/commit/aebd763b6419fca8191c4b3b047324dd0e2c4dd9))
+* **package:** update dependencies ([330d774](https://github.com/blashbrook/papiforms/commit/330d774a7449b37cd2360e5548e901fa706d0712))
+
 # [2.3.0](https://github.com/blashbrook/papiforms/compare/v2.2.0...v2.3.0) (2025-09-16)
 
 
