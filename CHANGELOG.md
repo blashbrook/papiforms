@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/blashbrook/papiforms/compare/v2.1.0...v2.2.0) (2025-09-16)
+
+
+### Features
+
+* **DeliveryOptionSelect:** move delivery option select creation to a livewire blade component ([e690437](https://github.com/blashbrook/papiforms/commit/e690437c2b6320f8051c939c40a887499d5616d7))
+* **PatronUDFSchoolSelect:** move udf4 school selection to livewire blade component ([1bd07fb](https://github.com/blashbrook/papiforms/commit/1bd07fbd0415dd7478414e7a4663f180558b9599))
+* **PatronUdfSelect:** add variables to patronudfselect to make it reusable ([fefcdc6](https://github.com/blashbrook/papiforms/commit/fefcdc6bca3c090ff86c56360fd1b2da81e75453))
+* **PostalCodeSelect:** add postalcodeselect livewire blade component display only ([5652aa4](https://github.com/blashbrook/papiforms/commit/5652aa475a4b8c73e95a8c855772c4c11501e54b))
+* **PostalCodeSelect:** move postal code select to a livewire blade component and clean up unused files ([5e05f39](https://github.com/blashbrook/papiforms/commit/5e05f39fef7e56d7b048dd68663ba1448b2e9fcf))
+* **Settings:** add class attribute injection to livewire blade components and delete unused files ([006c2c1](https://github.com/blashbrook/papiforms/commit/006c2c1a42e9ed51734a997185fae7a3f5b4f364))
+
 # [2.1.0](https://github.com/blashbrook/papiforms/compare/v2.0.0...v2.1.0) (2025-09-12)
 
 
