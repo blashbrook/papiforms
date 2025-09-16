@@ -5,8 +5,8 @@ namespace Blashbrook\PAPIForms\App\Livewire;
 use Blashbrook\PAPIClient\PAPIClient;
 use Blashbrook\PAPIForms\App\Concerns\PatronFormConcerns;
 use Blashbrook\PAPIForms\App\Livewire\Forms\PatronForm;
-use Blashbrook\PAPIForms\App\Models\PatronCode;
 use Blashbrook\PAPIForms\App\Mail\{DuplicatePatronMailable,PatronApplicationMailable,TeenPassConfirmationMailable};
+use Blashbrook\PAPIForms\App\Models\PatronCode;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\{Factory,View};
@@ -25,6 +25,7 @@ class TeenPassRegistrationForm extends Component
     protected $listeners = ['deliveryOptionUpdated', 'postalCodeUpdated'];
 
     public string $patronCodeDescription = 'Teen Pass';
+
     //public $patronCodeID;
     /**
      * @return string[]

@@ -14,7 +14,8 @@ class PatronCode extends Model
         'Description',
     ];
 
-    public static function getPatronCodeID($patronCodeDescription){
+    public static function getPatronCodeID($patronCodeDescription)
+    {
         return PatronCode::where('Description', $patronCodeDescription)
             ->pluck('PatronCodeID')->first();
     }
