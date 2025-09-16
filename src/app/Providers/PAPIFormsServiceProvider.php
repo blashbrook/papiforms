@@ -3,7 +3,7 @@
 namespace Blashbrook\PAPIForms\App\Providers;
 
 use Blashbrook\PAPIForms\App;
-use Blashbrook\PAPIForms\App\Console\Commands\{RunSeeders, UpdatePatronCodes, UpdatePatronUdfs};
+use Blashbrook\PAPIForms\App\Console\Commands\{RunSeeders, UpdatePatronCodes, UpdatePatronStatCodes, UpdatePatronUdfs};
 use Blashbrook\PAPIForms\App\Livewire\Settings\{ DeliveryOptionSelect, PatronUDFSelect, PostalCodeSelect};
 use Blashbrook\PAPIForms\App\Livewire\{AdultRegistrationForm, TeenPassRegistrationForm};
 use Blashbrook\PAPIForms\PAPIForms;
@@ -131,6 +131,7 @@ class PAPIFormsServiceProvider extends ServiceProvider
             RunSeeders::class,
             UpdatePatronCodes::class,
             UpdatePatronUdfs::class,
+            UpdatePatronStatCodes::class,
         ]);
     }
 }
