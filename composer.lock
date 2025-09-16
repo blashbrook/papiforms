@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a371432550974e7bacfb67f86009924f",
+    "content-hash": "0c4ccf30b006655da41b434c3c056e28",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -159,16 +159,16 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "c461629987adfbc36a06cd4c10195f9c300b7da4"
+                "reference": "7f8f0d5fa6b210745239e9de8021becfa3a68b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/c461629987adfbc36a06cd4c10195f9c300b7da4",
-                "reference": "c461629987adfbc36a06cd4c10195f9c300b7da4",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/7f8f0d5fa6b210745239e9de8021becfa3a68b58",
+                "reference": "7f8f0d5fa6b210745239e9de8021becfa3a68b58",
                 "shasum": ""
             },
             "require": {
@@ -185,6 +185,7 @@
                 "symfony/stopwatch": "v7.3.0",
                 "symfony/string": "^v7.0.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -226,9 +227,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/v2.0.0"
+                "source": "https://github.com/blashbrook/papiclient/tree/master"
             },
-            "time": "2025-09-11T19:17:56+00:00"
+            "time": "2025-09-16T16:40:11+00:00"
         },
         {
             "name": "brick/math",
@@ -8697,7 +8698,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "blashbrook/papiclient": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
