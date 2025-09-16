@@ -1,15 +1,14 @@
 <?php
 
-    namespace Blashbrook\PAPIForms\App\Models;
+namespace Blashbrook\PAPIForms\App\Models;
 
     use Illuminate\Database\Eloquent\Model;
 
     class PatronStatClassCode extends Model
     {
         protected $fillable = [
-           'StatisticalClassID',
+            'StatisticalClassID',
             'OrganizationID',
             'Description',
         ];
-
     }
