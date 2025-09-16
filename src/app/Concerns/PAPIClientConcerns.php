@@ -2,9 +2,9 @@
 
 namespace Blashbrook\PAPIForms\App\Concerns;
 
-trait PAPIHelpers
+trait PAPIClientConcerns
 {
-    protected function fetchData($uri, $key)
+    protected function fetchData($uri, $key): array
     {
         $response = $this->papiclient->method('get')->uri($uri)->execRequest();
 

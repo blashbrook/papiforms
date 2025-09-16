@@ -3,12 +3,12 @@
 namespace Blashbrook\PAPIForms\App\Services;
 
 use Blashbrook\PAPIClient\PAPIClient;
-use Blashbrook\PAPIForms\App\Concerns\PAPIHelpers;
+use Blashbrook\PAPIForms\App\Concerns\PAPIClientConcerns;
 use Blashbrook\PAPIForms\App\Models\PatronCode;
 
 class PatronCodeFetcher
 {
-    use PAPIHelpers;
+    use PAPIClientConcerns;
 
     protected PAPIClient $papiclient;
 

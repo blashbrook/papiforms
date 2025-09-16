@@ -21,6 +21,6 @@ class DuplicatePatronMailable extends Mailable
                 $this->confirmation['NameFirst'].' '.
                 $this->confirmation['NameMiddle'].' - DUPLICATE '.
                 $this->confirmation['patronCodeDescription'])
-            ->markdown('papiforms::mail.duplicate-patron');
+            ->markdown('papiforms::mail.patron.duplicate-patron');
     }
 }

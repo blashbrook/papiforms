@@ -21,6 +21,6 @@ class PatronApplicationMailable extends Mailable
                 $this->confirmation['NameFirst'].' '.
                 $this->confirmation['NameMiddle'].' - NEW '.
                 $this->confirmation['patronCodeDescription'])
-            ->markdown('papiforms::mail.patron-application');
+            ->markdown('papiforms::mail.staff.patron-application');
     }
 }
