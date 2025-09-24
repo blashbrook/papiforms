@@ -159,16 +159,16 @@
         },
         {
             "name": "blashbrook/papiclient",
-            "version": "v2.0.0",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blashbrook/papiclient.git",
-                "reference": "c461629987adfbc36a06cd4c10195f9c300b7da4"
+                "reference": "cfc9f1472b9eefb4137488d7896574b3508f6093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/c461629987adfbc36a06cd4c10195f9c300b7da4",
-                "reference": "c461629987adfbc36a06cd4c10195f9c300b7da4",
+                "url": "https://api.github.com/repos/blashbrook/papiclient/zipball/cfc9f1472b9eefb4137488d7896574b3508f6093",
+                "reference": "cfc9f1472b9eefb4137488d7896574b3508f6093",
                 "shasum": ""
             },
             "require": {
@@ -226,9 +226,9 @@
             ],
             "support": {
                 "issues": "https://github.com/blashbrook/papiclient/issues",
-                "source": "https://github.com/blashbrook/papiclient/tree/v2.0.0"
+                "source": "https://github.com/blashbrook/papiclient/tree/v2.0.2"
             },
-            "time": "2025-09-11T19:17:56+00:00"
+            "time": "2025-09-23T21:56:25+00:00"
         },
         {
             "name": "brick/math",
